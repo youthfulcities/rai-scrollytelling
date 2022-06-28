@@ -1,6 +1,8 @@
 import { createTheme, ThemeProvider } from '@mui/material';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Footer from './components/Footer';
+import Home from './pages/Home';
 
 const App = () => {
   const theme = createTheme({
@@ -36,7 +38,7 @@ const App = () => {
     },
     typography: {
       fontFamily: 'Gotham Narrow Book',
-      fontSize: 14 + textSize,
+      fontSize: 14,
       h1: {
         fontFamily: 'Gotham Narrow Black',
       },

@@ -41,25 +41,7 @@ const Footer = () => {
                   </Grid>
                 </Grid>
               </Grid>
-              {/* <Grid item sx={{ maxWidth: "50%" }}>
-                <Typography color="#fff" variant="body1" className="smallText">
-                  Youthful Cities is a not-for-profit determined to make cities
-                  better places to work, live, and play for everyone.
-                </Typography>
-              </Grid> */}
             </Grid>
-          </Grid>
-          <Grid item mt="1vh">
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.therefugeecentre.org/">
-              <img
-                src={'./assets/images/trc-logo.png'}
-                height="60vh"
-                alt="The Refugee Centre / Le Centre de Réfugiés logo"
-              />
-            </a>
           </Grid>
         </Grid>
       </Container>
