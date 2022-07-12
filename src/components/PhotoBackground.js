@@ -1,10 +1,8 @@
-const PhotoBackground = () => {
-  return (
-    <>
-      <div className="photoBackground"></div>
-      <div className="photoBackgroundOverlay"></div>
-    </>
-  );
-};
+const PhotoBackground = () => (
+  <>
+    <div className="photoBackground" />
+    <div className="photoBackgroundOverlay" />
+  </>
+);
 
 export default PhotoBackground;

@@ -1,5 +1,5 @@
-const Decoration = ({ absolute = false }) => {
-  return <div className={absolute ? 'backgroundAbsolute' : 'background'}></div>;
-};
+const Decoration = ({ absolute = false }) => (
+  <div className={absolute ? 'backgroundAbsolute' : 'background'} />
+);
 
 export default Decoration;
