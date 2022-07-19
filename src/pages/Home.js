@@ -17,6 +17,7 @@ const Home = () => (
         <Typography color="#FFF" variant="h1" align="center" mb="2vh">
           Affordability
         </Typography>
+        <Map />
         <Grid item>
           <Typography color="#FFF" variant="body1" align="center">
             Im baby mlkshk yes plz keffiyeh tilde chambray YOLO aesthetic
@@ -253,7 +254,6 @@ const Home = () => (
           </Typography>
         </Grid>
       </Grid>
-      <Map />
     </BasicContainer>
   </div>
 );

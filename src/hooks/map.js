@@ -11,6 +11,7 @@ const MapView = () => {
     longitude: -86.08,
     latitude: 54.67,
     zoom: 3,
+    duration: 2000,
   };
 
   const [viewState, setViewState] = useState(initialView);
@@ -34,7 +35,11 @@ const MapView = () => {
   };
 
   const reset = () => {
-    setViewState(initialView);
+    mapRef.current?.flyTo({
+      center: [initialView.longitude, initialView.latitude],
+      zoom: initialView.zoom,
+      duration: 2000,
+    });
   };
 
   return (
