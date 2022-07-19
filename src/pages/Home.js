@@ -1,6 +1,7 @@
 import { Grid, Typography } from '@mui/material';
 import BasicContainer from '../components/BasicContainer';
 import Decoration from '../components/Decoration';
+import Map from '../components/Map';
 
 const Home = () => (
   <div style={{ backgroundColor: 'var(--red)' }}>
@@ -252,6 +253,7 @@ const Home = () => (
           </Typography>
         </Grid>
       </Grid>
+      <Map />
     </BasicContainer>
   </div>
 );
