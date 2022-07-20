@@ -10,6 +10,8 @@ const MapView = () => {
   const initialView = {
     longitude: -86.08,
     latitude: 54.67,
+    pitch: 54,
+    bearing: 13.6,
     zoom: 3,
     duration: 2000,
   };
@@ -52,7 +54,7 @@ const MapView = () => {
         initialViewState={initialView}
         onMove={(e) => setViewState(e.viewState)}
         style={{ width: '100%', height: 600 }}
-        mapStyle="mapbox://styles/youthfulcities/cl58he38x001t15qpntaryouo"
+        mapStyle="mapbox://styles/youthfulcities/cl5tynh51002614lw2jtl75on"
         interactiveLayerIds={['rai-rent']}
         onClick={onClick}
         mapboxAccessToken={MAPBOX_TOKEN}
