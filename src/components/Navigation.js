@@ -1,0 +1,2 @@
+/* This Component is a placeholder based on the Figma Wireframes as of now! 
+File name will be kept as Navigation for now, as we will still have to figure out the possibility of having "mini" progress bar, bar with text, etc. */
