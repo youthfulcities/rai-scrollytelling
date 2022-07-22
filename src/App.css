@@ -3,9 +3,9 @@
   --yellow: #fbd166;
   --pink: #f6d9d7;
   --green: #b8d98d;
-  --indigo: #253d88;
+  --blue: #253d88;
   --red: #f2695d;
-  --chestnuts: #884c41;
+  --brown: #673934;
 
   --font_heading: font(normal normal normal 45px/1.4em arial + black);
 }
@@ -327,13 +327,13 @@ img {
 } */
 
 .photoOverlay:hover {
-  background-color: var(--indigo);
+  background-color: var(--blue);
   opacity: 100%;
   cursor: pointer;
 }
 
 .photoButtonText:hover + .photoOverlay {
-  background-color: var(--indigo);
+  background-color: var(--blue);
   opacity: 100%;
   cursor: pointer;
 }
@@ -404,7 +404,7 @@ img {
 }
 
 .langMenuItemWrapper:hover .langMenuItem {
-  color: var(--indigo);
+  color: var(--blue);
   cursor: pointer;
 }
 
