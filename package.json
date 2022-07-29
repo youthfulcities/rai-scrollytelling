@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@turf/bbox": "^6.5.0",
     "chart.js": "^3.8.2",
+    "chartjs-plugin-deferred": "^2.0.0",
     "eslint": "^8.18.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",

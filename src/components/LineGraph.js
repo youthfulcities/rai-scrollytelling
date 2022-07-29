@@ -33,6 +33,10 @@ const options = {
       display: true,
       text: 'Chart.js Line Chart',
     },
+    deferred: {
+      delay: 500,
+      yOffset: '300px',
+    },
   },
 };
 

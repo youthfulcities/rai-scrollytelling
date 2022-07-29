@@ -24,6 +24,23 @@ const data = {
   ],
 };
 
-const DoughnutGraph = () => <Doughnut data={data} />;
+const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top',
+    },
+    title: {
+      display: true,
+      text: 'Chart.js Line Chart',
+    },
+    deferred: {
+      delay: 500,
+      yOffset: '300px',
+    },
+  },
+};
+
+const DoughnutGraph = () => <Doughnut data={data} options={options} />;
 
 export default DoughnutGraph;

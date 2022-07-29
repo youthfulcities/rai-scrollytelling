@@ -9,10 +9,12 @@ import {
   Title,
   Tooltip,
 } from 'chart.js';
+import ChartDeferred from 'chartjs-plugin-deferred';
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 
 ChartJS.register(
+  ChartDeferred,
   CategoryScale,
   LinearScale,
   BarElement,
@@ -51,6 +53,10 @@ const options = {
       display: true,
       text: 'Chart.js Bar Chart',
       color: '#fff',
+    },
+    deferred: {
+      delay: 500,
+      yOffset: '300px',
     },
   },
 };
