@@ -1,8 +1,8 @@
 import { Grid, Typography } from '@mui/material';
+import BarGraph from '../components/BarGraph';
 import BasicContainer from '../components/BasicContainer';
 import Decoration from '../components/Decoration';
 import Map from '../components/Map';
-import MapButtons from '../components/MapButtons';
 
 const Home = () => (
   <div style={{ backgroundColor: 'var(--blue)' }}>
@@ -18,8 +18,8 @@ const Home = () => (
         <Typography color="#FFF" variant="h1" align="center" mb="2vh">
           Affordability
         </Typography>
-        <MapButtons />
         <Map />
+        <BarGraph />
       </Grid>
     </BasicContainer>
   </div>
