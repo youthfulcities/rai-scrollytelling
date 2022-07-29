@@ -4,6 +4,8 @@ import { Doughnut } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+ChartJS.defaults.font.family = 'Gotham Narrow Book';
+
 const data = {
   labels: ['Red', 'Blue', 'Yellow', 'Green', 'Pink', 'Brown'],
   datasets: [
