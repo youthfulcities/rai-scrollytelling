@@ -23,6 +23,8 @@ ChartJS.register(
   Legend
 );
 
+ChartJS.defaults.font.family = 'Gotham Narrow Book';
+
 const options = {
   responsive: true,
   plugins: {
