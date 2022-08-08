@@ -25,6 +25,7 @@
   "rules": {
     "arrow-body-style": "warn",
     "react/jsx-curly-brace-presence": "warn",
+    "react/jsx-props-no-spreading":"warn",
     "react/react-in-jsx-scope": "off",
       "prettier/prettier": ["warn", {"endOfLine": "auto"}],
       "no-console":"off",

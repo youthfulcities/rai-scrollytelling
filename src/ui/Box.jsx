@@ -28,7 +28,7 @@ export const composedHelpers = compose(
   left,
   right,
   position,
-  boxShadow,
+  boxShadow
 );
 
 export const Box = styled.div`

@@ -1,14 +1,15 @@
 import styled from 'styled-components';
-import { Box } from 'Box.jsx';
-
 import { compose, flexbox } from 'styled-system';
+import { Box } from './Box';
 
 const composedHelpers = compose(flexbox);
 
-export const Flex = styled(Box)`
+const Flex = styled(Box)`
   display: flex;
 
   ${composedHelpers}
 `;
 
 Flex.defaultProps = {};
+
+export default Flex;

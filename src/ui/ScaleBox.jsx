@@ -1,20 +1,20 @@
-import React, { useMemo, useContext } from "react";
+import React, { useContext, useMemo } from 'react';
 
-import { IntersectionContext } from "/IntersectionObserver.jsx";
-import { MotionBox } from "/MotionBox.jsx";
+import { IntersectionContext } from './IntersectionObserver';
+import MotionBox from './MotionBox';
 
-export const ScaleBox = ({
+const ScaleBox = ({
   children,
   delayOrder, // order of appearance
   duration = 0.4,
-  easing = [0.42, 0, 0.58, 1] // [number, number, number, number] | "linear" | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate" | EasingFunction;
+  easing = [0.42, 0, 0.58, 1], // [number, number, number, number] | "linear" | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate" | EasingFunction;
 }) => {
   const { inView } = useContext(IntersectionContext);
   const transition = useMemo(
     () => ({
       duration,
       delay: delayOrder / 5,
-      ease: easing
+      ease: easing,
     }),
     [duration, delayOrder, easing]
   );
@@ -23,23 +23,24 @@ export const ScaleBox = ({
     hidden: {
       scale: 0,
       opacity: 0,
-      transition
+      transition,
     },
     show: {
       scale: 1,
       opacity: 1,
-      transition: transition
-    }
+      transition,
+    },
   };
 
   return (
     <MotionBox
       initial="hidden"
-      animate={inView ? "show" : "hidden"}
+      animate={inView ? 'show' : 'hidden'}
       exit="hidden"
-      variants={variants}
-    >
+      variants={variants}>
       {children}
     </MotionBox>
   );
 };
+
+export default ScaleBox;

@@ -1,9 +1,9 @@
-import React, { useContext, useMemo, useState, useEffect } from "react";
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 
-import { IntersectionContext } from "/IntersectionObserver.jsx";
-import { MotionBox } from "/MotionBox.jsx";
+import { IntersectionContext } from './IntersectionObserver';
+import { MotionBox } from './MotionBox';
 
-export const FadeInUpBox = ({
+const FadeInUpBox = ({
   children,
   yOffset = 24, // y initial possition
   easing = [0.42, 0, 0.58, 1], // [number, number, number, number] | "linear" | "easeIn" |
@@ -19,13 +19,14 @@ export const FadeInUpBox = ({
 
   useEffect(() => {
     if (delayOrder) return setDelay(delayOrder * offset);
+    return false;
   }, [delayOrder, offset]);
 
   const transition = useMemo(
     () => ({
       duration: 0.4,
       delay,
-      ease: easing
+      ease: easing,
     }),
     [delay, easing]
   );
@@ -36,19 +37,20 @@ export const FadeInUpBox = ({
       y: 0,
       x: 0,
       opacity: 1,
-      transition
-    }
+      transition,
+    },
   };
 
   return (
     <MotionBox
       initial="hidden"
-      animate={inView ? "show" : "hidden"}
+      animate={inView ? 'show' : 'hidden'}
       exit="hidden"
       variants={variants}
-      {...rest}
-    >
+      {...rest}>
       {children} {inView}
     </MotionBox>
   );
 };
+
+export default FadeInUpBox;

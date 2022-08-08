@@ -1,27 +1,16 @@
 import { Container, Grid } from '@mui/material';
 
 const BasicContainer = ({ children, width }) => (
-  <Container maxWidth={width === undefined ? 'xs' : width}>
+  <Container maxWidth={width === undefined ? 'md' : width}>
     <Grid
-      sx={{ minWidth: '100%', minHeight: '100%' }}
+      sx={{ width: '100%', height: '100%' }}
+      item
       container
       direction="column"
-      justifyContent="space-between"
+      justifyContent="center"
       alignItems="center"
-      spacing={0}
-      pb="5vh">
-      <Grid
-        sx={{ minHeight: '59vh', minWidth: '100%' }}
-        container
-        item
-        direction="column"
-        justifyContent="center"
-        alignItems="center"
-        pt="5vh"
-        pb="5vh"
-        spacing={0}>
-        {children}
-      </Grid>
+      spacing={0}>
+      {children}
     </Grid>
   </Container>
 );

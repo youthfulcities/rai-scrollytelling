@@ -2,34 +2,28 @@ import { Container, Grid } from '@mui/material';
 
 const Header = () => (
   <header>
-    <Container maxWidth="lg">
-      <Grid
-        sx={{ minHeight: '14vh', maxHeight: '14vh' }}
-        container
-        direction="row"
-        justifyContent="space-between"
-        alignItems="center">
+    <Grid
+      sx={{ height: '5vh', width: '100%', position: 'relative', zIndex: '10' }}
+      container
+      direction="row"
+      justifyContent="space-between"
+      alignItems="center">
+      <Container maxWidth="lg">
         <Grid item>
-          <Grid container direction="row" alignItems="center">
-            <Grid item container spacing="1vh" direction="column">
-              <Grid item>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://youthfulcities.com/">
-                  <img
-                    src="./assets/images/YC_BnW_ALT_black_RGB.png"
-                    height="50vh"
-                    alt="Youthful Cities logo"
-                  />
-                </a>
-              </Grid>
-                  {/* add RAI Affordability Index + GO TO YOUTHFUL CITIES Button! */}
-            </Grid>
-          </Grid>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://youthfulcities.com/">
+            <img
+              src="./assets/images/YC_BnW_ALT_black_RGB.png"
+              height="50px"
+              alt="Youthful Cities logo"
+            />
+          </a>
         </Grid>
-      </Grid>
-    </Container>
+        {/* add RAI Affordability Index + GO TO YOUTHFUL CITIES Button! */}
+      </Container>
+    </Grid>
   </header>
 );
 

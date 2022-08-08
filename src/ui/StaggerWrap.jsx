@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react';
 
-import { IntersectionContext } from "/IntersectionObserver.jsx";
-import { MotionBox } from "/MotionBox.jsx";
+import { IntersectionContext } from './IntersectionObserver';
+import MotionBox from './MotionBox';
 
 export const StaggerContext = React.createContext({
-  stagger: false
+  stagger: false,
 });
 
-export const StaggerWrap = ({ children, delayOrder, childrenDelay, ease }) => {
+const StaggerWrap = ({ children, delayOrder, childrenDelay, ease }) => {
   const { inView } = useContext(IntersectionContext);
 
   // const offset = 0.4;
@@ -17,23 +17,25 @@ export const StaggerWrap = ({ children, delayOrder, childrenDelay, ease }) => {
     show: {
       opacity: 1,
       transition: {
-        when: "beforeChildren",
-        delay: delayOrder ? delayOrder : 0,
-        staggerChildren: childrenDelay ? childrenDelay : 0.1
-      }
-    }
+        when: 'beforeChildren',
+        delay: delayOrder || 0,
+        staggerChildren: childrenDelay || 0.1,
+      },
+    },
   };
 
   return (
+    // ease apparently changes every render, may need to use useMemo or something
     <StaggerContext.Provider value={{ stagger: true, ease }}>
       <MotionBox
         initial="hidden"
-        animate={inView ? "show" : "hidden"}
+        animate={inView ? 'show' : 'hidden'}
         exit="hidden"
-        variants={variants}
-      >
+        variants={variants}>
         {children}
       </MotionBox>
     </StaggerContext.Provider>
   );
 };
+
+export default StaggerWrap;

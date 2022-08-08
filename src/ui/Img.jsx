@@ -1,14 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { border, compose, layout, space } from "styled-system";
+import { border, compose, layout, space } from 'styled-system';
 
-const composedHelpers = compose(
-  layout,
-  border,
-  space
-);
+const composedHelpers = compose(layout, border, space);
 
-export const Img = styled.img`
+const Img = styled.img`
   width: 100%;
   object-fit: cover;
   ${composedHelpers};
@@ -17,3 +13,5 @@ export const Img = styled.img`
 Img.defaultProps = {
   // borderRadius: 8
 };
+
+export default Img;

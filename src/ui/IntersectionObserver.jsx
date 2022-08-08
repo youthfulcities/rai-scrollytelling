@@ -1,25 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { useIntersection } from "react-use";
+import React, { useEffect, useState } from 'react';
+import { useIntersection } from 'react-use';
 
 export const IntersectionContext = React.createContext({ inView: true });
 
 export const IntersectionObserver = ({
   children,
-  reset = false // if value set to true - observed element will reappear every time it shows up on the screen
+  reset = false, // if value set to true - observed element will reappear every time it shows up on the screen
 }) => {
+  //try wrapping inView in useMemo
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
-    threshold: 0
+    threshold: 0,
   });
 
   useEffect(() => {
     const inViewNow = intersection && intersection.intersectionRatio > 0;
     if (inViewNow) {
       return setInView(inViewNow);
-    } else if (reset) {
+    }
+    if (reset) {
       return setInView(false);
     }
+    return false;
   }, [intersection, reset]);
 
   return (
