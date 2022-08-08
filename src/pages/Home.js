@@ -1,7 +1,9 @@
 import { Grid, Typography } from '@mui/material';
 import BasicContainer from '../components/BasicContainer';
 import Decoration from '../components/Decoration';
+// import HomeStats from '../components/HomeStats';
 import Map from '../components/Map';
+// import Quote from '../components/Quote';
 
 const Home = () => (
   <div style={{ backgroundColor: 'var(--red)' }}>
@@ -15,9 +17,8 @@ const Home = () => (
         spacing={2}
         justifyContent="center">
         <Typography color="#FFF" variant="h1" align="center" mb="2vh">
-          Affordability
+          Can Young People Afford to Live in Canadian Cities?
         </Typography>
-        <Map />
         <Grid item>
           <Typography color="#FFF" variant="body1" align="center">
             Im baby mlkshk yes plz keffiyeh tilde chambray YOLO aesthetic
@@ -32,42 +33,15 @@ const Home = () => (
           </Typography>
         </Grid>
         <Grid item>
-          <Typography color="#FFF" variant="body1" align="center">
-            Freegan fanny pack tbh, try-hard cardigan brooklyn roof party poke
-            drinking vinegar tonx you probably havent heard of them. Bespoke
-            sartorial sustainable wolf, heirloom raclette umami DIY ramps
-            thundercats single-origin coffee photo booth poutine pour-over
-            shoreditch. Hella coloring book swag cold-pressed enamel pin iPhone
-            butcher tbh hexagon iceland artisan jean shorts gentrify celiac.
-            XOXO try-hard offal meditation gastropub iceland williamsburg
-            snackwave lumbersexual vegan jean shorts fixie. Blog echo park
-            readymade kale chips enamel pin succulents yr fam brooklyn freegan
-            neutra twee. Single-origin coffee ramps wolf, before they sold out
-            PBR&B next level hashtag beard truffaut vaporware kogi hoodie
-            try-hard synth la croix. Blog godard hell of photo booth, la croix
-            pitchfork cloud bread DSA tumeric affogato semiotics food truck next
-            level. Small batch PBR&B air plant, trust fund palo santo butcher
-            copper mug ennui leggings disrupt semiotics. Tilde migas kinfolk
-            drinking vinegar, hexagon mumblecore listicle.
-          </Typography>
+        {/* <HomeStats /> */}
+        <Typography color="#FFF" variant="h4" align="center" mb="2vh">
+          put data points component here and arrow to continue
+        </Typography>
         </Grid>
-        <Grid item>
-          <Typography color="#FFF" variant="body1" align="center">
-            Cronut stumptown la croix drinking vinegar, iPhone celiac bushwick
-            tumblr. Organic farm-to-table tote bag artisan hexagon kitsch
-            chicharrones portland. Ennui slow-carb quinoa, live-edge organic
-            hella food truck tofu prism cronut. Forage godard next level fixie
-            keytar etsy seitan, palo santo ennui. Gochujang viral snackwave cred
-            twee. Microdosing echo park palo santo put a bird on it pork belly
-            dreamcatcher, lo-fi bushwick tacos pok pok jean shorts banjo
-            post-ironic succulents cronut. Occupy viral williamsburg yr.
-            Cardigan roof party poke chambray knausgaard meditation. Hella
-            affogato next level tote bag messenger bag chartreuse, enamel pin
-            ennui scenester shoreditch unicorn gentrify copper mug waistcoat
-            truffaut. Art party copper mug green juice, godard retro literally
-            post-ironic occupy.
-          </Typography>
-        </Grid>
+        <Typography color="#FFF" variant="h1" align="center" mb="2vh">
+          Affordability
+        </Typography>
+        <Map />
         <Grid item>
           <Typography color="#FFF" variant="body1" align="center">
             Freegan fanny pack tbh, try-hard cardigan brooklyn roof party poke
@@ -89,7 +63,14 @@ const Home = () => (
           </Typography>
         </Grid>
         <Grid item>
+        <Typography color="#FFF" variant="h1" align="center" mb="2vh">
+          Just Graduated?
+        </Typography>
+          </Grid>
+            {/* DiplomaJobSearch Component Goes Here!*/}
+        <Grid item>
           <Typography color="#FFF" variant="body1" align="center">
+            DiplomaJobSearch Component Goes Here!
             Cronut stumptown la croix drinking vinegar, iPhone celiac bushwick
             tumblr. Organic farm-to-table tote bag artisan hexagon kitsch
             chicharrones portland. Ennui slow-carb quinoa, live-edge organic
@@ -106,7 +87,14 @@ const Home = () => (
           </Typography>
         </Grid>
         <Grid item>
+        <Typography color="#FFF" variant="h1" align="center" mb="2vh">
+          Cost of Products?
+        </Typography>
+          </Grid>
+              {/* CostOfProducts Component Goes Here!*/}
+        <Grid item>
           <Typography color="#FFF" variant="body1" align="center">
+          CostOfProducts Component Goes Here! 
             Freegan fanny pack tbh, try-hard cardigan brooklyn roof party poke
             drinking vinegar tonx you probably havent heard of them. Bespoke
             sartorial sustainable wolf, heirloom raclette umami DIY ramps
@@ -126,133 +114,27 @@ const Home = () => (
           </Typography>
         </Grid>
         <Grid item>
-          <Typography color="#FFF" variant="body1" align="center">
-            Cronut stumptown la croix drinking vinegar, iPhone celiac bushwick
-            tumblr. Organic farm-to-table tote bag artisan hexagon kitsch
-            chicharrones portland. Ennui slow-carb quinoa, live-edge organic
-            hella food truck tofu prism cronut. Forage godard next level fixie
-            keytar etsy seitan, palo santo ennui. Gochujang viral snackwave cred
-            twee. Microdosing echo park palo santo put a bird on it pork belly
-            dreamcatcher, lo-fi bushwick tacos pok pok jean shorts banjo
-            post-ironic succulents cronut. Occupy viral williamsburg yr.
-            Cardigan roof party poke chambray knausgaard meditation. Hella
-            affogato next level tote bag messenger bag chartreuse, enamel pin
-            ennui scenester shoreditch unicorn gentrify copper mug waistcoat
-            truffaut. Art party copper mug green juice, godard retro literally
-            post-ironic occupy.
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography color="#FFF" variant="body1" align="center">
-            Freegan fanny pack tbh, try-hard cardigan brooklyn roof party poke
-            drinking vinegar tonx you probably havent heard of them. Bespoke
-            sartorial sustainable wolf, heirloom raclette umami DIY ramps
-            thundercats single-origin coffee photo booth poutine pour-over
-            shoreditch. Hella coloring book swag cold-pressed enamel pin iPhone
-            butcher tbh hexagon iceland artisan jean shorts gentrify celiac.
-            XOXO try-hard offal meditation gastropub iceland williamsburg
-            snackwave lumbersexual vegan jean shorts fixie. Blog echo park
-            readymade kale chips enamel pin succulents yr fam brooklyn freegan
-            neutra twee. Single-origin coffee ramps wolf, before they sold out
-            PBR&B next level hashtag beard truffaut vaporware kogi hoodie
-            try-hard synth la croix. Blog godard hell of photo booth, la croix
-            pitchfork cloud bread DSA tumeric affogato semiotics food truck next
-            level. Small batch PBR&B air plant, trust fund palo santo butcher
-            copper mug ennui leggings disrupt semiotics. Tilde migas kinfolk
-            drinking vinegar, hexagon mumblecore listicle.
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography color="#FFF" variant="body1" align="center">
-            Cronut stumptown la croix drinking vinegar, iPhone celiac bushwick
-            tumblr. Organic farm-to-table tote bag artisan hexagon kitsch
-            chicharrones portland. Ennui slow-carb quinoa, live-edge organic
-            hella food truck tofu prism cronut. Forage godard next level fixie
-            keytar etsy seitan, palo santo ennui. Gochujang viral snackwave cred
-            twee. Microdosing echo park palo santo put a bird on it pork belly
-            dreamcatcher, lo-fi bushwick tacos pok pok jean shorts banjo
-            post-ironic succulents cronut. Occupy viral williamsburg yr.
-            Cardigan roof party poke chambray knausgaard meditation. Hella
-            affogato next level tote bag messenger bag chartreuse, enamel pin
-            ennui scenester shoreditch unicorn gentrify copper mug waistcoat
-            truffaut. Art party copper mug green juice, godard retro literally
-            post-ironic occupy.
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography color="#FFF" variant="body1" align="center">
-            Freegan fanny pack tbh, try-hard cardigan brooklyn roof party poke
-            drinking vinegar tonx you probably havent heard of them. Bespoke
-            sartorial sustainable wolf, heirloom raclette umami DIY ramps
-            thundercats single-origin coffee photo booth poutine pour-over
-            shoreditch. Hella coloring book swag cold-pressed enamel pin iPhone
-            butcher tbh hexagon iceland artisan jean shorts gentrify celiac.
-            XOXO try-hard offal meditation gastropub iceland williamsburg
-            snackwave lumbersexual vegan jean shorts fixie. Blog echo park
-            readymade kale chips enamel pin succulents yr fam brooklyn freegan
-            neutra twee. Single-origin coffee ramps wolf, before they sold out
-            PBR&B next level hashtag beard truffaut vaporware kogi hoodie
-            try-hard synth la croix. Blog godard hell of photo booth, la croix
-            pitchfork cloud bread DSA tumeric affogato semiotics food truck next
-            level. Small batch PBR&B air plant, trust fund palo santo butcher
-            copper mug ennui leggings disrupt semiotics. Tilde migas kinfolk
-            drinking vinegar, hexagon mumblecore listicle.
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography color="#FFF" variant="body1" align="center">
-            Cronut stumptown la croix drinking vinegar, iPhone celiac bushwick
-            tumblr. Organic farm-to-table tote bag artisan hexagon kitsch
-            chicharrones portland. Ennui slow-carb quinoa, live-edge organic
-            hella food truck tofu prism cronut. Forage godard next level fixie
-            keytar etsy seitan, palo santo ennui. Gochujang viral snackwave cred
-            twee. Microdosing echo park palo santo put a bird on it pork belly
-            dreamcatcher, lo-fi bushwick tacos pok pok jean shorts banjo
-            post-ironic succulents cronut. Occupy viral williamsburg yr.
-            Cardigan roof party poke chambray knausgaard meditation. Hella
-            affogato next level tote bag messenger bag chartreuse, enamel pin
-            ennui scenester shoreditch unicorn gentrify copper mug waistcoat
-            truffaut. Art party copper mug green juice, godard retro literally
-            post-ironic occupy.
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography color="#FFF" variant="body1" align="center">
-            Freegan fanny pack tbh, try-hard cardigan brooklyn roof party poke
-            drinking vinegar tonx you probably havent heard of them. Bespoke
-            sartorial sustainable wolf, heirloom raclette umami DIY ramps
-            thundercats single-origin coffee photo booth poutine pour-over
-            shoreditch. Hella coloring book swag cold-pressed enamel pin iPhone
-            butcher tbh hexagon iceland artisan jean shorts gentrify celiac.
-            XOXO try-hard offal meditation gastropub iceland williamsburg
-            snackwave lumbersexual vegan jean shorts fixie. Blog echo park
-            readymade kale chips enamel pin succulents yr fam brooklyn freegan
-            neutra twee. Single-origin coffee ramps wolf, before they sold out
-            PBR&B next level hashtag beard truffaut vaporware kogi hoodie
-            try-hard synth la croix. Blog godard hell of photo booth, la croix
-            pitchfork cloud bread DSA tumeric affogato semiotics food truck next
-            level. Small batch PBR&B air plant, trust fund palo santo butcher
-            copper mug ennui leggings disrupt semiotics. Tilde migas kinfolk
-            drinking vinegar, hexagon mumblecore listicle.
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography color="#FFF" variant="body1" align="center">
-            Cronut stumptown la croix drinking vinegar, iPhone celiac bushwick
-            tumblr. Organic farm-to-table tote bag artisan hexagon kitsch
-            chicharrones portland. Ennui slow-carb quinoa, live-edge organic
-            hella food truck tofu prism cronut. Forage godard next level fixie
-            keytar etsy seitan, palo santo ennui. Gochujang viral snackwave cred
-            twee. Microdosing echo park palo santo put a bird on it pork belly
-            dreamcatcher, lo-fi bushwick tacos pok pok jean shorts banjo
-            post-ironic succulents cronut. Occupy viral williamsburg yr.
-            Cardigan roof party poke chambray knausgaard meditation. Hella
-            affogato next level tote bag messenger bag chartreuse, enamel pin
-            ennui scenester shoreditch unicorn gentrify copper mug waistcoat
-            truffaut. Art party copper mug green juice, godard retro literally
-            post-ironic occupy.
-          </Typography>
-        </Grid>
+        <Typography color="#FFF" variant="h4" align="left" mb="2vh">
+        &quot;Young peoples&apos; inability to afford to live in urban areas can have many 
+          compounding negative effects, including increased mental health concerns, as 
+          they face fears of missing out on life ahead and attaining their goals and ambitions.&quot;
+        </Typography>
+        <Typography color="#FFF" variant="h6" align="left" mb="2vh">
+          - Mark Beckles
+        </Typography>
+          </Grid>
+          {/* <Quote /> */}
+              {/* MAYBE TURN THIS QUOTE^ INTO ITS OWN COMPONENT FILE? */}
+          <Grid item>
+        <Typography color="#FFF" variant="h1" align="center" mb="2vh">
+          Did you know?
+        </Typography>
+          </Grid>
+          <Grid item>
+        <Typography color="#FFF" variant="h3" align="center" mb="2vh">
+          Women pay more on certain products than men and often experience a greater deficit
+        </Typography>
+          </Grid>
       </Grid>
     </BasicContainer>
   </div>
