@@ -56,26 +56,44 @@ const App = () => {
       fontSize: 14,
       h1: {
         fontFamily: 'Gotham Narrow Black',
+        fontSize: '81px',
+        lineHeight: '88px',
       },
       h2: {
-        fontFamily: 'Gotham Narrow Medium',
+        fontFamily: 'Gotham Narrow Black',
+        fontSize: '54px',
+        lineHeight: '60px',
       },
       h3: {
         fontFamily: 'Gotham Narrow Medium',
+        fontSize: '36px',
+        lineHeight: '42px',
       },
       h4: {
         fontFamily: 'Gotham Narrow Light',
+        fontSize: '30px',
+        lineHeight: '36px',
+        textTransform: 'uppercase',
       },
       h5: {
-        fontFamily: 'Gotham Narrow Medium',
+        fontFamily: 'adelle',
+        fontSize: '24px',
+        lineHeight: '34px',
       },
       body1: {
         fontFamily: 'Gotham Narrow Book',
-        fontSize: 14,
+        fontSize: '18px',
+        lineHeight: '30px',
       },
       body2: {
         fontFamily: 'Gotham Narrow Book',
-        fontSize: 10,
+        fontSize: '15px',
+      },
+      button: {
+        fontFamily: 'Gotham Narrow Medium',
+        fontSize: '14px',
+        lineHeight: '16px',
+        textTransform: 'uppercase',
       },
     },
     shape: {

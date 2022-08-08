@@ -22,6 +22,7 @@ const Home = () => (
         <Typography color="#000" variant="h1" align="center" mb="2vh">
           Affordability
         </Typography>
+        <Typography variant="h5">This is some text</Typography>
         <Map />
         <BarGraph />
         <DoughnutGraph />
