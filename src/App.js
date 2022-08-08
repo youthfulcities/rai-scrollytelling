@@ -1,8 +1,23 @@
 import { createTheme, ThemeProvider } from '@mui/material';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+// import styled from "styled-components"; <- gives an error
+import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+
+// import {
+//   Box,
+//   Container,
+//   FadeInUpBox,
+//   Flex,
+//   ScaleBox,
+//   StaggerWrap,
+// } from "./ui"; <- Path Incorrect?
+
+// import { picsList } from "../PicsList.js";
+
+// Removed Framer Motion Code to focus on these^
 
 const App = () => {
   const theme = createTheme({
@@ -198,6 +213,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Router>
+        <Header />
         <div className="flexWrapper">
           <div className="flexGrow">
             <Routes>
