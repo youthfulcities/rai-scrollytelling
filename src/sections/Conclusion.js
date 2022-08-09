@@ -1,9 +1,9 @@
 import { Grid, Typography } from '@mui/material';
-import React from 'react';
+import { forwardRef } from 'react';
 import BasicContainer from '../components/BasicContainer';
 
-const Conclusion = () => (
-  <div>
+const Conclusion = (props, ref) => (
+  <section ref={ref} id="conclusion">
     <Grid
       item
       container
@@ -17,7 +17,7 @@ const Conclusion = () => (
         </Typography>
       </BasicContainer>
     </Grid>
-  </div>
+  </section>
 );
 
-export default Conclusion;
+export default forwardRef(Conclusion);

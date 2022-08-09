@@ -1,10 +1,10 @@
 import { Grid, Typography } from '@mui/material';
-import React from 'react';
+import { forwardRef } from 'react';
 import BasicContainer from '../components/BasicContainer';
 import HomeStats from '../components/HomeStats';
 
-const HomeSection = () => (
-  <div>
+const HomeSection = (props, ref) => (
+  <section ref={ref} id="home">
     <Grid container sx={{ minHeight: '100vh' }}>
       <BasicContainer>
         <Typography variant="h1" align="center" mb="2vh">
@@ -16,7 +16,7 @@ const HomeSection = () => (
         </Typography>
       </BasicContainer>
     </Grid>
-  </div>
+  </section>
 );
 
-export default HomeSection;
+export default forwardRef(HomeSection);

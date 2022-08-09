@@ -1,9 +1,9 @@
 import { Grid, Typography } from '@mui/material';
-import React from 'react';
+import { forwardRef } from 'react';
 import BasicContainer from '../components/BasicContainer';
 
-const Chap2 = () => (
-  <div>
+const Chap2 = (props, ref) => (
+  <section id="chap2" ref={ref}>
     <Grid container sx={{ minHeight: '100vh', backgroundColor: '#FBD166' }}>
       <BasicContainer>
         <Typography variant="h2" align="center" mb="2vh">
@@ -11,7 +11,7 @@ const Chap2 = () => (
         </Typography>
       </BasicContainer>
     </Grid>
-  </div>
+  </section>
 );
 
-export default Chap2;
+export default forwardRef(Chap2);
