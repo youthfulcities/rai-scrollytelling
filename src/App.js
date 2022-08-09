@@ -24,6 +24,7 @@ const theme = muiTheme();
 
 const App = () => {
   const [currentSection, setCurrentSection] = useState(0);
+
   const [homeRef, homeInView, homeEntry] = useInView({ threshold: 0.5 });
   const [chap1Ref, chap1InView, chap1Entry] = useInView({ threshold: 0.5 });
   const [chap2Ref, chap2InView, chap2Entry] = useInView({ threshold: 0.5 });
@@ -33,44 +34,6 @@ const App = () => {
   const [conclusionRef, conclusionInView, conclusionEntry] = useInView({
     threshold: 0.5,
   });
-
-  const sections = [
-    {
-      title: 'Home',
-      description: '',
-      element: homeEntry.target,
-    },
-    {
-      title: 'Chapter 1',
-      description: '',
-      element: chap1Entry.target,
-    },
-    {
-      title: 'Chapter 2',
-      description: '',
-      element: chap2Entry.target,
-    },
-    {
-      title: 'Chapter 3',
-      description: '',
-      element: chap3Entry.target,
-    },
-    {
-      title: 'Chapter 4',
-      description: '',
-      element: chap4Entry.target,
-    },
-    {
-      title: 'Chapter 5',
-      description: '',
-      element: chap5Entry.target,
-    },
-    {
-      title: 'Conclusion',
-      description: '',
-      element: conclusionEntry.target,
-    },
-  ];
 
   useEffect(() => {
     if (homeInView) {
