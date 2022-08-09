@@ -4,6 +4,7 @@ import './App.css';
 // import styled from "styled-components"; <- gives an error
 import Footer from './components/Footer';
 import Header from './components/Header';
+import Navigation from './components/Navigation';
 import Chap1 from './sections/Chap1';
 import Chap2 from './sections/Chap2';
 import Chap3 from './sections/Chap3';
@@ -25,6 +26,7 @@ const App = () => (
       <div className="flexWrapper">
         <div className="flexGrow">
           <Header />
+          <Navigation />
           <HomeSection />
           <Chap1 />
           <Chap2 />
