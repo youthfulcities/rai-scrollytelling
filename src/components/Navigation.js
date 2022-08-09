@@ -69,9 +69,6 @@ const ScrollBar = ({
 
   return (
     <Box sx={{ position: 'fixed', left: '25px', top: '20vh', minWidth: 0 }}>
-      <IconButton onClick={handleBack}>
-        <KeyboardArrowUpIcon />
-      </IconButton>
       <Stepper
         orientation="vertical"
         steps={7}
@@ -97,9 +94,6 @@ const ScrollBar = ({
           </Step>
         ))}
       </Stepper>
-      <IconButton onClick={handleNext}>
-        <KeyboardArrowDownIcon />
-      </IconButton>
     </Box>
   );
 };
