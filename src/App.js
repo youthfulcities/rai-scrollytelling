@@ -24,7 +24,6 @@ const theme = muiTheme();
 
 const App = () => {
   const [currentSection, setCurrentSection] = useState(0);
-
   const [homeRef, homeInView, homeEntry] = useInView({ threshold: 0.5 });
   const [chap1Ref, chap1InView, chap1Entry] = useInView({ threshold: 0.5 });
   const [chap2Ref, chap2InView, chap2Entry] = useInView({ threshold: 0.5 });
@@ -34,6 +33,44 @@ const App = () => {
   const [conclusionRef, conclusionInView, conclusionEntry] = useInView({
     threshold: 0.5,
   });
+
+  const sections = [
+    {
+      title: 'Home',
+      description: '',
+      element: homeEntry.target,
+    },
+    {
+      title: 'Chapter 1',
+      description: '',
+      element: chap1Entry.target,
+    },
+    {
+      title: 'Chapter 2',
+      description: '',
+      element: chap2Entry.target,
+    },
+    {
+      title: 'Chapter 3',
+      description: '',
+      element: chap3Entry.target,
+    },
+    {
+      title: 'Chapter 4',
+      description: '',
+      element: chap4Entry.target,
+    },
+    {
+      title: 'Chapter 5',
+      description: '',
+      element: chap5Entry.target,
+    },
+    {
+      title: 'Conclusion',
+      description: '',
+      element: conclusionEntry.target,
+    },
+  ];
 
   useEffect(() => {
     if (homeInView) {
@@ -67,6 +104,10 @@ const App = () => {
     conclusionInView,
   ]);
 
+  const handleScroll = (element) => {
+    element.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <Router>
@@ -76,6 +117,7 @@ const App = () => {
             <Navigation
               currentSection={currentSection}
               setCurrentSection={setCurrentSection}
+              handleScroll={handleScroll}
               homeEl={homeEntry && homeEntry.target}
               chap1El={chap1Entry && chap1Entry.target}
               chap2El={chap2Entry && chap2Entry.target}
@@ -84,7 +126,11 @@ const App = () => {
               chap5El={chap5Entry && chap5Entry.target}
               conclusionEl={conclusionEntry && conclusionEntry.target}
             />
-            <HomeSection ref={homeRef} />
+            <HomeSection
+              ref={homeRef}
+              chap1El={chap1Entry && chap1Entry.target}
+              handleScroll={handleScroll}
+            />
             <Chap1 ref={chap1Ref} />
             <Chap2 ref={chap2Ref} />
             <Chap3 ref={chap3Ref} />

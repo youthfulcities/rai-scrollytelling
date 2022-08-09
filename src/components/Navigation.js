@@ -6,6 +6,7 @@ import React from 'react';
 const ScrollBar = ({
   currentSection,
   setCurrentSection,
+  handleScroll,
   homeEl,
   chap1El,
   chap2El,
@@ -51,22 +52,19 @@ const ScrollBar = ({
       element: conclusionEl,
     },
   ];
-  const handleScroll = (element) => {
-    element.scrollIntoView({ behavior: 'smooth' });
-  };
 
   const handleNext = () => {
     setCurrentSection((prevActiveStep) =>
       prevActiveStep < steps.length - 1 ? prevActiveStep + 1 : steps.length - 1
     );
-    handleScroll(steps[currentSection].element);
+    handleScroll(steps[currentSection + 1].element);
   };
 
   const handleBack = () => {
     setCurrentSection((prevActiveStep) =>
       prevActiveStep !== 0 ? prevActiveStep - 1 : 0
     );
-    handleScroll(steps[currentSection].element);
+    handleScroll(steps[currentSection - 1].element);
   };
 
   return (
@@ -86,6 +84,9 @@ const ScrollBar = ({
           <Step
             sx={{
               cursor: 'pointer',
+              '&MuiStepIcon-text': {
+                display: 'none',
+              },
             }}
             key={step.title}
             onClick={() => {

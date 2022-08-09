@@ -1,9 +1,10 @@
-import { Grid, Typography } from '@mui/material';
-import { forwardRef } from 'react';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { Grid, IconButton, Typography } from '@mui/material';
+import React, { forwardRef } from 'react';
 import BasicContainer from '../components/BasicContainer';
 import HomeStats from '../components/HomeStats';
 
-const HomeSection = (props, ref) => (
+const HomeSection = ({ handleScroll, chap1El }, ref) => (
   <section ref={ref} id="home">
     <Grid container sx={{ minHeight: '100vh' }}>
       <BasicContainer>
@@ -14,6 +15,11 @@ const HomeSection = (props, ref) => (
         <Typography variant="h4" align="center" mb="2vh">
           put data points component here and arrow to continue
         </Typography>
+        <Grid item>
+          <IconButton onClick={() => handleScroll(chap1El)}>
+            <KeyboardArrowDownIcon sx={{ fontSize: '80px' }} />
+          </IconButton>
+        </Grid>
       </BasicContainer>
     </Grid>
   </section>
