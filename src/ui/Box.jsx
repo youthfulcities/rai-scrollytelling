@@ -31,8 +31,10 @@ export const composedHelpers = compose(
   boxShadow
 );
 
-export const Box = styled.div`
+const Box = styled.div`
   ${composedHelpers}
 `;
 
 Box.defaultProps = {};
+
+export default Box;

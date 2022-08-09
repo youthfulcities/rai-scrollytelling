@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 
 import { IntersectionContext } from './IntersectionObserver';
-import { MotionBox } from './MotionBox';
+import MotionBox from './MotionBox';
 
 const FadeInUpBox = ({
   children,
