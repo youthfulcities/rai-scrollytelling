@@ -23,6 +23,7 @@
       "json"
   ],
   "rules": {
+    "no-unused-vars": "warn",
     "arrow-body-style": "warn",
     "react/jsx-curly-brace-presence": "warn",
     "react/jsx-props-no-spreading":"warn",
