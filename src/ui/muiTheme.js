@@ -37,8 +37,8 @@ const theme = () =>
       fontSize: 14,
       h1: {
         fontFamily: 'Gotham Narrow Black',
-        fontSize: '81px',
-        lineHeight: '88px',
+        fontSize: '54px',
+        lineHeight: '60px',
       },
       h2: {
         fontFamily: 'Gotham Narrow Black',
