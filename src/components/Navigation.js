@@ -1,4 +1,12 @@
-import { Box, Step, StepLabel, Stepper } from '@mui/material';
+import {
+  Box,
+  Step,
+  StepLabel,
+  Stepper,
+  Typography,
+  useMediaQuery,
+} from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import React from 'react';
 import NextSection from './NextSection';
 
@@ -16,6 +24,9 @@ const ScrollBar = ({
   chap1InView,
   homeInView,
 }) => {
+  const theme = useTheme();
+  const smallScreen = useMediaQuery(theme.breakpoints.down('md'));
+
   const steps = [
     {
       title: 'Home',
@@ -24,27 +35,27 @@ const ScrollBar = ({
     },
     {
       title: 'Chapter 1',
-      description: '',
+      description: 'Searching',
       element: chap1El,
     },
     {
       title: 'Chapter 2',
-      description: '',
+      description: 'Tbd',
       element: chap2El,
     },
     {
       title: 'Chapter 3',
-      description: '',
+      description: 'Tbd',
       element: chap3El,
     },
     {
       title: 'Chapter 4',
-      description: '',
+      description: 'Tbd',
       element: chap4El,
     },
     {
       title: 'Chapter 5',
-      description: '',
+      description: 'Tbd',
       element: chap5El,
     },
     {
@@ -53,20 +64,6 @@ const ScrollBar = ({
       element: conclusionEl,
     },
   ];
-
-  // const handleNext = () => {
-  //   setCurrentSection((prevActiveStep) =>
-  //     prevActiveStep < steps.length - 1 ? prevActiveStep + 1 : steps.length - 1
-  //   );
-  //   handleScroll(steps[currentSection + 1].element);
-  // };
-
-  // const handleBack = () => {
-  //   setCurrentSection((prevActiveStep) =>
-  //     prevActiveStep !== 0 ? prevActiveStep - 1 : 0
-  //   );
-  //   handleScroll(steps[currentSection - 1].element);
-  // };
 
   return (
     <>
@@ -92,16 +89,27 @@ const ScrollBar = ({
                 setCurrentSection(i);
                 handleScroll(step.element);
               }}>
-              <StepLabel>{step.title}</StepLabel>
+              <StepLabel
+                optional={
+                  !smallScreen ? (
+                    <Typography variant="caption">
+                      {step.description}
+                    </Typography>
+                  ) : null
+                }>
+                {!smallScreen && step.title}
+              </StepLabel>
             </Step>
           ))}
         </Stepper>
       </Box>
-      <NextSection
-        el={steps[currentSection].element}
-        homeInView={homeInView}
-        chap1InView={chap1InView}
-      />
+      {!smallScreen && (
+        <NextSection
+          el={steps[currentSection].element}
+          homeInView={homeInView}
+          chap1InView={chap1InView}
+        />
+      )}
     </>
   );
 };
