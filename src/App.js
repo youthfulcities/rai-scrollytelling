@@ -77,25 +77,31 @@ const App = () => {
         <div className="flexWrapper">
           <div className="flexGrow">
             <Header />
-            <Navigation
-              currentSection={currentSection}
-              setCurrentSection={setCurrentSection}
-              handleScroll={handleScroll}
-              homeEl={homeEntry && homeEntry.target}
-              chap1El={chap1Entry && chap1Entry.target}
-              chap2El={chap2Entry && chap2Entry.target}
-              chap3El={chap3Entry && chap3Entry.target}
-              chap4El={chap4Entry && chap4Entry.target}
-              chap5El={chap5Entry && chap5Entry.target}
-              conclusionEl={conclusionEntry && conclusionEntry.target}
-            />
+            {conclusionEntry && (
+              <Navigation
+                currentSection={currentSection}
+                setCurrentSection={setCurrentSection}
+                handleScroll={handleScroll}
+                homeEl={homeEntry.target}
+                chap1El={chap1Entry.target}
+                chap2El={chap2Entry.target}
+                chap3El={chap3Entry.target}
+                chap4El={chap4Entry.target}
+                chap5El={chap5Entry.target}
+                conclusionEl={conclusionEntry.target}
+                homeInView={homeInView}
+                chap1InView={chap1InView}
+              />
+            )}
             <HomeSection
               ref={homeRef}
-              chap1El={chap1Entry && chap1Entry.target}
-              handleScroll={handleScroll}
+              el={homeEntry && homeEntry.target}
+              homeInView={homeInView}
+              chap1InView={chap1InView}
             />
-            <Chap1 ref={chap1Ref} />
-            <Chap2 ref={chap2Ref} />
+
+            <Chap1 ref={chap1Ref} el={chap1Entry && chap1Entry.target} />
+            <Chap2 ref={chap2Ref} el={chap2Entry && chap2Entry.target} />
             <Chap3 ref={chap3Ref} />
             <Chap4 ref={chap4Ref} />
             <Chap5 ref={chap5Ref} />
