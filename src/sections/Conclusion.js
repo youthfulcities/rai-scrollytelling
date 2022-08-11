@@ -11,7 +11,7 @@ const Conclusion = (props, ref) => (
       alignItems="center"
       sx={{ minHeight: '100vh' }}
       justifyContent="center">
-      <BasicContainer width="md">
+      <BasicContainer>
         <Typography variant="h2" align="center" mb="2vh">
           Conclusion
         </Typography>
