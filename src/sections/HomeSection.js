@@ -3,7 +3,7 @@ import React, { forwardRef } from 'react';
 import BasicContainer from '../components/BasicContainer';
 import HomeStats from '../components/HomeStats';
 
-const HomeSection = ({ el, homeInView, chap1InView }, ref) => (
+const HomeSection = (props, ref) => (
   <section ref={ref} id="home">
     <Grid container sx={{ minHeight: '100vh' }}>
       <BasicContainer>

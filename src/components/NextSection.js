@@ -43,7 +43,7 @@ const NextSection = ({ el, homeInView = true, chap1InView = false }) => {
               y: [0, 10, 0],
               transition: {
                 repeat: Infinity,
-                repeatDelay: 1,
+                repeatDelay: 0.3,
               },
             }}
             transition={{ duration: 0.8 }}
