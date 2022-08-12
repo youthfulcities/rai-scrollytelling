@@ -24,9 +24,12 @@ const theme = muiTheme();
 
 const App = () => {
   const [currentSection, setCurrentSection] = useState(0);
+  const [currentEl, setCurrentEl] = useState(null);
 
-  const [homeRef, homeInView, homeEntry] = useInView({ threshold: 0.5 });
-  const [chap1Ref, chap1InView, chap1Entry] = useInView({ threshold: 0.5 });
+  // console.log(currentEl);
+
+  const [homeRef, homeInView, homeEntry] = useInView({ threshold: 0 });
+  const [chap1Ref, chap1InView, chap1Entry] = useInView({ threshold: 0 });
   const [chap2Ref, chap2InView, chap2Entry] = useInView({ threshold: 0.5 });
   const [chap3Ref, chap3InView, chap3Entry] = useInView({ threshold: 0.5 });
   const [chap4Ref, chap4InView, chap4Entry] = useInView({ threshold: 0.5 });
@@ -38,24 +41,31 @@ const App = () => {
   useEffect(() => {
     if (homeInView) {
       setCurrentSection(0);
+      setCurrentEl(homeEntry.target);
     }
     if (chap1InView) {
       setCurrentSection(1);
+      setCurrentEl(chap1Entry.target);
     }
     if (chap2InView) {
       setCurrentSection(2);
+      setCurrentEl(chap2Entry.target);
     }
     if (chap3InView) {
       setCurrentSection(3);
+      setCurrentEl(chap3Entry.target);
     }
     if (chap4InView) {
       setCurrentSection(4);
+      setCurrentEl(chap4Entry.target);
     }
     if (chap5InView) {
       setCurrentSection(5);
+      setCurrentEl(chap5Entry.target);
     }
     if (conclusionInView) {
       setCurrentSection(6);
+      setCurrentEl(conclusionEntry.target);
     }
   }, [
     homeInView,
@@ -91,6 +101,7 @@ const App = () => {
                 conclusionEl={conclusionEntry.target}
                 homeInView={homeInView}
                 chap1InView={chap1InView}
+                currentEl={currentEl}
               />
             )}
             <HomeSection
@@ -100,7 +111,11 @@ const App = () => {
               chap1InView={chap1InView}
             />
 
-            <Chap1 ref={chap1Ref} el={chap1Entry && chap1Entry.target} />
+            <Chap1
+              ref={chap1Ref}
+              el={chap1Entry && chap1Entry.target}
+              setCurrentEl={setCurrentEl}
+            />
             <Chap2 ref={chap2Ref} el={chap2Entry && chap2Entry.target} />
             <Chap3 ref={chap3Ref} />
             <Chap4 ref={chap4Ref} />

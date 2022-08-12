@@ -1,13 +1,17 @@
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { Grid, IconButton, Typography } from '@mui/material';
+import { Grid, IconButton, Typography, useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react';
 
-const NextSection = ({ el, homeInView = true }) => {
-  const handleScroll = (element) =>
-    element.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+const NextSection = ({ el, currentEl, homeInView = true }) => {
+  const theme = useTheme();
+  const smallScreen = useMediaQuery(theme.breakpoints.down('md'));
 
-  console.log(el);
+  const handleScroll = (element) => {
+    console.log(element.nextElementSibling);
+    element.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <AnimatePresence>
@@ -17,10 +21,10 @@ const NextSection = ({ el, homeInView = true }) => {
         sx={{
           zIndex: 100,
           height: 0,
-          justifyContent: homeInView ? 'center' : 'flex-end',
-          position: homeInView ? 'relative' : 'fixed',
-          top: homeInView ? '79vh' : 25,
-          right: homeInView ? 0 : 50,
+          justifyContent: homeInView && !smallScreen ? 'center' : 'flex-end',
+          position: homeInView && !smallScreen ? 'relative' : 'fixed',
+          top: homeInView && !smallScreen ? '79vh' : 25,
+          right: homeInView && !smallScreen ? 0 : 20,
         }}
         direction="row"
         justifyContent="center">
@@ -30,7 +34,7 @@ const NextSection = ({ el, homeInView = true }) => {
             direction="column"
             justifyContent="center"
             alignItems="center">
-            {homeInView && (
+            {homeInView && !smallScreen && (
               <Grid item>
                 <Typography
                   component={motion.h4}
@@ -58,7 +62,7 @@ const NextSection = ({ el, homeInView = true }) => {
                 }}
                 transition={{ duration: 0.8 }}
                 onClick={() => {
-                  handleScroll(el);
+                  handleScroll(currentEl);
                 }}>
                 <KeyboardArrowDownIcon sx={{ fontSize: '80px' }} />
               </IconButton>
