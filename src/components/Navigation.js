@@ -23,6 +23,7 @@ const ScrollBar = ({
   conclusionEl,
   chap1InView,
   homeInView,
+  currentEl,
 }) => {
   const theme = useTheme();
   const smallScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -35,31 +36,31 @@ const ScrollBar = ({
     },
     {
       title: 'Chapter 1',
-      description: 'Searching',
+      description: 'Next Steps',
       element: chap1El,
     },
     {
       title: 'Chapter 2',
-      description: 'Tbd',
+      description: 'Work',
       element: chap2El,
     },
     {
       title: 'Chapter 3',
-      description: 'Tbd',
+      description: 'Balance',
       element: chap3El,
     },
     {
       title: 'Chapter 4',
-      description: 'Tbd',
+      description: 'Skills',
       element: chap4El,
     },
     {
       title: 'Chapter 5',
-      description: 'Tbd',
+      description: 'Security',
       element: chap5El,
     },
     {
-      title: 'Conclusion',
+      title: 'Get Involved',
       description: '',
       element: conclusionEl,
     },
@@ -103,13 +104,12 @@ const ScrollBar = ({
           ))}
         </Stepper>
       </Box>
-      {!smallScreen && (
-        <NextSection
-          el={steps[currentSection].element}
-          homeInView={homeInView}
-          chap1InView={chap1InView}
-        />
-      )}
+      <NextSection
+        el={steps[currentSection].element}
+        homeInView={homeInView}
+        chap1InView={chap1InView}
+        currentEl={currentEl}
+      />
     </>
   );
 };
