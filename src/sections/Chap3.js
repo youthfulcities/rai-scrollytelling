@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid, Link, Typography } from '@mui/material';
 import { forwardRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import BasicContainer from '../components/BasicContainer';
@@ -46,24 +46,55 @@ const Chap3 = ({ setCurrentEl }, ref) => {
         <BasicContainer ref={sec2Ref}>
           <Typography variant="body1">
             Additional costs in Toronto include $1788 per month to rent a one
-            bedroom apartment and $1537 annually for a transit pass. With these
-            high costs it is harder to budget for the rising cost of food.
+            bedroom apartment
+            <sup>
+              <Link
+                href="https://www.rentseeker.ca/average-rent-prices-canada"
+                target="_blank">
+                [8]
+              </Link>
+            </sup>{' '}
+            and $1537 annually for a transit pass.
+            <sup>
+              <Link
+                href="https://youthfulcities.com/urban-indexes/rai-2022/"
+                target="_blank">
+                [2]
+              </Link>
+            </sup>{' '}
+            With these high costs it is harder to budget for the rising cost of
+            food.
           </Typography>
           <Typography variant="h5">
             44% of Canadians in urban areas state that they are affected by the
             rise in the cost of groceries.
+            <sup>
+              <Link
+                href="https://www150.statcan.gc.ca/n1/daily-quotidien/220609/dq220609a-eng.htm"
+                target="_blank">
+                [9]
+              </Link>
+            </sup>{' '}
           </Typography>
           <Typography variant="body1">
             The costs of joy that are necessary to live a balanced life, provide
-            more financial pressure that weighs heavily.{' '}
+            more financial pressure that weighs heavily.
           </Typography>
           {/* Insert receipt graphic */}
         </BasicContainer>
         <BasicContainer ref={sec3Ref}>
           <Typography variant="h5">
             In July of 2020 only 44.3% of young men and 30% of young women
-            reported having very good mental health, and youth continuously
-            report lower levels of mental health than adults.
+            reported having very good mental health,
+            <sup>
+              <Link
+                href="https://www150.statcan.gc.ca/n1/pub/42-28-0001/2021001/article/00001-eng.htm"
+                target="_blank">
+                [10]
+              </Link>
+            </sup>{' '}
+            and youth continuously report lower levels of mental health than
+            adults.
           </Typography>
           <Typography variant="body1">
             The pressure of finances, meeting societal expectations and

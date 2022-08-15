@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid, Link, Typography } from '@mui/material';
 import { forwardRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import BasicContainer from '../components/BasicContainer';
@@ -48,9 +48,24 @@ const Chap4 = ({ setCurrentEl }, ref) => {
           </Typography>
           <Typography variant="h5">
             Although 73% of young people in Canada attend post secondary
-            education, 49% of college graduates owe money to an external source
-            for their education, and this is the same for 54% of Bachelor’s
-            students, 46% of Master’s students and 36% of Doctorate students.
+            education,
+            <sup>
+              <Link
+                href="https://www150.statcan.gc.ca/n1/daily-quotidien/211004/dq211004c-eng.htm"
+                target="_blank">
+                [11]
+              </Link>
+            </sup>{' '}
+            49% of college graduates owe money to an external source for their
+            education, and this is the same for 54% of Bachelor’s students, 46%
+            of Master’s students and 36% of Doctorate students.
+            <sup>
+              <Link
+                href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3710003601"
+                target="_blank">
+                [12]
+              </Link>
+            </sup>
           </Typography>
         </BasicContainer>
         <BasicContainer ref={sec2Ref}>
@@ -58,13 +73,27 @@ const Chap4 = ({ setCurrentEl }, ref) => {
             The tuition costs vary by province, with Sakatchewan having the most
             affordable tuition and Ontario having the highest tuition at $9,743
             on average.
+            <sup>
+              <Link
+                href="https://www150.statcan.gc.ca/n1/daily-quotidien/210908/dq210908a-eng.htm"
+                target="_blank">
+                [13]
+              </Link>
+            </sup>
           </Typography>
           <Map />
         </BasicContainer>
         <BasicContainer ref={sec3Ref}>
           <Typography variant="body1">
             You don’t want to move to another province for school even though
-            the average tuition in another province would be $6,700-
+            the average tuition in another province would be $6,700,
+            <sup>
+              <Link
+                href="https://www150.statcan.gc.ca/n1/daily-quotidien/210908/dq210908a-eng.htm"
+                target="_blank">
+                [13]
+              </Link>
+            </sup>{' '}
             significantly less that what you would have to pay annually for
             attending university in Ontario.
           </Typography>

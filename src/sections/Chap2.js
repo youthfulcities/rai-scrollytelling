@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid, Link, Typography } from '@mui/material';
 import { forwardRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import BasicContainer from '../components/BasicContainer';
@@ -51,8 +51,16 @@ const Chap2 = ({ setCurrentEl }, ref) => {
         <BasicContainer ref={sec2Ref}>
           <Typography variant="body1">
             The price of goods has increased 8.1% over the past year across
-            Canada. This increased cost of living makes it difficult to continue
-            working in the service industry.
+            Canada.
+            <sup>
+              <Link
+                href="https://www150.statcan.gc.ca/n1/daily-quotidien/220720/dq220720a-eng.htm"
+                target="_blank">
+                [4]
+              </Link>
+            </sup>{' '}
+            This increased cost of living makes it difficult to continue working
+            in the service industry.
           </Typography>
           {/* Inflation graph */}
         </BasicContainer>
@@ -64,6 +72,13 @@ const Chap2 = ({ setCurrentEl }, ref) => {
           <Typography variant="body1">
             The minimum wage in Toronto is $15.50 an hour, but a liveable wage
             is $23.62 an hour.
+            <sup>
+              <Link
+                href="https://youthfulcities.com/urban-indexes/rai-2022/"
+                target="_blank">
+                [2]
+              </Link>
+            </sup>{' '}
           </Typography>
         </BasicContainer>
         <BasicContainer ref={sec4Ref}>
@@ -72,25 +87,62 @@ const Chap2 = ({ setCurrentEl }, ref) => {
             consider transitioning to working in the trade sector, as you
             realize it might be the only feasible option for you if you want to
             increase your monthly income. The trade industry is male dominated
-            across Canada. This is reflected in the physical environment with
-            many work sites without bathrooms.
+            across Canada.
+            <sup>
+              <Link
+                href="https://youthfulcities.com/urban-indexes/rai-2022/"
+                target="_blank">
+                [2]
+              </Link>
+            </sup>{' '}
+            This is reflected in the physical environment with many work sites
+            without bathrooms.
           </Typography>
         </BasicContainer>
         <BasicContainer ref={sec5Ref}>
           <Typography variant="body1">
             This isn’t the only factor that perpetuates affordability
             differences between genders. People who menstruate average spending
-            $6000 in their lifetime on menstruation products resulting in 21% of
-            Canadians stating that they have trouble affording period products.
+            $6000 in their lifetime on menstruation products
+            <sup>
+              <Link
+                href="https://www.cpha.ca/period-poverty-canada-and-around-globe"
+                target="_blank">
+                [5]
+              </Link>
+            </sup>{' '}
+            resulting in 21% of Canadians stating that they have trouble
+            affording period products.
+            <sup>
+              <Link
+                href="https://www.multivu.com/players/English/9052951-menstrual-health-day-2022/"
+                target="_blank">
+                [6]
+              </Link>
+            </sup>{' '}
             Women also average spending $35.65 more per month than men on
             similar products.
+            <sup>
+              <Link
+                href="https://youthfulcities.com/urban-indexes/rai-2022/"
+                target="_blank">
+                [2]
+              </Link>
+            </sup>{' '}
           </Typography>
         </BasicContainer>
         <BasicContainer ref={sec6Ref}>
           <Typography variant="h5">
             Gender pay equity is also not a reality in Canadian cities. Young
             men continue to earn a higher income than young women in every
-            Canadian city.{' '}
+            Canadian city.
+            <sup>
+              <Link
+                href="https://youthfulcities.com/urban-indexes/rai-2022/"
+                target="_blank">
+                [2]
+              </Link>
+            </sup>{' '}
           </Typography>
           {/* Insert gender/racial pay graph */}
           <Typography variant="body1">
@@ -99,6 +151,13 @@ const Chap2 = ({ setCurrentEl }, ref) => {
           </Typography>
           <Typography variant="h5">
             Canada has racial gaps varying from 8.1% to 19.7% in all provinces.
+            <sup>
+              <Link
+                href="https://www.conferenceboard.ca/hcp/provincial/society/racial-gap.aspx"
+                target="_blank">
+                [7]
+              </Link>
+            </sup>{' '}
           </Typography>
           <Typography variant="body1">
             These statistics represent the extent that youth in the role of a

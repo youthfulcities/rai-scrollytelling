@@ -2,6 +2,7 @@ import {
   Button,
   Container,
   Grid,
+  Link,
   Typography,
   useMediaQuery,
 } from '@mui/material';
@@ -52,16 +53,23 @@ const Header = () => {
             </Grid>
           </Grid>
           {!smallScreen && (
-            <Grid item>
+            <Grid item sx={{ textDecoration: 'none' }}>
               <Button
+                component={Link}
+                href="https://youthfulcities.us7.list-manage.com/subscribe?u=ad93cdfc178e6d9bc7646844f&id=453e06e908"
+                target="_blank"
+                rel="noreferrer"
                 variant="contained"
                 color="error"
-                sx={{ color: '#000', padding: '14px 35px' }}>
+                sx={{
+                  color: '#000',
+                  padding: '14px 35px',
+                  textAlign: 'center',
+                }}>
                 Subscribe to our newsletter
               </Button>
             </Grid>
           )}
-          {/* add RAI Affordability Index + GO TO YOUTHFUL CITIES Button! */}
         </Grid>
       </Container>
     </header>
