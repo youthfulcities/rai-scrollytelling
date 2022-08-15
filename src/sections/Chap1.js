@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid, Link, Typography } from '@mui/material';
 import { forwardRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import BasicContainer from '../components/BasicContainer';
@@ -48,26 +48,47 @@ const Chap1 = ({ setCurrentEl }, ref) => {
         <BasicContainer ref={sec2Ref}>
           <Typography variant="body1">
             By eventually moving to an urban centre, you will become part of the
-            70% of Canadian youth that leave rural areas for urban ones. But the
-            pandemic has complicated this path. With virtual learning and
-            continuous lockdowns that disrupt work environments, you decide to
-            continue living at home until there is more certainty about the
+            70% of Canadian youth that leave rural areas for urban ones.{' '}
+            <sup>
+              <Link
+                href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410032701"
+                target="_blank">
+                [1]
+              </Link>
+            </sup>{' '}
+            But the pandemic has complicated this path. With virtual learning
+            and continuous lockdowns that disrupt work environments, you decide
+            to continue living at home until there is more certainty about the
             pandemic.
           </Typography>
         </BasicContainer>
         <BasicContainer ref={sec3Ref}>
           <Typography variant="body1">
             You work a minimum wage job in your hometown and are part of the 35%
-            of Canadian youth that are employed in the service sector, but it is
-            challenging to maintain employment because of the continuous
-            lockdowns.
+            of Canadian youth that are employed in the service sector,
+            <sup>
+              <Link
+                href="https://youthfulcities.com/urban-indexes/rai-2022/"
+                target="_blank">
+                [2]
+              </Link>
+            </sup>{' '}
+            but it is challenging to maintain employment because of the
+            continuous lockdowns.
           </Typography>
         </BasicContainer>
         <BasicContainer ref={sec4Ref}>
           <Typography variant="h3" mb="2vh">
             During this time, youth unemployment was higher than during the
             Great Recession and 15 to 24 year olds were unemployed for an
-            average of 12.6 weeks.
+            average of 12.6 weeks.{' '}
+            <sup>
+              <Link
+                href="https://www150.statcan.gc.ca/n1/pub/36-28-0001/2022003/article/00003-eng.htm"
+                target="_blank">
+                [3]
+              </Link>
+            </sup>
           </Typography>
           {/* insert graph */}
         </BasicContainer>
@@ -86,6 +107,13 @@ const Chap1 = ({ setCurrentEl }, ref) => {
           <Typography variant="h5">
             Young Canadians across the country experience a $2 and $10 gap
             between minimum and liveable wage.
+            <sup>
+              <Link
+                href="https://youthfulcities.com/urban-indexes/rai-2022/"
+                target="_blank">
+                [2]
+              </Link>
+            </sup>
           </Typography>
           <Typography variant="body1">
             Like the other young people across Canada who experience a monthly

@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid, Link, Typography } from '@mui/material';
 import { forwardRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import BasicContainer from '../components/BasicContainer';
@@ -43,11 +43,18 @@ const Chap5 = ({ setCurrentEl }, ref) => {
           </Typography>
           <Typography variant="body1">
             Every month you feel as if you are scraping by. You are part of a
-            generation of young people in a deficit of $750 per month. Minimum
-            wage doesn’t keep up with the liveable wage making cities feel
-            unlivable, yet you don’t have another option. You must live in an
-            urban area in order to upskill and move away from the minimum wage
-            bracket so that you can have future successes.
+            generation of young people in a deficit of $750 per month.
+            <sup>
+              <Link
+                href="https://youthfulcities.com/urban-indexes/rai-2022/"
+                target="_blank">
+                [2]
+              </Link>
+            </sup>{' '}
+            Minimum wage doesn’t keep up with the liveable wage making cities
+            feel unlivable, yet you don’t have another option. You must live in
+            an urban area in order to upskill and move away from the minimum
+            wage bracket so that you can have future successes.
           </Typography>
         </BasicContainer>
         <BasicContainer ref={sec2Ref}>
