@@ -56,10 +56,12 @@ const theme = () =>
         h5: {
           fontFamily: 'adelle',
           fontSize: 24,
+          marginBottom: 20,
         },
         body1: {
           fontFamily: 'Gotham Narrow Book',
           fontSize: 18,
+          marginBottom: 20,
         },
         body2: {
           fontFamily: 'Gotham Narrow Book',

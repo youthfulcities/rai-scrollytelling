@@ -4,12 +4,17 @@ import { useTheme } from '@mui/material/styles';
 import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react';
 
-const NextSection = ({ el, currentEl, homeInView = true }) => {
+const NextSection = ({ currentEl, homeInView = true }) => {
   const theme = useTheme();
   const smallScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   const handleScroll = (element) => {
-    console.log(element.nextElementSibling);
+    // console.log(element.nextElementSibling);
+    if (element.nextElementSibling === null) {
+      element.parentElement.parentElement.nextElementSibling.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
     element.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
   };
 
