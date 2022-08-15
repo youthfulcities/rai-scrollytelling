@@ -26,14 +26,14 @@ const App = () => {
   const [currentSection, setCurrentSection] = useState(0);
   const [currentEl, setCurrentEl] = useState(null);
 
-  console.log(currentEl);
+  console.log(currentSection);
 
   const [homeRef, homeInView, homeEntry] = useInView({ threshold: 0.5 });
   const [chap1Ref, chap1InView, chap1Entry] = useInView({ threshold: 0 });
-  const [chap2Ref, chap2InView, chap2Entry] = useInView({ threshold: 0.5 });
-  const [chap3Ref, chap3InView, chap3Entry] = useInView({ threshold: 0.5 });
-  const [chap4Ref, chap4InView, chap4Entry] = useInView({ threshold: 0.5 });
-  const [chap5Ref, chap5InView, chap5Entry] = useInView({ threshold: 0.5 });
+  const [chap2Ref, chap2InView, chap2Entry] = useInView({ threshold: 0 });
+  const [chap3Ref, chap3InView, chap3Entry] = useInView({ threshold: 0 });
+  const [chap4Ref, chap4InView, chap4Entry] = useInView({ threshold: 0 });
+  const [chap5Ref, chap5InView, chap5Entry] = useInView({ threshold: 0 });
   const [conclusionRef, conclusionInView, conclusionEntry] = useInView({
     threshold: 0.5,
   });
