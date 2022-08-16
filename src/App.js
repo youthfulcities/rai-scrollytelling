@@ -7,6 +7,7 @@ import { useInView } from 'react-intersection-observer';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
+import muiTheme from './muiTheme';
 import Chap1 from './sections/Chap1';
 import Chap2 from './sections/Chap2';
 import Chap3 from './sections/Chap3';
@@ -14,7 +15,6 @@ import Chap4 from './sections/Chap4';
 import Chap5 from './sections/Chap5';
 import Conclusion from './sections/Conclusion';
 import HomeSection from './sections/HomeSection';
-import muiTheme from './ui/muiTheme';
 
 // import { Box, Container, FadeInUpBox, Flex, ScaleBox, StaggerWrap } from './ui';
 // import { picsList } from '../PicsList.js';
@@ -110,7 +110,7 @@ const App = () => {
             <Chap3 ref={chap3Ref} setCurrentEl={setCurrentEl} />
             <Chap4 ref={chap4Ref} setCurrentEl={setCurrentEl} />
             <Chap5 ref={chap5Ref} setCurrentEl={setCurrentEl} />
-            <Conclusion ref={conclusionRef} />
+            <Conclusion ref={conclusionRef} inView={conclusionInView} />
           </div>
           <Footer />
         </div>

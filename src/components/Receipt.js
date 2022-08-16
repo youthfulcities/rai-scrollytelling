@@ -1,32 +1,21 @@
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
-import { useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
-const Receipt = ({ el }) => {
-  const { scrollYProgress } = useScroll({
-    target: { current: el },
-    offset: ['start end', 'end start'],
-  });
-
-  const x = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [-window.innerWidth, window.innerWidth]
-  );
-
-  useEffect(() => {
-    scrollYProgress.onChange((latest) => console.log(latest));
-  }, [scrollYProgress]);
-
-  const springedX = useSpring(x, { damping: 100 });
-
-  return (
-    <motion.div
-      className="receipt"
-      ease="backInOut"
-      yOffset={64}
-      duration={1}
-    />
-  );
-};
+const Receipt = ({ inView }) => (
+  <AnimatePresence>
+    {inView && (
+      <motion.div
+        initial={{ opacity: 0, y: 1000, scale: 0.1 }}
+        className="receipt"
+        animate={{
+          opacity: 1,
+          scale: 1,
+          y: 0,
+        }}
+        transition={{ duration: 2, ease: 'backInOut' }}
+        exit={{ opacity: 0, scale: 0.1 }}
+      />
+    )}
+  </AnimatePresence>
+);
 
 export default Receipt;

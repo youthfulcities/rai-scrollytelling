@@ -31,7 +31,7 @@ const Chap1 = ({ setCurrentEl }, ref) => {
         container
         direction="column"
         sx={{ minHeight: '100vh', height: '100%', backgroundColor: '#F6D9D7' }}>
-        <BasicContainer ref={sec1Ref}>
+        <BasicContainer ref={sec1Ref} inView={sec1InView}>
           <Typography variant="h3" mb="2vh">
             Searching for next steps
           </Typography>
@@ -57,7 +57,7 @@ const Chap1 = ({ setCurrentEl }, ref) => {
             pandemic.
           </Typography>
         </BasicContainer>
-        <BasicContainer ref={sec2Ref}>
+        <BasicContainer ref={sec2Ref} inView={sec2InView}>
           <Typography variant="body1">
             You work a minimum wage job in your hometown and are part of the 35%
             of Canadian youth that are employed in the service sector,
@@ -72,7 +72,7 @@ const Chap1 = ({ setCurrentEl }, ref) => {
             continuous lockdowns.
           </Typography>
         </BasicContainer>
-        <BasicContainer ref={sec3Ref}>
+        <BasicContainer ref={sec3Ref} inView={sec3InView}>
           <Typography variant="h5" mb="2vh">
             During this time, youth unemployment was higher than during the
             Great Recession and 15 to 24 year olds were unemployed for an
@@ -87,7 +87,7 @@ const Chap1 = ({ setCurrentEl }, ref) => {
           </Typography>
           {/* insert graph */}
         </BasicContainer>
-        <BasicContainer ref={sec4Ref}>
+        <BasicContainer ref={sec4Ref} inView={sec4InView}>
           <Typography variant="body1">
             As your hours decrease, you continue to experience a monthly deficit
             when realistic living costs are subtracted from your income.
@@ -123,7 +123,7 @@ const Chap1 = ({ setCurrentEl }, ref) => {
             opportunities to move out of the minimum wage bracket.
           </Typography>
         </BasicContainer>
-        <Car el={sec4Entry && sec4Entry.target} />
+        {sec4Entry && <Car el={sec4Entry.target} />}
       </Grid>
     </section>
   );
