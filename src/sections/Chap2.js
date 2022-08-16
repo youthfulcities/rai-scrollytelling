@@ -33,7 +33,10 @@ const Chap2 = ({ setCurrentEl }, ref) => {
 
   return (
     <section id="chap2" ref={ref}>
-      <Grid container sx={{ minHeight: '100vh', backgroundColor: '#FBD166' }}>
+      <Grid
+        container
+        direction="column"
+        sx={{ minHeight: '100vh', backgroundColor: '#FBD166' }}>
         <BasicContainer ref={sec1Ref}>
           <Typography variant="h2" align="center" mb="2vh">
             Chapter 2: Searching for work

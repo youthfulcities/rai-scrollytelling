@@ -2,6 +2,7 @@ import { Grid, Link, Typography } from '@mui/material';
 import { forwardRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import BasicContainer from '../components/BasicContainer';
+import Receipt from '../components/Receipt';
 
 const Chap3 = ({ setCurrentEl }, ref) => {
   const [sec1Ref, sec1InView, sec1Entry] = useInView({ threshold: 0.5 });
@@ -33,7 +34,10 @@ const Chap3 = ({ setCurrentEl }, ref) => {
 
   return (
     <section id="chap3" ref={ref}>
-      <Grid container sx={{ minHeight: '100vh', backgroundColor: '#B8D98D' }}>
+      <Grid
+        container
+        direction="column"
+        sx={{ minHeight: '100vh', backgroundColor: '#B8D98D' }}>
         <BasicContainer ref={sec1Ref}>
           <Typography variant="h2" align="center" mb="2vh">
             Chapter 3: Searching for balance
@@ -76,6 +80,7 @@ const Chap3 = ({ setCurrentEl }, ref) => {
               </Link>
             </sup>{' '}
           </Typography>
+          <Receipt />
           <Typography variant="body1">
             The costs of joy that are necessary to live a balanced life, provide
             more financial pressure that weighs heavily.

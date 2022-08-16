@@ -1,17 +1,25 @@
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const Car = ({ el }) => {
+  const [width, setWidth] = useState(1);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
+
   const { scrollYProgress } = useScroll({
     target: { current: el },
     offset: ['start end', 'end start'],
   });
 
-  const x = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [-window.innerWidth, window.innerWidth]
-  );
+  const x = useTransform(scrollYProgress, [0, 1], [-width, width]);
 
   useEffect(() => {
     scrollYProgress.onChange((latest) => console.log(latest));

@@ -20,16 +20,12 @@ const Receipt = ({ el }) => {
   const springedX = useSpring(x, { damping: 100 });
 
   return (
-    <>
-      <motion.img
-        style={{ x: springedX }}
-        className="car"
-        src="/assets/images/car.png"
-        alt="Car"
-        width="100px"
-      />
-      <div className="road" />
-    </>
+    <motion.div
+      className="receipt"
+      ease="backInOut"
+      yOffset={64}
+      duration={1}
+    />
   );
 };
 

@@ -35,6 +35,7 @@ const Chap4 = ({ setCurrentEl }, ref) => {
     <section ref={ref} id="chap4">
       <Grid
         container
+        direction="column"
         sx={{ minHeight: '100vh', backgroundColor: '#F2695D' }}
         justifyContent="center">
         <BasicContainer ref={sec1Ref}>
