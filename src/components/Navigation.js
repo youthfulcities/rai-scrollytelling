@@ -60,7 +60,7 @@ const ScrollBar = ({
       element: chap5El,
     },
     {
-      title: 'Get Involved',
+      title: 'What now?',
       description: '',
       element: conclusionEl,
     },

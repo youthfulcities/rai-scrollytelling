@@ -49,7 +49,9 @@ const Header = () => {
             </Grid>
             <Divider orientation="vertical" variant="middle" flexItem />
             <Grid item>
-              <Typography variant="body1">Real Affordability Index</Typography>
+              <Typography variant="body1" sx={{ marginBottom: 0 }}>
+                Real Affordability Index
+              </Typography>
             </Grid>
           </Grid>
           {!smallScreen && (
