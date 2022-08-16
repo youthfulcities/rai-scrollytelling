@@ -33,8 +33,11 @@ const Chap2 = ({ setCurrentEl }, ref) => {
 
   return (
     <section id="chap2" ref={ref}>
-      <Grid container sx={{ minHeight: '100vh', backgroundColor: '#FBD166' }}>
-        <BasicContainer ref={sec1Ref}>
+      <Grid
+        container
+        direction="column"
+        sx={{ minHeight: '100vh', backgroundColor: '#FBD166' }}>
+        <BasicContainer ref={sec1Ref} inView={sec1InView}>
           <Typography variant="h2" align="center" mb="2vh">
             Chapter 2: Searching for work
           </Typography>
@@ -48,7 +51,7 @@ const Chap2 = ({ setCurrentEl }, ref) => {
             living costs, mounts.
           </Typography>
         </BasicContainer>
-        <BasicContainer ref={sec2Ref}>
+        <BasicContainer ref={sec2Ref} inView={sec2InView}>
           <Typography variant="body1">
             The price of goods has increased 8.1% over the past year across
             Canada.
@@ -64,7 +67,7 @@ const Chap2 = ({ setCurrentEl }, ref) => {
           </Typography>
           {/* Inflation graph */}
         </BasicContainer>
-        <BasicContainer ref={sec3Ref}>
+        <BasicContainer ref={sec3Ref} inView={sec3InView}>
           <Typography variant="h5">
             Toronto has an estimated 36% and 56% of young people working in the
             service sector, which is notorious for paying the lowest wages.
@@ -81,7 +84,7 @@ const Chap2 = ({ setCurrentEl }, ref) => {
             </sup>{' '}
           </Typography>
         </BasicContainer>
-        <BasicContainer ref={sec4Ref}>
+        <BasicContainer ref={sec4Ref} inView={sec4InView}>
           <Typography variant="body1">
             To keep up with the cost of living in your new city, you begin to
             consider transitioning to working in the trade sector, as you
@@ -99,7 +102,7 @@ const Chap2 = ({ setCurrentEl }, ref) => {
             without bathrooms.
           </Typography>
         </BasicContainer>
-        <BasicContainer ref={sec5Ref}>
+        <BasicContainer ref={sec5Ref} inView={sec5InView}>
           <Typography variant="body1">
             This isn’t the only factor that perpetuates affordability
             differences between genders. People who menstruate average spending
@@ -131,7 +134,7 @@ const Chap2 = ({ setCurrentEl }, ref) => {
             </sup>{' '}
           </Typography>
         </BasicContainer>
-        <BasicContainer ref={sec6Ref}>
+        <BasicContainer ref={sec6Ref} inView={sec6InView}>
           <Typography variant="h5">
             Gender pay equity is also not a reality in Canadian cities. Young
             men continue to earn a higher income than young women in every

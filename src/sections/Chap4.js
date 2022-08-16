@@ -35,9 +35,10 @@ const Chap4 = ({ setCurrentEl }, ref) => {
     <section ref={ref} id="chap4">
       <Grid
         container
+        direction="column"
         sx={{ minHeight: '100vh', backgroundColor: '#F2695D' }}
         justifyContent="center">
-        <BasicContainer ref={sec1Ref}>
+        <BasicContainer ref={sec1Ref} inView={sec1InView}>
           <Typography variant="h2" align="center" mb="2vh">
             Chapter 4: Searching for skills
           </Typography>
@@ -68,7 +69,7 @@ const Chap4 = ({ setCurrentEl }, ref) => {
             </sup>
           </Typography>
         </BasicContainer>
-        <BasicContainer ref={sec2Ref}>
+        <BasicContainer ref={sec2Ref} inView={sec2InView}>
           <Typography variant="body1">
             The tuition costs vary by province, with Sakatchewan having the most
             affordable tuition and Ontario having the highest tuition at $9,743
@@ -83,7 +84,7 @@ const Chap4 = ({ setCurrentEl }, ref) => {
           </Typography>
           <Map />
         </BasicContainer>
-        <BasicContainer ref={sec3Ref}>
+        <BasicContainer ref={sec3Ref} inView={sec3InView}>
           <Typography variant="body1">
             You don’t want to move to another province for school even though
             the average tuition in another province would be $6,700,

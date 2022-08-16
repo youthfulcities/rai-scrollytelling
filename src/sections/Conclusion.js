@@ -2,7 +2,7 @@ import { Button, Grid, Link, Typography } from '@mui/material';
 import { forwardRef } from 'react';
 import BasicContainer from '../components/BasicContainer';
 
-const Conclusion = (props, ref) => (
+const Conclusion = ({ inView }, ref) => (
   <section ref={ref} id="conclusion">
     <Grid
       item
@@ -11,7 +11,7 @@ const Conclusion = (props, ref) => (
       alignItems="center"
       sx={{ minHeight: '100vh' }}
       justifyContent="center">
-      <BasicContainer align="center">
+      <BasicContainer align="center" inView={inView}>
         <Typography variant="h2" align="center" mb="2vh">
           What now?
         </Typography>

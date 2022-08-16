@@ -2,6 +2,7 @@ import { Grid, Link, Typography } from '@mui/material';
 import { forwardRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import BasicContainer from '../components/BasicContainer';
+import Receipt from '../components/Receipt';
 
 const Chap3 = ({ setCurrentEl }, ref) => {
   const [sec1Ref, sec1InView, sec1Entry] = useInView({ threshold: 0.5 });
@@ -33,8 +34,11 @@ const Chap3 = ({ setCurrentEl }, ref) => {
 
   return (
     <section id="chap3" ref={ref}>
-      <Grid container sx={{ minHeight: '100vh', backgroundColor: '#B8D98D' }}>
-        <BasicContainer ref={sec1Ref}>
+      <Grid
+        container
+        direction="column"
+        sx={{ minHeight: '100vh', backgroundColor: '#B8D98D' }}>
+        <BasicContainer ref={sec1Ref} inView={sec1InView}>
           <Typography variant="h2" align="center" mb="2vh">
             Chapter 3: Searching for balance
           </Typography>
@@ -43,7 +47,7 @@ const Chap3 = ({ setCurrentEl }, ref) => {
             you get settled in your urban life.
           </Typography>
         </BasicContainer>
-        <BasicContainer ref={sec2Ref}>
+        <BasicContainer ref={sec2Ref} inView={sec2InView}>
           <Typography variant="body1">
             Additional costs in Toronto include $1788 per month to rent a one
             bedroom apartment
@@ -76,13 +80,14 @@ const Chap3 = ({ setCurrentEl }, ref) => {
               </Link>
             </sup>{' '}
           </Typography>
+          <Receipt inView={sec2InView} />
           <Typography variant="body1">
             The costs of joy that are necessary to live a balanced life, provide
             more financial pressure that weighs heavily.
           </Typography>
           {/* Insert receipt graphic */}
         </BasicContainer>
-        <BasicContainer ref={sec3Ref}>
+        <BasicContainer ref={sec3Ref} inView={sec3InView}>
           <Typography variant="h5">
             In July of 2020 only 44.3% of young men and 30% of young women
             reported having very good mental health,

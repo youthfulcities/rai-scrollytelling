@@ -35,9 +35,10 @@ const Chap5 = ({ setCurrentEl }, ref) => {
   return (
     <section ref={ref} id="chap5">
       <Grid
+        direction="column"
         container
         sx={{ minHeight: '100vh', backgroundColor: '#253D88', color: '#fff' }}>
-        <BasicContainer ref={sec1Ref}>
+        <BasicContainer ref={sec1Ref} inView={sec1InView}>
           <Typography variant="h2" align="center" mb="2vh">
             Chapter 5: Searching for security
           </Typography>
@@ -57,12 +58,12 @@ const Chap5 = ({ setCurrentEl }, ref) => {
             wage bracket so that you can have future successes.
           </Typography>
         </BasicContainer>
-        <BasicContainer ref={sec2Ref}>
+        <BasicContainer ref={sec2Ref} inView={sec2InView}>
           <Typography variant="body1">
             Whatever you do doesn’t feel like enough.
           </Typography>
         </BasicContainer>
-        <BasicContainer ref={sec3Ref}>
+        <BasicContainer ref={sec3Ref} inView={sec3InView}>
           <Typography variant="body1">
             It feels like you are constantly searching for a sense of financial
             security that is just out of reach.

@@ -558,3 +558,10 @@ button {
   background: var(--red);
   transform-origin: 0%;
 }
+
+.receipt {
+  background-color: #fff;
+  height: 500px;
+  width: 300px;
+  margin: 40px auto;
+}

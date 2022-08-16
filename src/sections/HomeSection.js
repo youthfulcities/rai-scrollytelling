@@ -9,7 +9,7 @@ const HomeSection = (props, ref) => {
   return (
     <section ref={ref} id="home">
       <Grid container sx={{ minHeight: '100vh' }}>
-        <BasicContainer>
+        <BasicContainer inView>
           <Typography
             variant="h1"
             align="center"

@@ -1,7 +1,11 @@
 import { Container, Grid } from '@mui/material';
 import { forwardRef } from 'react';
+import FadeInUp from './FadeInUp';
 
-const BasicContainer = ({ children, width, align = 'flex-start' }, ref) => (
+const BasicContainer = (
+  { children, inView = false, width, align = 'flex-start' },
+  ref
+) => (
   <Container
     ref={ref}
     maxWidth={width === undefined ? 'sm' : width}
@@ -11,17 +15,19 @@ const BasicContainer = ({ children, width, align = 'flex-start' }, ref) => (
       height: '100%',
       margin: 'auto',
     }}>
-    <Grid
-      sx={{ width: '100%', height: '100%', minHeight: '100vh' }}
-      item
-      container
-      direction="column"
-      justifyContent="center"
-      flexWrap="nowrap"
-      alignItems={align}
-      spacing={0}>
-      {children}
-    </Grid>
+    <FadeInUp inView={inView}>
+      <Grid
+        sx={{ width: '100%', height: '100%', minHeight: '100vh' }}
+        item
+        container
+        direction="column"
+        justifyContent="center"
+        flexWrap="nowrap"
+        alignItems={align}
+        spacing={0}>
+        {children}
+      </Grid>
+    </FadeInUp>
   </Container>
 );
 
