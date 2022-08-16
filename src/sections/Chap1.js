@@ -2,13 +2,13 @@ import { Grid, Link, Typography } from '@mui/material';
 import { forwardRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import BasicContainer from '../components/BasicContainer';
+import Car from '../components/Car';
 
 const Chap1 = ({ setCurrentEl }, ref) => {
   const [sec1Ref, sec1InView, sec1Entry] = useInView({ threshold: 0.5 });
   const [sec2Ref, sec2InView, sec2Entry] = useInView({ threshold: 0.5 });
   const [sec3Ref, sec3InView, sec3Entry] = useInView({ threshold: 0.5 });
   const [sec4Ref, sec4InView, sec4Entry] = useInView({ threshold: 0.5 });
-  const [sec5Ref, sec5InView, sec5Entry] = useInView({ threshold: 0.5 });
 
   useEffect(() => {
     if (sec1InView) {
@@ -23,10 +23,7 @@ const Chap1 = ({ setCurrentEl }, ref) => {
     if (sec4InView) {
       setCurrentEl(sec4Entry.target);
     }
-    if (sec5InView) {
-      setCurrentEl(sec5Entry.target);
-    }
-  }, [sec1InView, sec2InView, sec3InView, sec4InView, sec5InView]);
+  }, [sec1InView, sec2InView, sec3InView, sec4InView]);
 
   return (
     <section id="chap1" ref={ref}>
@@ -44,8 +41,6 @@ const Chap1 = ({ setCurrentEl }, ref) => {
             living with your family, or move to an urban centre to pursue work
             or education opportunities amidst great uncertainty.
           </Typography>
-        </BasicContainer>
-        <BasicContainer ref={sec2Ref}>
           <Typography variant="body1">
             By eventually moving to an urban centre, you will become part of the
             70% of Canadian youth that leave rural areas for urban ones.{' '}
@@ -62,7 +57,7 @@ const Chap1 = ({ setCurrentEl }, ref) => {
             pandemic.
           </Typography>
         </BasicContainer>
-        <BasicContainer ref={sec3Ref}>
+        <BasicContainer ref={sec2Ref}>
           <Typography variant="body1">
             You work a minimum wage job in your hometown and are part of the 35%
             of Canadian youth that are employed in the service sector,
@@ -77,11 +72,11 @@ const Chap1 = ({ setCurrentEl }, ref) => {
             continuous lockdowns.
           </Typography>
         </BasicContainer>
-        <BasicContainer ref={sec4Ref}>
-          <Typography variant="h3" mb="2vh">
+        <BasicContainer ref={sec3Ref}>
+          <Typography variant="h5" mb="2vh">
             During this time, youth unemployment was higher than during the
             Great Recession and 15 to 24 year olds were unemployed for an
-            average of 12.6 weeks.{' '}
+            average of 12.6 weeks.
             <sup>
               <Link
                 href="https://www150.statcan.gc.ca/n1/pub/36-28-0001/2022003/article/00003-eng.htm"
@@ -92,7 +87,11 @@ const Chap1 = ({ setCurrentEl }, ref) => {
           </Typography>
           {/* insert graph */}
         </BasicContainer>
-        <BasicContainer ref={sec5Ref}>
+        <BasicContainer ref={sec4Ref}>
+          <Typography variant="body1">
+            As your hours decrease, you continue to experience a monthly deficit
+            when realistic living costs are subtracted from your income.
+          </Typography>
           <Typography variant="body1">
             Realistic costs are measured by the extra costs that can bring joy
             to your life, like a meal at your favourite restaurant or the
@@ -102,7 +101,7 @@ const Chap1 = ({ setCurrentEl }, ref) => {
           </Typography>
           <Typography variant="body1">
             The deficit that you fall into monthly represents that minimum wage
-            is not a liveable wage.
+            is <strong>not</strong> a liveable wage.
           </Typography>
           <Typography variant="h5">
             Young Canadians across the country experience a $2 and $10 gap
@@ -119,7 +118,12 @@ const Chap1 = ({ setCurrentEl }, ref) => {
             Like the other young people across Canada who experience a monthly
             deficit, you must make changes to break even.
           </Typography>
+          <Typography variant="body1">
+            This means moving to the nearest urban centre to look for upskilling
+            opportunities to move out of the minimum wage bracket.
+          </Typography>
         </BasicContainer>
+        <Car el={sec4Entry && sec4Entry.target} />
       </Grid>
     </section>
   );

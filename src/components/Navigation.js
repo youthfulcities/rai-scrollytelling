@@ -60,7 +60,7 @@ const ScrollBar = ({
       element: chap5El,
     },
     {
-      title: 'Get Involved',
+      title: 'What now?',
       description: '',
       element: conclusionEl,
     },
@@ -73,7 +73,7 @@ const ScrollBar = ({
           orientation="vertical"
           steps={7}
           position="fixed"
-          activeStep={Math.floor(currentSection)}
+          activeStep={currentSection}
           sx={{
             zIndex: 10,
           }}>
@@ -105,7 +105,6 @@ const ScrollBar = ({
         </Stepper>
       </Box>
       <NextSection
-        el={steps[currentSection].element}
         homeInView={homeInView}
         chap1InView={chap1InView}
         currentEl={currentEl}
