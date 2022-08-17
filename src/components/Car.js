@@ -25,9 +25,11 @@ const Car = ({ el }) => {
     offset: ['start end', 'end start'],
   });
 
-  console.log(width);
-
-  const x = useTransform(scrollYProgress, [0, 1], [-width, width]);
+  const x = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [-width + width / 2, width + width / 2]
+  );
 
   // useEffect(() => {
   //   scrollYProgress.onChange((latest) => console.log(latest));
@@ -39,7 +41,7 @@ const Car = ({ el }) => {
     <AnimatePresence>
       <motion.img
         key="car"
-        style={{ x: springedX }}
+        style={{ x: springedX, y: '50vh' }}
         className="car"
         src="/assets/images/car.png"
         alt="Car"

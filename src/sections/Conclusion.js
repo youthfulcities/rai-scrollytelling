@@ -9,10 +9,10 @@ const Conclusion = ({ inView }, ref) => (
       container
       direction="column"
       alignItems="center"
-      sx={{ minHeight: '100vh' }}
+      sx={{ minHeight: '100vh', backgroundColor: '#000' }}
       justifyContent="center">
       <BasicContainer align="center" inView={inView}>
-        <Typography variant="h2" align="center" mb="2vh">
+        <Typography variant="h2" align="center" mb="2vh" color="#fff">
           What now?
         </Typography>
         <Grid item mb={1}>

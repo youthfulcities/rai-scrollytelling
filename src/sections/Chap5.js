@@ -37,7 +37,13 @@ const Chap5 = ({ setCurrentEl }, ref) => {
       <Grid
         direction="column"
         container
-        sx={{ minHeight: '100vh', backgroundColor: '#253D88', color: '#fff' }}>
+        sx={{
+          minHeight: '100vh',
+          backgroundColor: '#253D88',
+          background:
+            'linear-gradient(180deg, rgba(140,83,114,1) 0%, rgba(37,61,136,1) 20%, rgba(37,61,136,1) 49%, rgba(0,0,0,1) 100%)',
+          color: '#fff',
+        }}>
         <BasicContainer ref={sec1Ref} inView={sec1InView}>
           <Typography variant="h2" align="center" mb="2vh">
             Chapter 5: Searching for security

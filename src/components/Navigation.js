@@ -68,7 +68,13 @@ const ScrollBar = ({
 
   return (
     <>
-      <Box sx={{ position: 'fixed', left: '25px', top: '20vh', minWidth: 0 }}>
+      <Box
+        sx={{
+          position: 'fixed',
+          left: '25px',
+          top: '20vh',
+          minWidth: 0,
+        }}>
         <Stepper
           orientation="vertical"
           steps={7}
@@ -81,8 +87,9 @@ const ScrollBar = ({
             <Step
               sx={{
                 cursor: 'pointer',
-                '&MuiStepIcon-text': {
-                  display: 'none',
+                color: '#fff',
+                '&:disabled': {
+                  cursor: 'pointer',
                 },
               }}
               key={step.title}
@@ -91,14 +98,39 @@ const ScrollBar = ({
                 handleScroll(step.element);
               }}>
               <StepLabel
+                sx={{
+                  '&:hover': { cursor: 'pointer' },
+                  '&.Mui-completed': {
+                    backgroundColor: '#fff',
+                  },
+                }}
+                StepIconProps={{
+                  icon: '',
+                  sx: {
+                    '&.Mui-completed': {
+                      color: currentSection > 4 ? '#5164a0' : '#253D88',
+                    },
+                    '&.Mui-active': {
+                      color: currentSection > 4 ? '#5164a0' : '#253D88',
+                    },
+                  },
+                }}
                 optional={
                   !smallScreen ? (
-                    <Typography variant="caption">
+                    <Typography
+                      variant="caption"
+                      color={currentSection > 4 ? '#fff' : '#000'}>
                       {step.description}
                     </Typography>
                   ) : null
                 }>
-                {!smallScreen && step.title}
+                {!smallScreen && (
+                  <Typography
+                    variant="body2"
+                    color={currentSection > 4 ? '#fff' : '#000'}>
+                    {step.title}
+                  </Typography>
+                )}
               </StepLabel>
             </Step>
           ))}

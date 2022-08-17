@@ -36,7 +36,12 @@ const Chap2 = ({ setCurrentEl }, ref) => {
       <Grid
         container
         direction="column"
-        sx={{ minHeight: '100vh', backgroundColor: '#FBD166' }}>
+        sx={{
+          minHeight: '100vh',
+          backgroundColor: '#FBD166',
+          background:
+            'linear-gradient(180deg, rgba(246,217,215,1) 0%, rgba(251,209,102,1) 20%, rgba(251,209,102,1) 80%, rgba(216,213,123,1) 100%)',
+        }}>
         <BasicContainer ref={sec1Ref} inView={sec1InView}>
           <Typography variant="h2" align="center" mb="2vh">
             Chapter 2: Searching for work

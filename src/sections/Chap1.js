@@ -9,6 +9,7 @@ const Chap1 = ({ setCurrentEl }, ref) => {
   const [sec2Ref, sec2InView, sec2Entry] = useInView({ threshold: 0.5 });
   const [sec3Ref, sec3InView, sec3Entry] = useInView({ threshold: 0.5 });
   const [sec4Ref, sec4InView, sec4Entry] = useInView({ threshold: 0.5 });
+  const [sec5Ref, sec5InView, sec5Entry] = useInView({ threshold: 0.5 });
 
   useEffect(() => {
     if (sec1InView) {
@@ -23,7 +24,10 @@ const Chap1 = ({ setCurrentEl }, ref) => {
     if (sec4InView) {
       setCurrentEl(sec4Entry.target);
     }
-  }, [sec1InView, sec2InView, sec3InView, sec4InView]);
+    if (sec5InView) {
+      setCurrentEl(sec5Entry.target);
+    }
+  }, [sec1InView, sec2InView, sec3InView, sec4InView, sec5InView]);
 
   return (
     <section id="chap1" ref={ref}>
@@ -123,7 +127,12 @@ const Chap1 = ({ setCurrentEl }, ref) => {
             opportunities to move out of the minimum wage bracket.
           </Typography>
         </BasicContainer>
-        {sec4Entry && <Car el={sec4Entry.target} />}
+        <Grid
+          ref={sec5Ref}
+          inView={sec5InView}
+          sx={{ minHeight: '100vh', width: '100%' }}>
+          {sec5Entry && <Car el={sec5Entry.target} />}
+        </Grid>
       </Grid>
     </section>
   );
