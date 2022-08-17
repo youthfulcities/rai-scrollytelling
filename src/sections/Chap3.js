@@ -37,7 +37,12 @@ const Chap3 = ({ setCurrentEl }, ref) => {
       <Grid
         container
         direction="column"
-        sx={{ minHeight: '100vh', backgroundColor: '#B8D98D' }}>
+        sx={{
+          minHeight: '100vh',
+          backgroundColor: '#B8D98D',
+          background:
+            'linear-gradient(180deg, rgba(216,213,123,1) 0%, rgba(184,217,141,1) 20%, rgba(184,217,141,1) 80%, rgba(214,160,117,1) 100%)',
+        }}>
         <BasicContainer ref={sec1Ref} inView={sec1InView}>
           <Typography variant="h2" align="center" mb="2vh">
             Chapter 3: Searching for balance

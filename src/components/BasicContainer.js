@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 import FadeInUp from './FadeInUp';
 
 const BasicContainer = (
-  { children, inView = false, width, align = 'flex-start' },
+  { children, inView = false, width, align = 'flex-start', height = '100vh' },
   ref
 ) => (
   <Container
@@ -17,7 +17,7 @@ const BasicContainer = (
     }}>
     <FadeInUp inView={inView}>
       <Grid
-        sx={{ width: '100%', height: '100%', minHeight: '100vh' }}
+        sx={{ width: '100%', height: '100%', minHeight: height }}
         item
         container
         direction="column"
