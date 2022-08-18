@@ -564,18 +564,30 @@ button {
   transform-origin: 0%;
 }
 
+.receipt-placeholder {
+  height: 500px;
+}
+
+.sticky-container {
+  position: sticky;
+  top: 50px;
+  overflow: hidden;
+}
+
 .receipt {
   background-color: #fff;
   min-height: 500px;
   width: 300px;
   margin: 40px auto;
-  position: sticky;
-  top: 30px;
-  overflow: hidden;
+  /* transform: translateY(-500px);
+  -webkit-transform: translateY(-500px);
+  -moz-transform: translateY(-500px);
+  -ms-transform: translateY(-500px);
+  -o-transform: translateY(-500px); */
 }
 
 .receipt-container {
   width: 100%;
-  height: 150vh;
-  background-color: #000000;
+  height: 350vh;
+  /* background-color: #000000; */
 }

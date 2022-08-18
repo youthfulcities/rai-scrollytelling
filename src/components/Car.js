@@ -31,10 +31,6 @@ const Car = ({ el }) => {
     [-width + width / 2, width + width / 2]
   );
 
-  // useEffect(() => {
-  //   scrollYProgress.onChange((latest) => console.log(latest));
-  // }, [scrollYProgress]);
-
   const springedX = useSpring(x, { damping: 100 });
 
   return (
