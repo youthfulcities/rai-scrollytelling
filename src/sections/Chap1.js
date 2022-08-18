@@ -130,7 +130,7 @@ const Chap1 = ({ setCurrentEl }, ref) => {
         <Grid
           ref={sec5Ref}
           inView={sec5InView}
-          sx={{ minHeight: '100vh', width: '100%' }}>
+          sx={{ minHeight: '100vh', width: '100%', overflow: 'hidden' }}>
           {sec5Entry && <Car el={sec5Entry.target} />}
         </Grid>
       </Grid>

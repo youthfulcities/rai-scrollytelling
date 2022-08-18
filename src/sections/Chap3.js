@@ -6,11 +6,12 @@ import Receipt from '../components/Receipt';
 
 const Chap3 = ({ setCurrentEl }, ref) => {
   const [sec1Ref, sec1InView, sec1Entry] = useInView({ threshold: 0.5 });
-  const [sec2Ref, sec2InView, sec2Entry] = useInView({ threshold: 0.5 });
+  const [sec2Ref, sec2InView, sec2Entry] = useInView({ threshold: 0 });
   const [sec3Ref, sec3InView, sec3Entry] = useInView({ threshold: 0.5 });
   const [sec4Ref, sec4InView, sec4Entry] = useInView({ threshold: 0.5 });
   const [sec5Ref, sec5InView, sec5Entry] = useInView({ threshold: 0.5 });
   const [sec6Ref, sec6InView, sec6Entry] = useInView({ threshold: 0.5 });
+  
   useEffect(() => {
     if (sec1InView) {
       setCurrentEl(sec1Entry.target);
@@ -85,11 +86,11 @@ const Chap3 = ({ setCurrentEl }, ref) => {
               </Link>
             </sup>{' '}
           </Typography>
-          <Receipt inView={sec2InView} />
           <Typography variant="body1">
             The costs of joy that are necessary to live a balanced life, provide
             more financial pressure that weighs heavily.
           </Typography>
+          <Receipt inView={sec2InView} />
           {/* Insert receipt graphic */}
         </BasicContainer>
         <BasicContainer ref={sec3Ref} inView={sec3InView}>
