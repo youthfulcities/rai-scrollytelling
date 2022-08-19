@@ -16,10 +16,12 @@ const expenses = [
   { name: 'Fun', value: 22 },
 ];
 
+const startingTotal = 1000;
+
 const Receipt = ({ el }) => {
   const ref = useRef(null);
   const [currentItem, setCurrentItem] = useState(0);
-  const [total, setTotal] = useState(1000);
+  const [total, setTotal] = useState(startingTotal);
 
   // console.log(currentItem);
 
@@ -32,20 +34,18 @@ const Receipt = ({ el }) => {
 
   useEffect(() => {
     item.onChange((v) => {
-      console.log(v);
-      setCurrentItem(v);
+      setCurrentItem(Math.floor(v));
     });
   }, [item]);
 
-  // useEffect(() => {
-  //   if (expenses[0].value === undefined) return;
-  //   setTotal((preTotal) => preTotal - expenses[currentItem].value);
-  //   return () => {
-  //     setTotal(1000);
-  //   };
-  // }, [currentItem]);
+  useEffect(() => {
+    const newTotal = expenses.reduce(
+      (prev, expense, i) => (i < currentItem ? prev - expense.value : prev),
+      [startingTotal]
+    );
 
-  console.log(`current: ${currentItem}`);
+    setTotal(newTotal);
+  }, [currentItem]);
 
   return (
     <>
@@ -94,7 +94,9 @@ const Receipt = ({ el }) => {
                 <Typography variant="h3">Checking</Typography>
               </Grid>
               <Grid item>
-                <Typography variant="h3">${total}</Typography>
+                <Typography variant="h3" color={total >= 0 ? '#000' : 'error'}>
+                  ${total}
+                </Typography>
               </Grid>
             </Grid>
             <Divider variant="middle" sx={{ borderStyle: 'dashed' }} />
@@ -106,12 +108,35 @@ const Receipt = ({ el }) => {
                 justifyContent="space-between"
                 spacing={3}>
                 <AnimatePresence>
-                  {i < currentItem && (
+                  {i >= currentItem ? (
                     <>
-                      <Grid item component={motion.div}>
+                      <Grid
+                        key={uuid4()}
+                        item
+                        component={motion.div}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: i === currentItem ? 1 : 0 }}
+                        exit={{ opacity: 0 }}>
                         <Typography variant="h3">{expense.name}</Typography>
                       </Grid>
-                      <Grid item component={motion.div}>
+                      <Grid
+                        key={uuid4()}
+                        item
+                        component={motion.div}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: i === currentItem ? 1 : 0 }}
+                        exit={{ opacity: 0 }}>
+                        <Typography variant="h3" color="error">
+                          -${expense.value}
+                        </Typography>
+                      </Grid>
+                    </>
+                  ) : (
+                    <>
+                      <Grid key={uuid4()} item component={motion.div}>
+                        <Typography variant="h3">{expense.name}</Typography>
+                      </Grid>
+                      <Grid key={uuid4()} item component={motion.div}>
                         <Typography variant="h3" color="error">
                           -${expense.value}
                         </Typography>
