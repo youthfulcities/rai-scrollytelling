@@ -5,41 +5,28 @@ import {
   Chart as ChartJS,
   Legend,
   LinearScale,
-  LineElement,
-  PointElement,
   SubTitle,
   Title,
   Tooltip,
 } from 'chart.js';
 import ChartDeferred from 'chartjs-plugin-deferred';
 import React from 'react';
-import { Line } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 
 ChartJS.register(
   ChartDeferred,
   CategoryScale,
   LinearScale,
   BarElement,
-  LineElement,
   Title,
   SubTitle,
   Tooltip,
-  Legend,
-  PointElement
+  Legend
 );
 
 ChartJS.defaults.font.family = 'Gotham Narrow Book';
 
 const options = {
-  // animations: {
-  //   tension: {
-  //     duration: 1000,
-  //     easing: 'linear',
-  //     from: 1,
-  //     to: 0,
-  //     loop: true,
-  //   },
-  // },
   aspectRatio: 1,
   responsive: true,
   layout: {
@@ -52,10 +39,6 @@ const options = {
       ticks: {
         color: '#000',
       },
-      title: {
-        display: true,
-        text: 'Avg. Inflation Rate (%)',
-      },
     },
     y: {
       ticks: {
@@ -63,20 +46,19 @@ const options = {
       },
       title: {
         display: true,
-        text: 'Year',
+        text: 'Average earnings relative to white men (%)',
       },
     },
   },
 
   plugins: {
     legend: {
-      display: false,
       position: 'top',
       color: '#000',
     },
     title: {
       display: true,
-      text: 'Inflation rate in Canada between 2019 and 2022',
+      text: 'Wages by Gender and Ethnicity',
       color: '#000',
       font: {
         size: 14,
@@ -85,12 +67,9 @@ const options = {
     },
     subtitle: {
       display: true,
-      text: 'Canadian inflation peaked at 8.1% in June 2022 due to increase in consumer goods prices, such as gasoline. ',
+      text: 'Women make less than men in every ethnicity group, with Latin American women making only 65% of what a man earns',
       font: {
         family: 'Gotham Narrow Medium',
-      },
-      padding: {
-        bottom: 20,
       },
     },
     deferred: {
@@ -100,28 +79,49 @@ const options = {
   },
 };
 
-const labels = ['2019', '2020', '2021', '2022'];
+const labels = [
+  'White',
+  'Southeast Asian',
+  'South Asian',
+  'Other',
+  'Latin American',
+  'Korean',
+  'Japanese',
+  'Filipino',
+  'Chinese',
+  'Black',
+  'Arab or West Asian',
+];
 
 const data = {
   labels,
   datasets: [
     {
-      label: '',
-      data: [1.948467929, 0.721875277, 3.394053014, 6.686929199],
+      label: 'Female',
+      data: [
+        73.20261438, 71.89542484, 86.92810458, 76.47058824, 65.35947712,
+        94.77124183, 86.2745098, 82.35294118, 94.11764706, 70.58823529,
+        73.20261438,
+      ],
       backgroundColor: '#F2695D',
-      borderColor: '#F2695D',
-      borderWidth: 4,
+    },
+    {
+      label: 'Male',
+      data: [
+        100, 84.96732026, 109.8039216, 84.96732026, 75.81699346, 112.4183007,
+        114.379085, 84.31372549, 103.2679739, 79.08496732, 79.08496732,
+      ],
+      backgroundColor: '#253D88',
     },
   ],
 };
 
-const InflationGraph = () => (
+const WageGraph = () => (
   <>
-    <Line options={options} data={data} />{' '}
+    <Bar options={options} data={data} />
     <sub>
-      Source: Statistics Canada. Table 18-10-0004-01 Consumer Price Index,
-      monthly, not seasonally adjusted
-      <br /> Learn more about affordability for youth in Canada at{' '}
+      Source: Statistics Canada, 2016 Census of Population. <br />
+      Learn more about affordability for youth in Canada at{' '}
       <a
         href="https://youthfulcities.com/urban-indexes/rai-2022/"
         target="_blank"
@@ -132,4 +132,4 @@ const InflationGraph = () => (
   </>
 );
 
-export default InflationGraph;
+export default WageGraph;

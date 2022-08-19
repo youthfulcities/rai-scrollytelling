@@ -3,6 +3,7 @@ import { forwardRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import BasicContainer from '../components/BasicContainer';
 import InflationGraph from '../components/InflationGraph';
+import WageGraph from '../components/WageGraph';
 
 const Chap2 = ({ setCurrentEl }, ref) => {
   const [sec1Ref, sec1InView, sec1Entry] = useInView({ threshold: 0.5 });
@@ -11,6 +12,8 @@ const Chap2 = ({ setCurrentEl }, ref) => {
   const [sec4Ref, sec4InView, sec4Entry] = useInView({ threshold: 0.5 });
   const [sec5Ref, sec5InView, sec5Entry] = useInView({ threshold: 0.5 });
   const [sec6Ref, sec6InView, sec6Entry] = useInView({ threshold: 0.5 });
+  const [sec7Ref, sec7InView, sec7Entry] = useInView({ threshold: 0.5 });
+
   useEffect(() => {
     if (sec1InView) {
       setCurrentEl(sec1Entry.target);
@@ -30,7 +33,18 @@ const Chap2 = ({ setCurrentEl }, ref) => {
     if (sec6InView) {
       setCurrentEl(sec6Entry.target);
     }
-  }, [sec1InView, sec2InView, sec3InView, sec4InView, sec5InView, sec6InView]);
+    if (sec7InView) {
+      setCurrentEl(sec7Entry.target);
+    }
+  }, [
+    sec1InView,
+    sec2InView,
+    sec3InView,
+    sec4InView,
+    sec5InView,
+    sec6InView,
+    sec7InView,
+  ]);
 
   return (
     <section id="chap2" ref={ref}>
@@ -161,11 +175,14 @@ const Chap2 = ({ setCurrentEl }, ref) => {
               </Link>
             </sup>{' '}
           </Typography>
-          {/* Insert gender/racial pay graph */}
+
           <Typography variant="body1">
             The different wage opportunities available to our young people
             reveal the sexist and racial biases embedded in our culture.
           </Typography>
+          <WageGraph />
+        </BasicContainer>
+        <BasicContainer ref={sec7Ref} inView={sec7InView}>
           <Typography variant="h5">
             Canada has racial gaps varying from 8.1% to 19.7% in all provinces.
             <sup>
