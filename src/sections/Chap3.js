@@ -6,11 +6,12 @@ import Receipt from '../components/Receipt';
 
 const Chap3 = ({ setCurrentEl }, ref) => {
   const [sec1Ref, sec1InView, sec1Entry] = useInView({ threshold: 0.5 });
-  const [sec2Ref, sec2InView, sec2Entry] = useInView({ threshold: 0.5 });
+  const [sec2Ref, sec2InView, sec2Entry] = useInView({ threshold: 0 });
   const [sec3Ref, sec3InView, sec3Entry] = useInView({ threshold: 0.5 });
   const [sec4Ref, sec4InView, sec4Entry] = useInView({ threshold: 0.5 });
   const [sec5Ref, sec5InView, sec5Entry] = useInView({ threshold: 0.5 });
   const [sec6Ref, sec6InView, sec6Entry] = useInView({ threshold: 0.5 });
+
   useEffect(() => {
     if (sec1InView) {
       setCurrentEl(sec1Entry.target);
@@ -53,44 +54,8 @@ const Chap3 = ({ setCurrentEl }, ref) => {
           </Typography>
         </BasicContainer>
         <BasicContainer ref={sec2Ref} inView={sec2InView}>
-          <Typography variant="body1">
-            Additional costs in Toronto include $1788 per month to rent a one
-            bedroom apartment
-            <sup>
-              <Link
-                href="https://www.rentseeker.ca/average-rent-prices-canada"
-                target="_blank">
-                [8]
-              </Link>
-            </sup>{' '}
-            and $1537 annually for a transit pass.
-            <sup>
-              <Link
-                href="https://youthfulcities.com/urban-indexes/rai-2022/"
-                target="_blank">
-                [2]
-              </Link>
-            </sup>{' '}
-            With these high costs it is harder to budget for the rising cost of
-            food.
-          </Typography>
-          <Typography variant="h5">
-            44% of Canadians in urban areas state that they are affected by the
-            rise in the cost of groceries.
-            <sup>
-              <Link
-                href="https://www150.statcan.gc.ca/n1/daily-quotidien/220609/dq220609a-eng.htm"
-                target="_blank">
-                [9]
-              </Link>
-            </sup>{' '}
-          </Typography>
-          <Receipt inView={sec2InView} />
-          <Typography variant="body1">
-            The costs of joy that are necessary to live a balanced life, provide
-            more financial pressure that weighs heavily.
-          </Typography>
-          {/* Insert receipt graphic */}
+          
+            <Receipt inView={sec2InView} />
         </BasicContainer>
         <BasicContainer ref={sec3Ref} inView={sec3InView}>
           <Typography variant="h5">
