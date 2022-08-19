@@ -2,6 +2,7 @@ import { Grid, Link, Typography } from '@mui/material';
 import { forwardRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import BasicContainer from '../components/BasicContainer';
+import InflationGraph from '../components/InflationGraph';
 
 const Chap2 = ({ setCurrentEl }, ref) => {
   const [sec1Ref, sec1InView, sec1Entry] = useInView({ threshold: 0.5 });
@@ -70,7 +71,7 @@ const Chap2 = ({ setCurrentEl }, ref) => {
             This increased cost of living makes it difficult to continue working
             in the service industry.
           </Typography>
-          {/* Inflation graph */}
+          <InflationGraph />
         </BasicContainer>
         <BasicContainer ref={sec3Ref} inView={sec3InView}>
           <Typography variant="h5">

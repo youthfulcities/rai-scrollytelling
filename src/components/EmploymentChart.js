@@ -31,13 +31,15 @@ const options = {
   aspectRatio: 1,
   yAxisID: 'test',
   responsive: true,
+  layout: {
+    padding: {
+      bottom: 20,
+    },
+  },
   scales: {
     x: {
       ticks: {
         color: '#000',
-      },
-      grid: {
-        color: '#fff',
       },
       title: {
         display: true,
@@ -47,9 +49,6 @@ const options = {
     y: {
       ticks: {
         color: '#000',
-      },
-      grid: {
-        color: '#fff',
       },
       title: {
         display: true,
@@ -105,6 +104,21 @@ const data = {
   ],
 };
 
-const BarGraph = () => <Bar options={options} data={data} />;
+const BarGraph = () => (
+  <>
+    <Bar options={options} data={data} />
+    <sub>
+      Source: Statistics Canada. Table 14-10-0023-01 Labour force
+      characteristics by industry, annual (x 1,000) Learn more about
+      affordability for youth in Canada at{' '}
+      <a
+        href="https://youthfulcities.com/urban-indexes/rai-2022/"
+        target="_blank"
+        rel="noreferrer">
+        https://youthfulcities.com/urban-indexes/rai-2022/
+      </a>
+    </sub>
+  </>
+);
 
 export default BarGraph;
