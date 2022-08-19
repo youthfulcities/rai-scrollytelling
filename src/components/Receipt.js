@@ -9,16 +9,19 @@ import { useEffect, useRef, useState } from 'react';
 import uuid4 from 'uuid4';
 
 const expenses = [
-  { name: 'Food', value: 832 },
-  { name: 'Rent', value: 1788 },
-  { name: 'Student Loans', value: 838 },
-  { name: 'Transit Pass', value: 140 },
-  { name: 'Fun', value: 22 },
+  { name: 'Rent', value: 2057.99 },
+  { name: 'Dining out', value: 392.0 },
+  { name: 'Groceries', value: 302.36 },
+  { name: 'Phone & internet', value: 192.63 },
+  { name: 'Entertainment', value: 132.29 },
+  { name: 'Health and fitness', value: 61.59 },
+  { name: 'Transportation', value: 279.0 },
+  { name: 'Subscriptions', value: 75.12 },
 ];
 
-const startingTotal = 1000;
+const startingTotal = 1000.0;
 
-const Receipt = ({ el }) => {
+const Receipt = () => {
   const ref = useRef(null);
   const [currentItem, setCurrentItem] = useState(0);
   const [total, setTotal] = useState(startingTotal);
@@ -40,7 +43,7 @@ const Receipt = ({ el }) => {
 
   useEffect(() => {
     const newTotal = expenses.reduce(
-      (prev, expense, i) => (i < currentItem ? prev - expense.value : prev),
+      (prev, expense, i) => (i <= currentItem ? prev - expense.value : prev),
       [startingTotal]
     );
 
@@ -95,7 +98,7 @@ const Receipt = ({ el }) => {
               </Grid>
               <Grid item>
                 <Typography variant="h3" color={total >= 0 ? '#000' : 'error'}>
-                  ${total}
+                  ${Number.parseFloat(total).toFixed(2)}
                 </Typography>
               </Grid>
             </Grid>
@@ -103,10 +106,11 @@ const Receipt = ({ el }) => {
             {expenses.map((expense, i) => (
               <Grid
                 key={uuid4()}
-                p={3}
+                px={3}
+                py={1.5}
                 container
                 justifyContent="space-between"
-                spacing={3}>
+                spacing={1}>
                 <AnimatePresence>
                   {i >= currentItem ? (
                     <>

@@ -8,9 +8,6 @@ const Chap4 = ({ setCurrentEl }, ref) => {
   const [sec1Ref, sec1InView, sec1Entry] = useInView({ threshold: 0.5 });
   const [sec2Ref, sec2InView, sec2Entry] = useInView({ threshold: 0.5 });
   const [sec3Ref, sec3InView, sec3Entry] = useInView({ threshold: 0.5 });
-  const [sec4Ref, sec4InView, sec4Entry] = useInView({ threshold: 0.5 });
-  const [sec5Ref, sec5InView, sec5Entry] = useInView({ threshold: 0.5 });
-  const [sec6Ref, sec6InView, sec6Entry] = useInView({ threshold: 0.5 });
   useEffect(() => {
     if (sec1InView) {
       setCurrentEl(sec1Entry.target);
@@ -21,16 +18,7 @@ const Chap4 = ({ setCurrentEl }, ref) => {
     if (sec3InView) {
       setCurrentEl(sec3Entry.target);
     }
-    if (sec4InView) {
-      setCurrentEl(sec4Entry.target);
-    }
-    if (sec5InView) {
-      setCurrentEl(sec5Entry.target);
-    }
-    if (sec6InView) {
-      setCurrentEl(sec6Entry.target);
-    }
-  }, [sec1InView, sec2InView, sec3InView, sec4InView, sec5InView, sec6InView]);
+  }, [sec1InView, sec2InView, sec3InView]);
   return (
     <section ref={ref} id="chap4">
       <Grid
