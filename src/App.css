@@ -577,8 +577,9 @@ button {
 .receipt {
   background-color: #fff;
   min-height: 500px;
-  width: 300px;
+  min-width: 300px;
   margin: 40px auto;
+  padding-bottom: 10px;
   /* transform: translateY(-500px);
   -webkit-transform: translateY(-500px);
   -moz-transform: translateY(-500px);

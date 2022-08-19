@@ -8,9 +8,6 @@ const Chap3 = ({ setCurrentEl }, ref) => {
   const [sec1Ref, sec1InView, sec1Entry] = useInView({ threshold: 0.5 });
   const [sec2Ref, sec2InView, sec2Entry] = useInView({ threshold: 0 });
   const [sec3Ref, sec3InView, sec3Entry] = useInView({ threshold: 0.5 });
-  const [sec4Ref, sec4InView, sec4Entry] = useInView({ threshold: 0.5 });
-  const [sec5Ref, sec5InView, sec5Entry] = useInView({ threshold: 0.5 });
-  const [sec6Ref, sec6InView, sec6Entry] = useInView({ threshold: 0.5 });
 
   useEffect(() => {
     if (sec1InView) {
@@ -22,16 +19,7 @@ const Chap3 = ({ setCurrentEl }, ref) => {
     if (sec3InView) {
       setCurrentEl(sec3Entry.target);
     }
-    if (sec4InView) {
-      setCurrentEl(sec4Entry.target);
-    }
-    if (sec5InView) {
-      setCurrentEl(sec5Entry.target);
-    }
-    if (sec6InView) {
-      setCurrentEl(sec6Entry.target);
-    }
-  }, [sec1InView, sec2InView, sec3InView, sec4InView, sec5InView, sec6InView]);
+  }, [sec1InView, sec2InView, sec3InView]);
 
   return (
     <section id="chap3" ref={ref}>
@@ -54,8 +42,16 @@ const Chap3 = ({ setCurrentEl }, ref) => {
           </Typography>
         </BasicContainer>
         <BasicContainer ref={sec2Ref} inView={sec2InView}>
-          
-            <Receipt inView={sec2InView} />
+          <Receipt inView={sec2InView} />
+          <sub>
+            Source:{' '}
+            <a
+              href="https://www.lowestrates.ca/resource-centre/personal-finance/cost-of-living-toronto"
+              target="_blank"
+              rel="noreferrer">
+              https://www.lowestrates.ca/resource-centre/personal-finance/cost-of-living-toronto
+            </a>
+          </sub>
         </BasicContainer>
         <BasicContainer ref={sec3Ref} inView={sec3InView}>
           <Typography variant="h5">

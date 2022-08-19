@@ -23,7 +23,7 @@ const Conclusion = ({ inView }, ref) => (
             rel="noreferrer"
             variant="contained"
             color="error"
-            sx={{ color: '#000', padding: '14px 35px' }}>
+            sx={{ color: '#000', padding: '14px 35px', textAlign: 'center' }}>
             Explore the data
           </Button>
         </Grid>
@@ -35,7 +35,7 @@ const Conclusion = ({ inView }, ref) => (
             rel="noreferrer"
             variant="contained"
             color="error"
-            sx={{ color: '#000', padding: '14px 35px' }}>
+            sx={{ color: '#000', padding: '14px 35px', textAlign: 'center' }}>
             Share your affordability story
           </Button>
         </Grid>
