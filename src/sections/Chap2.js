@@ -74,8 +74,16 @@ const Chap2 = ({ setCurrentEl }, ref) => {
         </BasicContainer>
         <BasicContainer ref={sec3Ref} inView={sec3InView}>
           <Typography variant="h5">
-            Toronto has an estimated 36% and 56% of young people working in the
-            service sector, which is notorious for paying the lowest wages.
+            Toronto has an estimated 35% to 36% of young people working in the
+            service sector,
+            <sup>
+              <Link
+                href="https://youthfulcities.com/urban-indexes/rai-2022/"
+                target="_blank">
+                [2]
+              </Link>
+            </sup>{' '}
+            which is notorious for paying the lowest wages.
           </Typography>
           <Typography variant="body1">
             The minimum wage in Toronto is $15.50 an hour, but a liveable wage
