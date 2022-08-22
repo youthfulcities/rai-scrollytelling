@@ -8,7 +8,14 @@ const HomeSection = (props, ref) => {
 
   return (
     <section ref={ref} id="home">
-      <Grid container sx={{ minHeight: '100vh' }}>
+      <Grid
+        container
+        sx={{
+          minHeight: '100vh',
+          backgroundColor: 'var(--green)',
+          background:
+            'linear-gradient(180deg, rgba(184,217,141,1) 0%, rgba(184,217,141,1) 20%, rgba(184,217,141,1) 80%, rgba(214,217,177,1) 100%)',
+        }}>
         <BasicContainer inView>
           <Typography
             variant="h1"

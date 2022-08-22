@@ -100,6 +100,13 @@ const Chap2 = ({ setCurrentEl }, ref) => {
             </sup>{' '}
             which is notorious for paying the lowest wages.
           </Typography>
+        </BasicContainer>
+        <BasicContainer ref={sec4Ref} inView={sec4InView}>
+          <img
+            src="/assets/images/jobsearch.png"
+            alt="Job search on a computer advertising entry level positions requiring 5 years experience and paying minimum wage."
+            width="100%"
+          />
           <Typography variant="body1">
             The minimum wage in Toronto is $15.50 an hour, but a liveable wage
             is $23.62 an hour.
@@ -111,8 +118,6 @@ const Chap2 = ({ setCurrentEl }, ref) => {
               </Link>
             </sup>{' '}
           </Typography>
-        </BasicContainer>
-        <BasicContainer ref={sec4Ref} inView={sec4InView}>
           <Typography variant="body1">
             To keep up with the cost of living in your new city, you begin to
             consider transitioning to working in the trade sector, as you

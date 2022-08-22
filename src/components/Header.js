@@ -4,7 +4,7 @@ import {
   Grid,
   Link,
   Typography,
-  useMediaQuery,
+  useMediaQuery
 } from '@mui/material';
 import Divider from '@mui/material/Divider';
 import { useTheme } from '@mui/material/styles';

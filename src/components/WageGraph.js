@@ -130,16 +130,16 @@ const data = {
 const WageGraph = () => (
   <>
     <Typography
-      variant="h4"
+      variant="h3"
       textAlign="center"
       sx={{ width: '100%' }}
       mb={1}
       mt={2}>
-      Inflation rate in Canada between 2019 and 2022
+      Wages by Gender and Ethnicity
     </Typography>
     <Typography variant="h6" textAlign="center" mb={1}>
-      Canadian inflation peaked at 8.1% in June 2022 due to increase in consumer
-      goods prices, such as gasoline
+      Women make less than men in every ethnicity group, with Latin American
+      women making only 65% of what a man earns
     </Typography>
     <Bar options={options} data={data} />
     <sub>Source: Statistics Canada, 2016 Census of Population.</sub>

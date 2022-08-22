@@ -121,7 +121,7 @@ const EmploymentGraph = () => (
       Employment in Canada between 2019 and 2022 for males and females age 15-24
       years old
     </Typography>
-    <Typography variant="body2" textAlign="center" mb={1}>
+    <Typography variant="h6" textAlign="center" mb={1}>
       Between 15-24 years old, females have an average employment rate of 59%,
       higher than males 55%
     </Typography>

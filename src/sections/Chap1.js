@@ -35,7 +35,13 @@ const Chap1 = ({ setCurrentEl }, ref) => {
       <Grid
         container
         direction="column"
-        sx={{ minHeight: '100vh', height: '100%', backgroundColor: '#F6D9D7' }}>
+        sx={{
+          minHeight: '100vh',
+          height: '100%',
+          backgroundColor: '#F6D9D7',
+          background:
+            'linear-gradient(180deg, rgba(214,217,177,1) 0%, rgba(246,217,215,1) 20%, rgba(246,217,215,1) 80%, rgba(246,217,215,1) 100%)',
+        }}>
         <BasicContainer ref={sec1Ref} inView={sec1InView}>
           <Typography variant="h3" mb="2vh">
             Searching for next steps
