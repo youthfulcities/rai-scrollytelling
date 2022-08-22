@@ -1,4 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
+import { Typography } from '@mui/material';
 import {
   BarElement,
   CategoryScale,
@@ -45,6 +46,7 @@ const options = {
         display: true,
         text: 'Avg. Employment Rate (%)',
       },
+      max: 100,
     },
     y: {
       ticks: {
@@ -63,7 +65,7 @@ const options = {
       color: '#000',
     },
     title: {
-      display: true,
+      display: false,
       text: 'Employment in Canada between 2019 and 2022 for males and females age 15-24 years old',
       color: '#000',
       font: {
@@ -72,7 +74,7 @@ const options = {
       },
     },
     subtitle: {
-      display: true,
+      display: false,
       text: 'Between 15-24 years old, females have an average employment rate of 59%, higher than males 55%',
       font: {
         family: 'Gotham Narrow Medium',
@@ -104,21 +106,22 @@ const data = {
   ],
 };
 
-const BarGraph = () => (
+const EmploymentGraph = () => (
   <>
+    <Typography variant="h4" textAlign="center" mb={1} mt={2}>
+      Employment in Canada between 2019 and 2022 for males and females age 15-24
+      years old
+    </Typography>
+    <Typography variant="h6" textAlign="center" mb={1}>
+      Between 15-24 years old, females have an average employment rate of 59%,
+      higher than males 55%
+    </Typography>
     <Bar options={options} data={data} />
     <sub>
       Source: Statistics Canada. Table 14-10-0023-01 Labour force
-      characteristics by industry, annual (x 1,000) Learn more about
-      affordability for youth in Canada at{' '}
-      <a
-        href="https://youthfulcities.com/urban-indexes/rai-2022/"
-        target="_blank"
-        rel="noreferrer">
-        https://youthfulcities.com/urban-indexes/rai-2022/
-      </a>
+      characteristics by industry, annual (x 1,000).
     </sub>
   </>
 );
 
-export default BarGraph;
+export default EmploymentGraph;

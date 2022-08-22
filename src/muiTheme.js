@@ -58,6 +58,10 @@ const theme = () =>
           fontSize: 24,
           marginBottom: 20,
         },
+        h6: {
+          fontFamily: 'Gotham Narrow Medium',
+          fontSize: 14,
+        },
         body1: {
           fontFamily: 'Gotham Narrow Book',
           fontSize: 18,
