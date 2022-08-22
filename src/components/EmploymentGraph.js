@@ -32,6 +32,15 @@ const options = {
   aspectRatio: 1,
   yAxisID: 'test',
   responsive: true,
+  animation: {
+    delay: (context) => {
+      let delay = 0;
+      if (context.type === 'data' && context.mode === 'default') {
+        delay = context.dataIndex * 300 + context.datasetIndex * 100;
+      }
+      return delay;
+    },
+  },
   layout: {
     padding: {
       bottom: 20,
