@@ -35,6 +35,15 @@ const options = {
       bottom: 20,
     },
   },
+  animation: {
+    delay: (context) => {
+      let delay = 0;
+      if (context.type === 'data' && context.mode === 'default') {
+        delay = context.dataIndex * 300 + context.datasetIndex * 100;
+      }
+      return delay;
+    },
+  },
   scales: {
     x: {
       ticks: {
