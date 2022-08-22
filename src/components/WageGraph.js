@@ -1,4 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
+import { Typography } from '@mui/material';
 import {
   BarElement,
   CategoryScale,
@@ -48,6 +49,7 @@ const options = {
         display: true,
         text: 'Average earnings relative to white men (%)',
       },
+      max: 120,
     },
   },
 
@@ -57,7 +59,7 @@ const options = {
       color: '#000',
     },
     title: {
-      display: true,
+      display: false,
       text: 'Wages by Gender and Ethnicity',
       color: '#000',
       font: {
@@ -66,7 +68,7 @@ const options = {
       },
     },
     subtitle: {
-      display: true,
+      display: false,
       text: 'Women make less than men in every ethnicity group, with Latin American women making only 65% of what a man earns',
       font: {
         family: 'Gotham Narrow Medium',
@@ -118,17 +120,20 @@ const data = {
 
 const WageGraph = () => (
   <>
+    <Typography
+      variant="h4"
+      textAlign="center"
+      sx={{ width: '100%' }}
+      mb={1}
+      mt={2}>
+      Inflation rate in Canada between 2019 and 2022
+    </Typography>
+    <Typography variant="h6" textAlign="center" mb={1}>
+      Canadian inflation peaked at 8.1% in June 2022 due to increase in consumer
+      goods prices, such as gasoline
+    </Typography>
     <Bar options={options} data={data} />
-    <sub>
-      Source: Statistics Canada, 2016 Census of Population. <br />
-      Learn more about affordability for youth in Canada at{' '}
-      <a
-        href="https://youthfulcities.com/urban-indexes/rai-2022/"
-        target="_blank"
-        rel="noreferrer">
-        https://youthfulcities.com/urban-indexes/rai-2022/
-      </a>
-    </sub>
+    <sub>Source: Statistics Canada, 2016 Census of Population.</sub>
   </>
 );
 

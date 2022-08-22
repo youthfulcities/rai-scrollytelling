@@ -3,7 +3,7 @@ import { forwardRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import BasicContainer from '../components/BasicContainer';
 import Car from '../components/Car';
-import EmploymentChart from '../components/EmploymentChart';
+import EmploymentChart from '../components/EmploymentGraph';
 
 const Chap1 = ({ setCurrentEl }, ref) => {
   const [sec1Ref, sec1InView, sec1Entry] = useInView({ threshold: 0.5 });
