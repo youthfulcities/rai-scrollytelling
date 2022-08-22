@@ -26,8 +26,6 @@ const App = () => {
   const [currentSection, setCurrentSection] = useState(0);
   const [currentEl, setCurrentEl] = useState(null);
 
-  // console.log(currentSection);
-
   const [homeRef, homeInView, homeEntry] = useInView({ threshold: 0.5 });
   const [chap1Ref, chap1InView, chap1Entry] = useInView({ threshold: 0 });
   const [chap2Ref, chap2InView, chap2Entry] = useInView({ threshold: 0 });

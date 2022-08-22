@@ -104,24 +104,24 @@ const data = {
     {
       label: 'Female',
       data: [59.15, 49.71666667, 56, 59.16666667],
-      backgroundColor: '#F2695D',
+      backgroundColor: '#673934',
       borderColor: '#fff',
     },
     {
       label: 'Male',
       data: [56.025, 49.41666667, 54.65, 55.86666667],
-      backgroundColor: '#673934',
+      backgroundColor: '#F2695D',
     },
   ],
 };
 
 const EmploymentGraph = () => (
   <>
-    <Typography variant="h4" textAlign="center" mb={1} mt={2}>
+    <Typography variant="h3" textAlign="center" mb={1} mt={2}>
       Employment in Canada between 2019 and 2022 for males and females age 15-24
       years old
     </Typography>
-    <Typography variant="h6" textAlign="center" mb={1}>
+    <Typography variant="body2" textAlign="center" mb={1}>
       Between 15-24 years old, females have an average employment rate of 59%,
       higher than males 55%
     </Typography>
