@@ -58,7 +58,33 @@ const Chap2 = ({ setCurrentEl }, ref) => {
             'linear-gradient(180deg, rgba(246,217,215,1) 0%, rgba(251,209,102,1) 20%, rgba(251,209,102,1) 80%, rgba(216,213,123,1) 100%)',
         }}>
         <BasicContainer ref={sec1Ref} inView={sec1InView}>
-          <Typography variant="h2" align="center" mb="2vh">
+          <div className="relative">
+            <img
+              className="absolute parallax-bg"
+              src="/assets/images/background.png"
+              alt=""
+              width="100%"
+            />
+            <img
+              className="absolute"
+              src="/assets/images/bgclouds.png"
+              alt=""
+              width="100%"
+            />
+            <img
+              className="absolute"
+              src="/assets/images/foregroundclouds.png"
+              alt=""
+              width="100%"
+            />
+            <img
+              className="absolute parallax-fg"
+              src="/assets/images/buildings.png"
+              alt=""
+              width="100%"
+            />
+          </div>
+          <Typography variant="h2" align="center" mt={6} mb="2vh">
             Chapter 2: Searching for work
           </Typography>
           <Typography variant="body1">
@@ -100,6 +126,13 @@ const Chap2 = ({ setCurrentEl }, ref) => {
             </sup>{' '}
             which is notorious for paying the lowest wages.
           </Typography>
+        </BasicContainer>
+        <BasicContainer ref={sec4Ref} inView={sec4InView}>
+          <img
+            src="/assets/images/jobsearch.png"
+            alt="Job search on a computer advertising entry level positions requiring 5 years experience and paying minimum wage."
+            width="100%"
+          />
           <Typography variant="body1">
             The minimum wage in Toronto is $15.50 an hour, but a liveable wage
             is $23.62 an hour.
@@ -111,8 +144,6 @@ const Chap2 = ({ setCurrentEl }, ref) => {
               </Link>
             </sup>{' '}
           </Typography>
-        </BasicContainer>
-        <BasicContainer ref={sec4Ref} inView={sec4InView}>
           <Typography variant="body1">
             To keep up with the cost of living in your new city, you begin to
             consider transitioning to working in the trade sector, as you

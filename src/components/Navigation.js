@@ -74,6 +74,7 @@ const ScrollBar = ({
           left: '25px',
           top: '20vh',
           minWidth: 0,
+          zIndex: 100,
         }}>
         <Stepper
           orientation="vertical"

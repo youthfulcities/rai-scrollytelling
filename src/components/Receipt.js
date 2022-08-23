@@ -91,8 +91,16 @@ const Receipt = () => {
             The costs of joy that are necessary to live a balanced life, provide
             more financial pressure that weighs heavily.
           </Typography>
-          <motion.div className="receipt">
-            <Grid p={3} container justifyContent="space-between">
+          <motion.div
+            className="receipt"
+            style={{
+              backgroundImage: `url(${`${process.env.PUBLIC_URL}/assets/images/receipt.png`})`,
+            }}>
+            <Grid
+              p={3}
+              container
+              justifyContent="space-between"
+              sx={{ mixBlendMode: 'multiply' }}>
               <Grid item>
                 <Typography variant="h3">Checking</Typography>
               </Grid>
@@ -109,6 +117,7 @@ const Receipt = () => {
                 px={3}
                 py={1.5}
                 container
+                sx={{ mixBlendMode: 'multiply' }}
                 justifyContent="space-between"
                 spacing={1}>
                 <AnimatePresence>

@@ -122,7 +122,7 @@ const options = {
 const InflationGraph = () => (
   <>
     <Typography
-      variant="h4"
+      variant="h3"
       textAlign="center"
       sx={{ width: '100%' }}
       mb={1}

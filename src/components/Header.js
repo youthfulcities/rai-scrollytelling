@@ -13,7 +13,7 @@ const Header = () => {
   const theme = useTheme();
   const smallScreen = useMediaQuery(theme.breakpoints.down('md'));
   return (
-    <header>
+    <header style={{ backgroundColor: 'var(--green)' }}>
       <Container maxWidth="lg">
         <Grid
           sx={{
@@ -21,13 +21,15 @@ const Header = () => {
             width: '100%',
             position: 'relative',
             zIndex: '10',
+            backgroundColor: 'var(--green)',
+            boxSizing: 'content-box',
           }}
           container
           direction="row"
           justifyContent="space-between"
           flexWrap="nowrap"
           alignItems="center"
-          mt={2}>
+          pt={2}>
           <Grid
             item
             container

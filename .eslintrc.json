@@ -23,6 +23,7 @@
       "json"
   ],
   "rules": {
+    "camelcase": "off",
     "jsx-a11y/anchor-is-valid": "warn",
     "consistent-return": "warn",
     "no-unused-vars": "warn",
