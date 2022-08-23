@@ -68,75 +68,77 @@ const ScrollBar = ({
 
   return (
     <>
-      <Box
-        sx={{
-          position: 'fixed',
-          left: '25px',
-          top: '20vh',
-          minWidth: 0,
-          zIndex: 100,
-        }}>
-        <Stepper
-          orientation="vertical"
-          steps={7}
-          position="fixed"
-          activeStep={currentSection}
+      {!smallScreen && (
+        <Box
           sx={{
-            zIndex: 10,
+            position: 'fixed',
+            left: '25px',
+            top: '20vh',
+            minWidth: 0,
+            zIndex: 100,
           }}>
-          {steps.map((step, i) => (
-            <Step
-              sx={{
-                cursor: 'pointer',
-                color: '#fff',
-                '&:disabled': {
-                  cursor: 'pointer',
-                },
-              }}
-              key={step.title}
-              onClick={() => {
-                setCurrentSection(i);
-                handleScroll(step.element);
-              }}>
-              <StepLabel
+          <Stepper
+            orientation="vertical"
+            steps={7}
+            position="fixed"
+            activeStep={currentSection}
+            sx={{
+              zIndex: 10,
+            }}>
+            {steps.map((step, i) => (
+              <Step
                 sx={{
-                  '&:hover': { cursor: 'pointer' },
-                  '&.Mui-completed': {
-                    backgroundColor: '#fff',
+                  cursor: 'pointer',
+                  color: '#fff',
+                  '&:disabled': {
+                    cursor: 'pointer',
                   },
                 }}
-                StepIconProps={{
-                  icon: '',
-                  sx: {
+                key={step.title}
+                onClick={() => {
+                  setCurrentSection(i);
+                  handleScroll(step.element);
+                }}>
+                <StepLabel
+                  sx={{
+                    '&:hover': { cursor: 'pointer' },
                     '&.Mui-completed': {
-                      color: currentSection > 4 ? '#5164a0' : '#253D88',
+                      backgroundColor: '#fff',
                     },
-                    '&.Mui-active': {
-                      color: currentSection > 4 ? '#5164a0' : '#253D88',
+                  }}
+                  StepIconProps={{
+                    icon: '',
+                    sx: {
+                      '&.Mui-completed': {
+                        color: currentSection > 4 ? '#5164a0' : '#253D88',
+                      },
+                      '&.Mui-active': {
+                        color: currentSection > 4 ? '#5164a0' : '#253D88',
+                      },
                     },
-                  },
-                }}
-                optional={
-                  !smallScreen ? (
+                  }}
+                  optional={
+                    !smallScreen ? (
+                      <Typography
+                        variant="caption"
+                        color={currentSection > 4 ? '#fff' : '#000'}>
+                        {step.description}
+                      </Typography>
+                    ) : null
+                  }>
+                  {!smallScreen && (
                     <Typography
-                      variant="caption"
+                      variant="body2"
                       color={currentSection > 4 ? '#fff' : '#000'}>
-                      {step.description}
+                      {step.title}
                     </Typography>
-                  ) : null
-                }>
-                {!smallScreen && (
-                  <Typography
-                    variant="body2"
-                    color={currentSection > 4 ? '#fff' : '#000'}>
-                    {step.title}
-                  </Typography>
-                )}
-              </StepLabel>
-            </Step>
-          ))}
-        </Stepper>
-      </Box>
+                  )}
+                </StepLabel>
+              </Step>
+            ))}
+          </Stepper>
+        </Box>
+      )}
       <NextSection
         homeInView={homeInView}
         chap1InView={chap1InView}

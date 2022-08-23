@@ -123,13 +123,15 @@ const InflationGraph = () => (
   <>
     <Typography
       variant="h3"
+      textTransform="uppercase"
+      fontFamily="Gotham Narrow"
       textAlign="center"
       sx={{ width: '100%' }}
       mb={1}
-      mt={2}>
+      mt={8}>
       Inflation rate in Canada between 2019 and 2022
     </Typography>
-    <Typography variant="h6" textAlign="center" mb={1}>
+    <Typography variant="body2" textAlign="center" mb={1}>
       Canadian inflation peaked at 8.1% in June 2022 due to increase in consumer
       goods prices, such as gasoline
     </Typography>

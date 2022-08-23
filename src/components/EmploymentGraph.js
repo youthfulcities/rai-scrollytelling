@@ -117,11 +117,17 @@ const data = {
 
 const EmploymentGraph = () => (
   <>
-    <Typography variant="h3" textAlign="center" mb={1} mt={2}>
+    <Typography
+      variant="h3"
+      textTransform="uppercase"
+      fontFamily="Gotham Narrow"
+      textAlign="center"
+      mb={1}
+      mt={8}>
       Employment in Canada between 2019 and 2022 for males and females age 15-24
       years old
     </Typography>
-    <Typography variant="h6" textAlign="center" mb={1}>
+    <Typography variant="body2" textAlign="center" mb={1}>
       Between 15-24 years old, females have an average employment rate of 59%,
       higher than males 55%
     </Typography>

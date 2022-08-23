@@ -1,6 +1,7 @@
 import { Grid, Link, Typography } from '@mui/material';
 import { forwardRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
+import TypeWriterEffect from 'react-typewriter-effect';
 import BasicContainer from '../components/BasicContainer';
 import Car from '../components/Car';
 import EmploymentChart from '../components/EmploymentGraph';
@@ -43,7 +44,14 @@ const Chap1 = ({ setCurrentEl }, ref) => {
             'linear-gradient(180deg, rgba(214,217,177,1) 0%, rgba(246,217,215,1) 20%, rgba(246,217,215,1) 80%, rgba(246,217,215,1) 100%)',
         }}>
         <BasicContainer ref={sec1Ref} inView={sec1InView}>
-          <Typography variant="h3" mb="2vh">
+          <Grid item sx={{ margin: 'auto', width: '300px' }}>
+            <img
+              width="100%"
+              src="/assets/images/Character_Question2.gif"
+              alt="Person thinking with question marks above head."
+            />
+          </Grid>
+          <Typography mt={10} variant="h3" mb="2vh">
             Searching for next steps
           </Typography>
           <Typography variant="body1">
@@ -69,7 +77,7 @@ const Chap1 = ({ setCurrentEl }, ref) => {
           </Typography>
         </BasicContainer>
         <BasicContainer ref={sec2Ref} inView={sec2InView}>
-          <Typography variant="body1">
+          <Typography variant="body1" pt={30}>
             You work a minimum wage job in your hometown and are part of the 35%
             of Canadian youth that are employed in the service sector,
             <sup>
@@ -82,6 +90,52 @@ const Chap1 = ({ setCurrentEl }, ref) => {
             but it is challenging to maintain employment because of the
             continuous lockdowns.
           </Typography>
+          <Grid
+            container
+            item
+            pb={30}
+            sx={{ margin: 'auto', width: '370px', position: 'relative' }}>
+            <img
+              width="100%"
+              src="/assets/images/Char_Barista.png"
+              alt="Person dressed as a barista with a speech bubble."
+            />
+            <Typography
+              variant="h3"
+              sx={{
+                position: 'absolute',
+                right: 0,
+                top: '5px',
+                textAlign: 'center',
+                width: '200px',
+                height: '100px',
+                padding: '20px',
+                boxSizing: 'border-box',
+              }}>
+              <TypeWriterEffect
+                startDelay={2000}
+                textStyle={{
+                  fontSize: '1.25rem',
+                  lineHeight: '1.5rem',
+                  fontFamily: 'inherit',
+                  fontWeight: 'inherit',
+                }}
+                multiText={[
+                  'Hi there, how may I help you today?',
+                  '',
+                  'Is that almond or soy milk?',
+                  '',
+                  'For here or to go?',
+                  '',
+                  'Do you need a tray?',
+                  '',
+                  'Thank you, see you next time.',
+                ]}
+                scrollArea={sec2Entry && sec2Entry.target}
+                multiTextDelay={1000}
+              />
+            </Typography>
+          </Grid>
         </BasicContainer>
         <BasicContainer ref={sec3Ref} inView={sec3InView}>
           <Typography variant="h5" mb="2vh">

@@ -80,6 +80,12 @@ body {
   background-color: var(--green);
 }
 
+sup {
+  margin-top: 0;
+  padding-top: 0;
+  line-height: 0;
+}
+
 section {
   height: 100%;
 }
@@ -550,8 +556,15 @@ button {
   -o-transform: translateY(50vh);
 }
 
+.clouds {
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
 .car {
   position: relative;
+  top: 5px;
   left: 0;
   right: 0;
 }
@@ -722,14 +735,13 @@ button {
 .absolute {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 3%;
   height: 100%;
   width: 100%;
 }
 
 .relative {
   position: relative;
-  display: block;
   width: 100%;
   height: 50vh;
 }
