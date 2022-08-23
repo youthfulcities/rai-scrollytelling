@@ -2,12 +2,14 @@ import { Grid, Link, Typography } from '@mui/material';
 import { forwardRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import BasicContainer from '../components/BasicContainer';
+import FloorPlan from '../components/FloorPlan';
 import Receipt from '../components/Receipt';
 
 const Chap3 = ({ setCurrentEl }, ref) => {
   const [sec1Ref, sec1InView, sec1Entry] = useInView({ threshold: 0.5 });
-  const [sec2Ref, sec2InView, sec2Entry] = useInView({ threshold: 0 });
-  const [sec3Ref, sec3InView, sec3Entry] = useInView({ threshold: 0.5 });
+  const [sec2Ref, sec2InView, sec2Entry] = useInView({ threshold: 0.5 });
+  const [sec3Ref, sec3InView, sec3Entry] = useInView({ threshold: 0 });
+  const [sec4Ref, sec4InView, sec4Entry] = useInView({ threshold: 0.5 });
 
   useEffect(() => {
     if (sec1InView) {
@@ -19,7 +21,10 @@ const Chap3 = ({ setCurrentEl }, ref) => {
     if (sec3InView) {
       setCurrentEl(sec3Entry.target);
     }
-  }, [sec1InView, sec2InView, sec3InView]);
+    if (sec4InView) {
+      setCurrentEl(sec4Entry.target);
+    }
+  }, [sec1InView, sec2InView, sec3InView, sec4InView]);
 
   return (
     <section id="chap3" ref={ref}>
@@ -42,7 +47,31 @@ const Chap3 = ({ setCurrentEl }, ref) => {
           </Typography>
         </BasicContainer>
         <BasicContainer ref={sec2Ref} inView={sec2InView}>
-          <Receipt inView={sec2InView} />
+          <Typography variant="body1">
+            Additional costs in Toronto include $1788 per month to rent a one
+            bedroom apartment
+            <sup>
+              <Link
+                href="https://www.rentseeker.ca/average-rent-prices-canada"
+                target="_blank">
+                [8]
+              </Link>
+            </sup>{' '}
+            and $1537 annually for a transit pass.
+            <sup>
+              <Link
+                href="https://youthfulcities.com/urban-indexes/rai-2022/"
+                target="_blank">
+                [2]
+              </Link>
+            </sup>{' '}
+            With these high costs it is harder to budget for the rising cost of
+            food.
+          </Typography>
+          <FloorPlan />
+        </BasicContainer>
+        <BasicContainer ref={sec3Ref} inView={sec3InView}>
+          <Receipt inView={sec3InView} />
           <sub>
             Source:{' '}
             <a
@@ -53,7 +82,7 @@ const Chap3 = ({ setCurrentEl }, ref) => {
             </a>
           </sub>
         </BasicContainer>
-        <BasicContainer ref={sec3Ref} inView={sec3InView}>
+        <BasicContainer ref={sec4Ref} inView={sec4InView}>
           <Typography variant="h5">
             In July of 2020 only 44.3% of young men and 30% of young women
             reported having very good mental health,

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 913 513">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .01em;
+      }
+
+      .cls-2 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        letter-spacing: .02em;
+      }
+
+      .cls-4 {
+        letter-spacing: .02em;
+      }
+
+      .cls-5 {
+        letter-spacing: .03em;
+      }
+
+      .cls-6 {
+        fill: #6f5eb7;
+        font-family: GothamNarrow-Bold, 'Gotham Narrow';
+        font-size: 21px;
+      }
+
+      .cls-7 {
+        letter-spacing: .03em;
+      }
+
+      .cls-8 {
+        letter-spacing: .02em;
+      }
+
+      .cls-9 {
+        fill: none;
+        stroke: #6f5eb7;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 8px;
+      }
+
+      .cls-10 {
+        letter-spacing: 0em;
+      }
+
+      .cls-11 {
+        letter-spacing: .02em;
+      }
+    </style>
+  </defs>
+  <g id="Two_Bdrm" data-name="Two Bdrm">
+    <g>
+      <rect class="cls-9" x="4" y="4" width="905" height="505"/>
+      <line class="cls-9" x1="4" y1="138.33" x2="121.33" y2="138.33"/>
+      <polyline class="cls-9" points="197.33 138.33 244 138.33 244 148.33"/>
+      <line class="cls-9" x1="244" y1="201" x2="244" y2="509"/>
+      <line class="cls-9" x1="244" y1="213.67" x2="448.67" y2="213.67"/>
+      <polyline class="cls-9" points="522 213.67 546 213.67 546 509"/>
+      <line class="cls-9" x1="212" y1="4" x2="212" y2="138.33"/>
+      <line class="cls-9" x1="315.33" y1="138.33" x2="430.67" y2="138.33"/>
+      <polyline class="cls-9" points="501 138 546 138 546 4"/>
+      <line class="cls-9" x1="373" y1="4" x2="373" y2="138.33"/>
+      <line class="cls-9" x1="909" y1="191" x2="792" y2="191"/>
+      <text class="cls-6" transform="translate(672.28 360.67)"><tspan class="cls-7" x="0" y="0">Living </tspan><tspan class="cls-3" x="65.5" y="0">R</tspan><tspan class="cls-8" x="78.98" y="0">oom</tspan></text>
+      <text class="cls-6" transform="translate(696.28 109.25)"><tspan class="cls-7" x="0" y="0">Ki</tspan><tspan class="cls-1" x="19.95" y="0">t</tspan><tspan class="cls-7" x="27.8" y="0">chen</tspan></text>
+      <text class="cls-6" transform="translate(246.28 81.25)"><tspan class="cls-5" x="0" y="0">B</tspan><tspan class="cls-11" x="13.71" y="0">a</tspan><tspan class="cls-8" x="25.01" y="0">th</tspan><tspan class="cls-2" x="45.19" y="0">r</tspan><tspan class="cls-8" x="53.11" y="0">oom</tspan></text>
+      <text class="cls-6" transform="translate(74.7 362.2)"><tspan class="cls-7" x="0" y="0">Bed</tspan><tspan class="cls-10" x="38.2" y="0">r</tspan><tspan class="cls-7" x="46.12" y="0">oom</tspan></text>
+      <text class="cls-6" transform="translate(347.7 362.2)"><tspan class="cls-7" x="0" y="0">Bed</tspan><tspan class="cls-10" x="38.2" y="0">r</tspan><tspan class="cls-7" x="46.12" y="0">oom</tspan></text>
+      <text class="cls-6" transform="translate(75.16 81.25)"><tspan class="cls-8" x="0" y="0">Clos</tspan><tspan class="cls-4" x="42.02" y="0">e</tspan><tspan class="cls-8" x="53.72" y="0">t</tspan></text>
+      <text class="cls-6" transform="translate(431.16 81.25)"><tspan class="cls-8" x="0" y="0">Clos</tspan><tspan class="cls-4" x="42.02" y="0">e</tspan><tspan class="cls-8" x="53.72" y="0">t</tspan></text>
+    </g>
+  </g>
+</svg>

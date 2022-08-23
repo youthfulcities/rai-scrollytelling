@@ -94,7 +94,7 @@ const Chap1 = ({ setCurrentEl }, ref) => {
             container
             item
             pb={30}
-            sx={{ margin: 'auto', width: '40vw', position: 'relative' }}>
+            sx={{ margin: 'auto', width: '370px', position: 'relative' }}>
             <img
               width="100%"
               src="/assets/images/Char_Barista.png"
@@ -105,6 +105,7 @@ const Chap1 = ({ setCurrentEl }, ref) => {
               sx={{
                 position: 'absolute',
                 right: 0,
+                top: '5px',
                 textAlign: 'center',
                 width: '200px',
                 height: '100px',
@@ -124,7 +125,9 @@ const Chap1 = ({ setCurrentEl }, ref) => {
                   '',
                   'Is that almond or soy milk?',
                   '',
-                  'Would you like it for here or to go?',
+                  'For here or to go?',
+                  '',
+                  'Do you need a tray?',
                   '',
                   'Thank you, see you next time.',
                 ]}

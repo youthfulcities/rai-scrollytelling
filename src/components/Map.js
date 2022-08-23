@@ -87,7 +87,7 @@ const MapView = () => {
         initialViewState={initialView}
         scrollZoom={false}
         touchPitch={false}
-        // projection="globe"
+        projection="globe"
         onMove={(e) => setViewState(e.viewState)}
         style={{ width: '100%', height: 600 }}
         mapStyle="mapbox://styles/youthfulcities/cl759qkgf000015tcpu2ba6fc"

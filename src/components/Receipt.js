@@ -55,27 +55,6 @@ const Receipt = () => {
       {/* <div className="receipt-placeholder" /> */}
       <div className="receipt-container" ref={ref}>
         <div className="sticky-container">
-          <Typography variant="body1">
-            Additional costs in Toronto include $1788 per month to rent a one
-            bedroom apartment
-            <sup>
-              <Link
-                href="https://www.rentseeker.ca/average-rent-prices-canada"
-                target="_blank">
-                [8]
-              </Link>
-            </sup>{' '}
-            and $1537 annually for a transit pass.
-            <sup>
-              <Link
-                href="https://youthfulcities.com/urban-indexes/rai-2022/"
-                target="_blank">
-                [2]
-              </Link>
-            </sup>{' '}
-            With these high costs it is harder to budget for the rising cost of
-            food.
-          </Typography>
           <Typography variant="h5">
             44% of Canadians in urban areas state that they are affected by the
             rise in the cost of groceries.
