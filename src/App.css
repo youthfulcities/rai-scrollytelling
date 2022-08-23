@@ -65,7 +65,7 @@
    ========================================================================== */
 #root {
   min-height: 100%;
-  background-color: var(--green);
+  background-color: transparent;
 }
 
 html,
@@ -77,6 +77,7 @@ body {
   /* overflow-x: hidden; */
   font-family: 'Gotham Narrow Book', sans-serif;
   z-index: -100;
+  background-color: var(--green);
 }
 
 section {
@@ -689,3 +690,62 @@ button {
 .fade {
   animation: fadeIn 5s;
 }
+
+.parallax-wrapper {
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100vw;
+  /* margin: 0 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%); */
+}
+
+.parallax-bg-wrapper {
+  position: relative;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  transform-style: preserve-3d;
+  z-index: -1; */
+}
+
+.absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.relative {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 50vh;
+}
+/* 
+.parallax-bg {
+  transform: translateZ(-10px) scale(1);
+  -webkit-transform: translateZ(-10px) scale(1);
+  -moz-transform: translateZ(-10px) scale(1);
+  -ms-transform: translateZ(-10px) scale(1);
+  -o-transform: translateZ(-10px) scale(1);
+}
+
+.parallax-fg {
+  transform: translateZ(5px) scale(1);
+  -webkit-transform: translateZ(5px) scale(1);
+  -moz-transform: translateZ(5px) scale(1);
+  -ms-transform: translateZ(5px) scale(1);
+  -o-transform: translateZ(5px) scale(1);
+} */

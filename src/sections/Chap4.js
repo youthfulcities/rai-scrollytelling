@@ -75,8 +75,21 @@ const Chap4 = ({ setCurrentEl }, ref) => {
               </Link>
             </sup>
           </Typography>
-          <Map />
         </BasicContainer>
+      </Grid>
+      <Grid container sx={{ zIndex: 0, position: 'relative' }}>
+        <Map />
+      </Grid>
+      <Grid
+        container
+        direction="column"
+        sx={{
+          minHeight: '100vh',
+          backgroundColor: '#F2695D',
+          background:
+            'linear-gradient(180deg, rgba(214,160,117,1) 0%, rgba(242,105,93,1) 20%, rgba(242,105,93,1) 80%, rgba(140,83,114,1) 100%)',
+        }}
+        justifyContent="center">
         <BasicContainer ref={sec3Ref} inView={sec3InView}>
           <Typography variant="body1">
             You don’t want to move to another province for school even though
