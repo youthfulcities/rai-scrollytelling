@@ -1,6 +1,7 @@
 import { Grid, Link, Typography } from '@mui/material';
 import { forwardRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
+import TypeWriterEffect from 'react-typewriter-effect';
 import BasicContainer from '../components/BasicContainer';
 import Car from '../components/Car';
 import EmploymentChart from '../components/EmploymentGraph';
@@ -89,12 +90,48 @@ const Chap1 = ({ setCurrentEl }, ref) => {
             but it is challenging to maintain employment because of the
             continuous lockdowns.
           </Typography>
-          <Grid item sx={{ margin: 'auto', width: '40vw' }}>
+          <Grid
+            container
+            item
+            pb={30}
+            sx={{ margin: 'auto', width: '40vw', position: 'relative' }}>
             <img
               width="100%"
               src="/assets/images/Char_Barista.png"
               alt="Person dressed as a barista with a speech bubble."
             />
+            <Typography
+              variant="h3"
+              sx={{
+                position: 'absolute',
+                right: 0,
+                textAlign: 'center',
+                width: '200px',
+                height: '100px',
+                padding: '20px',
+                boxSizing: 'border-box',
+              }}>
+              <TypeWriterEffect
+                startDelay={2000}
+                textStyle={{
+                  fontSize: '1.25rem',
+                  lineHeight: '1.5rem',
+                  fontFamily: 'inherit',
+                  fontWeight: 'inherit',
+                }}
+                multiText={[
+                  'Hi there, how may I help you today?',
+                  '',
+                  'Is that almond or soy milk?',
+                  '',
+                  'Would you like it for here or to go?',
+                  '',
+                  'Thank you, see you next time.',
+                ]}
+                scrollArea={sec2Entry && sec2Entry.target}
+                multiTextDelay={1000}
+              />
+            </Typography>
           </Grid>
         </BasicContainer>
         <BasicContainer ref={sec3Ref} inView={sec3InView}>

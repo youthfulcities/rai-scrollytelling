@@ -36,8 +36,10 @@
     "react-map-gl": "^7.0.17",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-typewriter-effect": "^1.1.0",
     "styled-components": "^5.3.5",
     "styled-system": "^5.1.5",
+    "typewriter-effect": "^2.19.0",
     "uuid4": "^2.0.3",
     "web-vitals": "^2.1.4"
   },
