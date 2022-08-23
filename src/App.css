@@ -80,6 +80,12 @@ body {
   background-color: var(--green);
 }
 
+sup {
+  margin-top: 0;
+  padding-top: 0;
+  line-height: 0;
+}
+
 section {
   height: 100%;
 }

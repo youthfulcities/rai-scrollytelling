@@ -48,8 +48,8 @@ const Chap3 = ({ setCurrentEl }, ref) => {
         </BasicContainer>
         <BasicContainer ref={sec2Ref} inView={sec2InView}>
           <Typography variant="body1">
-            Additional costs in Toronto include $1788 per month to rent a one
-            bedroom apartment
+            Additional costs in Toronto include <strong>$1788</strong> per month
+            to rent a one bedroom apartment
             <sup>
               <Link
                 href="https://www.rentseeker.ca/average-rent-prices-canada"
@@ -57,7 +57,7 @@ const Chap3 = ({ setCurrentEl }, ref) => {
                 [8]
               </Link>
             </sup>{' '}
-            and $1537 annually for a transit pass.
+            and <strong>$1537</strong> annually for a transit pass.
             <sup>
               <Link
                 href="https://youthfulcities.com/urban-indexes/rai-2022/"

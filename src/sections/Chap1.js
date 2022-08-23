@@ -44,14 +44,14 @@ const Chap1 = ({ setCurrentEl }, ref) => {
             'linear-gradient(180deg, rgba(214,217,177,1) 0%, rgba(246,217,215,1) 20%, rgba(246,217,215,1) 80%, rgba(246,217,215,1) 100%)',
         }}>
         <BasicContainer ref={sec1Ref} inView={sec1InView}>
-          <Grid item sx={{ margin: 'auto', width: '40vw' }}>
+          <Grid item sx={{ margin: 'auto', width: '300px' }}>
             <img
               width="100%"
               src="/assets/images/Character_Question2.gif"
               alt="Person thinking with question marks above head."
             />
           </Grid>
-          <Typography variant="h3" mb="2vh">
+          <Typography mt={10} variant="h3" mb="2vh">
             Searching for next steps
           </Typography>
           <Typography variant="body1">

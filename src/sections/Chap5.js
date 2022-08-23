@@ -41,6 +41,7 @@ const Chap5 = ({ setCurrentEl }, ref) => {
             generation of young people in a deficit of $750 per month.
             <sup>
               <Link
+                sx={{ color: 'var(--red)' }}
                 href="https://youthfulcities.com/urban-indexes/rai-2022/"
                 target="_blank">
                 [2]
