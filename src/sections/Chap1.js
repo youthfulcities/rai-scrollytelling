@@ -43,6 +43,13 @@ const Chap1 = ({ setCurrentEl }, ref) => {
             'linear-gradient(180deg, rgba(214,217,177,1) 0%, rgba(246,217,215,1) 20%, rgba(246,217,215,1) 80%, rgba(246,217,215,1) 100%)',
         }}>
         <BasicContainer ref={sec1Ref} inView={sec1InView}>
+          <Grid item sx={{ margin: 'auto', width: '40vw' }}>
+            <img
+              width="100%"
+              src="/assets/images/Character_Question2.gif"
+              alt="Person thinking with question marks above head."
+            />
+          </Grid>
           <Typography variant="h3" mb="2vh">
             Searching for next steps
           </Typography>
@@ -69,7 +76,7 @@ const Chap1 = ({ setCurrentEl }, ref) => {
           </Typography>
         </BasicContainer>
         <BasicContainer ref={sec2Ref} inView={sec2InView}>
-          <Typography variant="body1">
+          <Typography variant="body1" pt={30}>
             You work a minimum wage job in your hometown and are part of the 35%
             of Canadian youth that are employed in the service sector,
             <sup>
@@ -82,6 +89,13 @@ const Chap1 = ({ setCurrentEl }, ref) => {
             but it is challenging to maintain employment because of the
             continuous lockdowns.
           </Typography>
+          <Grid item sx={{ margin: 'auto', width: '40vw' }}>
+            <img
+              width="100%"
+              src="/assets/images/Char_Barista.png"
+              alt="Person dressed as a barista with a speech bubble."
+            />
+          </Grid>
         </BasicContainer>
         <BasicContainer ref={sec3Ref} inView={sec3InView}>
           <Typography variant="h5" mb="2vh">

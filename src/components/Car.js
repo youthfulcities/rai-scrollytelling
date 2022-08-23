@@ -44,6 +44,11 @@ const Car = ({ el }) => {
         width="100px"
       />
       <div key="road" className="road" />
+      <img
+        src="/assets/images/Ch1_Clouds.png"
+        alt="Clouds"
+        className="clouds"
+      />
     </AnimatePresence>
   );
 };
