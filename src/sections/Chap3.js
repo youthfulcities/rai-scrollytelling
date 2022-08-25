@@ -4,10 +4,11 @@ import { useInView } from 'react-intersection-observer';
 import BasicContainer from '../components/BasicContainer';
 import FloorPlan from '../components/FloorPlan';
 import Receipt from '../components/Receipt';
+import TransitPass from '../components/TransitPass';
 
 const Chap3 = ({ setCurrentEl }, ref) => {
   const [sec1Ref, sec1InView, sec1Entry] = useInView({ threshold: 0.5 });
-  const [sec2Ref, sec2InView, sec2Entry] = useInView({ threshold: 0.5 });
+  const [sec2Ref, sec2InView, sec2Entry] = useInView({ threshold: 0.3 });
   const [sec3Ref, sec3InView, sec3Entry] = useInView({ threshold: 0 });
   const [sec4Ref, sec4InView, sec4Entry] = useInView({ threshold: 0.5 });
 
@@ -47,7 +48,7 @@ const Chap3 = ({ setCurrentEl }, ref) => {
           </Typography>
         </BasicContainer>
         <BasicContainer ref={sec2Ref} inView={sec2InView}>
-          <Typography variant="body1">
+          <Typography variant="body1" pt={30}>
             Additional costs in Toronto include <strong>$1788</strong> per month
             to rent a one bedroom apartment
             <sup>
@@ -68,6 +69,7 @@ const Chap3 = ({ setCurrentEl }, ref) => {
             With these high costs it is harder to budget for the rising cost of
             food.
           </Typography>
+          <TransitPass inView={sec2InView} />
           <FloorPlan />
         </BasicContainer>
         <BasicContainer ref={sec3Ref} inView={sec3InView}>
