@@ -19,7 +19,7 @@ const expenses = [
   { name: 'Subscriptions', value: 75.12 },
 ];
 
-const startingTotal = 1000.0;
+const startingTotal = 2371.84;
 
 const Receipt = () => {
   const ref = useRef(null);

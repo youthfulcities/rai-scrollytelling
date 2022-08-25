@@ -2,12 +2,14 @@ import { Grid, Link, Typography } from '@mui/material';
 import { forwardRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import BasicContainer from '../components/BasicContainer';
+import FadeInUp from '../components/FadeInUp';
 import Map from '../components/Map';
 
 const Chap4 = ({ setCurrentEl }, ref) => {
   const [sec1Ref, sec1InView, sec1Entry] = useInView({ threshold: 0.5 });
   const [sec2Ref, sec2InView, sec2Entry] = useInView({ threshold: 0.5 });
   const [sec3Ref, sec3InView, sec3Entry] = useInView({ threshold: 0.5 });
+  const [sec4Ref, sec4InView, sec4Entry] = useInView({ threshold: 0.5 });
   useEffect(() => {
     if (sec1InView) {
       setCurrentEl(sec1Entry.target);
@@ -18,7 +20,10 @@ const Chap4 = ({ setCurrentEl }, ref) => {
     if (sec3InView) {
       setCurrentEl(sec3Entry.target);
     }
-  }, [sec1InView, sec2InView, sec3InView]);
+    if (sec4InView) {
+      setCurrentEl(sec4Entry.target);
+    }
+  }, [sec1InView, sec2InView, sec3InView, sec4InView]);
   return (
     <section ref={ref} id="chap4">
       <Grid
@@ -76,21 +81,12 @@ const Chap4 = ({ setCurrentEl }, ref) => {
             </sup>
           </Typography>
         </BasicContainer>
-      </Grid>
-      <Grid container sx={{ zIndex: 0, position: 'relative' }}>
-        <Map />
-      </Grid>
-      <Grid
-        container
-        direction="column"
-        sx={{
-          minHeight: '100vh',
-          backgroundColor: '#F2695D',
-          background:
-            'linear-gradient(180deg, rgba(214,160,117,1) 0%, rgba(242,105,93,1) 20%, rgba(242,105,93,1) 80%, rgba(140,83,114,1) 100%)',
-        }}
-        justifyContent="center">
-        <BasicContainer ref={sec3Ref} inView={sec3InView}>
+        <div ref={sec3Ref}>
+          <FadeInUp inView={sec3InView}>
+            <Map />
+          </FadeInUp>
+        </div>
+        <BasicContainer ref={sec4Ref} inView={sec4InView}>
           <Typography variant="body1">
             You don’t want to move to another province for school even though
             the average tuition in another province would be $6,700,

@@ -89,7 +89,7 @@ const MapView = () => {
         touchPitch={false}
         projection="globe"
         onMove={(e) => setViewState(e.viewState)}
-        style={{ width: '100%', height: 600 }}
+        style={{ width: '100%', height: '100vh' }}
         mapStyle="mapbox://styles/youthfulcities/cl759qkgf000015tcpu2ba6fc"
         interactiveLayerIds={[
           'tuition-undergrad',
@@ -111,7 +111,9 @@ const MapView = () => {
             closeOnClick
             onClose={() => setShowPopup(false)}>
             <Grid container p={1}>
-              <Typography variant="h5">{tuition.prov}</Typography>
+              <Typography variant="h5">
+                Tuition costs in {tuition.prov}
+              </Typography>
               <Grid
                 item
                 container
