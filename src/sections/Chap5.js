@@ -7,6 +7,7 @@ const Chap5 = ({ setCurrentEl }, ref) => {
   const [sec1Ref, sec1InView, sec1Entry] = useInView({ threshold: 0.5 });
   const [sec2Ref, sec2InView, sec2Entry] = useInView({ threshold: 0.5 });
   const [sec3Ref, sec3InView, sec3Entry] = useInView({ threshold: 0.5 });
+  const [sec4Ref, sec4InView, sec4Entry] = useInView({ threshold: 0.5 });
 
   useEffect(() => {
     if (sec1InView) {
@@ -18,7 +19,8 @@ const Chap5 = ({ setCurrentEl }, ref) => {
     if (sec3InView) {
       setCurrentEl(sec3Entry.target);
     }
-  }, [sec1InView, sec2InView, sec3InView]);
+    if (sec4InView) setCurrentEl(sec4Entry.target);
+  }, [sec1InView, sec2InView, sec3InView, sec4InView]);
 
   return (
     <section ref={ref} id="chap5">
@@ -63,6 +65,13 @@ const Chap5 = ({ setCurrentEl }, ref) => {
             It feels like you are constantly searching for a sense of financial
             security that is just out of reach.
           </Typography>
+        </BasicContainer>
+        <BasicContainer ref={sec4Ref} inView={sec4InView}>
+          <img
+            src="/assets/images/RAI Graphics.png"
+            alt="Diagram of monthly deficits across 27 cities in Canada with the average being -$745 per month."
+            width="100%"
+          />
         </BasicContainer>
       </Grid>
     </section>
