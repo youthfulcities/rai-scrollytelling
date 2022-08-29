@@ -69,8 +69,13 @@ const Chap3 = ({ setCurrentEl }, ref) => {
             With these high costs it is harder to budget for the rising cost of
             food.
           </Typography>
-          <TransitPass inView={sec2InView} />
+          {sec2Entry && (
+            <TransitPass inView={sec2InView} el={sec2Entry.target} />
+          )}
           <FloorPlan />
+          <Typography variant="h5" mt={2} mb={50}>
+            This appartment costs $1788 per month
+          </Typography>
         </BasicContainer>
         <BasicContainer ref={sec3Ref} inView={sec3InView}>
           <Receipt inView={sec3InView} />

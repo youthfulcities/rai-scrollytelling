@@ -3,6 +3,7 @@ import { forwardRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import BasicContainer from '../components/BasicContainer';
 import InflationGraph from '../components/InflationGraph';
+import TorontoParallax from '../components/TorontoParallax';
 import WageGraph from '../components/WageGraph';
 
 const Chap2 = ({ setCurrentEl }, ref) => {
@@ -48,6 +49,7 @@ const Chap2 = ({ setCurrentEl }, ref) => {
 
   return (
     <section id="chap2" ref={ref}>
+      <TorontoParallax />
       <Grid
         container
         direction="column"
@@ -58,41 +60,6 @@ const Chap2 = ({ setCurrentEl }, ref) => {
             'linear-gradient(180deg, rgba(246,217,215,1) 0%, rgba(251,209,102,1) 20%, rgba(251,209,102,1) 80%, rgba(216,213,123,1) 100%)',
         }}>
         <BasicContainer ref={sec1Ref} inView={sec1InView}>
-          <Grid
-            container
-            direction="column"
-            justifyContent="flex-end"
-            alignItems="stretch"
-            sx={{
-              width: '100%',
-              position: 'relative',
-              height: '50vh',
-            }}>
-            <img
-              className="absolute"
-              src="/assets/images/background.png"
-              alt=""
-              width="100%"
-            />
-            <img
-              className="absolute"
-              src="/assets/images/bgclouds.png"
-              alt=""
-              width="100%"
-            />
-            <img
-              className="absolute"
-              src="/assets/images/foregroundclouds.png"
-              alt=""
-              width="100%"
-            />
-            <img
-              className="absolute"
-              src="/assets/images/buildings.png"
-              alt=""
-              width="100%"
-            />
-          </Grid>
           <Typography variant="h2" align="center" mt={6} mb="2vh">
             Chapter 2: Searching for work
           </Typography>

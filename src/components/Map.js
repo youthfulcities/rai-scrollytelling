@@ -1,5 +1,11 @@
 import Brightness1RoundedIcon from '@mui/icons-material/Brightness1Rounded';
-import { Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
+import {
+  Button,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import bbox from '@turf/bbox';
 import React, { useEffect, useRef, useState } from 'react';
 import Map, { NavigationControl, Popup } from 'react-map-gl';
@@ -70,18 +76,27 @@ const MapView = () => {
     };
   }, [completed]);
 
-  // const reset = () => {
-  //   mapRef.current?.flyTo({
-  //     center: [initialView.longitude, initialView.latitude],
-  //     zoom: initialView.zoom,
-  //     pitch: initialView.pitch,
-  //     bearing: initialView.bearing,
-  //     duration: 2000,
-  //   });
-  // };
+  const reset = () => {
+    mapRef.current?.flyTo({
+      center: [initialView.longitude, initialView.latitude],
+      zoom: initialView.zoom,
+      pitch: initialView.pitch,
+      bearing: initialView.bearing,
+      duration: 2000,
+    });
+  };
 
   return (
     <>
+      <Grid container sx={{ width: '100%' }} justifyContent="center">
+        <Button
+          variant="contained"
+          color="secondary"
+          type="submit"
+          onClick={reset}>
+          Reset Map
+        </Button>
+      </Grid>
       <Map
         latitude={viewState.latitude}
         longitude={viewState.longitude}
@@ -89,9 +104,7 @@ const MapView = () => {
         ref={mapRef}
         initialViewState={initialView}
         scrollZoom={false}
-        touchPitch={false}
         dragRotate={!smallScreen}
-        dragPan={!smallScreen}
         projection="globe"
         onMove={(e) => setViewState(e.viewState)}
         style={{ width: '100%', height: '100vh' }}
@@ -163,13 +176,6 @@ const MapView = () => {
           </Popup>
         )}
       </Map>
-      {/* <Button
-        variant="contained"
-        color="secondary"
-        type="submit"
-        onClick={reset}>
-        Reset
-      </Button> */}
     </>
   );
 };
