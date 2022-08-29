@@ -5,7 +5,12 @@ import React from 'react';
 const TransitPass = ({ inView = true }) => (
   <Grid
     container
-    sx={{ position: 'relative', height: '100%', width: '100%' }}
+    sx={{
+      position: 'relative',
+      height: '100%',
+      width: '100%',
+      overflowX: 'hidden',
+    }}
     pb={80}>
     <img
       style={{ position: 'absolute', top: 0, width: '100%' }}
