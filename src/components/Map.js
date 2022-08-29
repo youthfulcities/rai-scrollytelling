@@ -1,5 +1,5 @@
 import Brightness1RoundedIcon from '@mui/icons-material/Brightness1Rounded';
-import { Grid, Typography } from '@mui/material';
+import { Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
 import bbox from '@turf/bbox';
 import React, { useEffect, useRef, useState } from 'react';
 import Map, { NavigationControl, Popup } from 'react-map-gl';
@@ -17,6 +17,9 @@ const MapView = () => {
     zoom: 3,
     duration: 2000,
   };
+
+  const theme = useTheme();
+  const smallScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   const [viewState, setViewState] = useState(initialView);
   const [completed, setCompleted] = useState(false);
@@ -87,6 +90,8 @@ const MapView = () => {
         initialViewState={initialView}
         scrollZoom={false}
         touchPitch={false}
+        dragRotate={!smallScreen}
+        dragPan={!smallScreen}
         projection="globe"
         onMove={(e) => setViewState(e.viewState)}
         style={{ width: '100%', height: '100vh' }}
@@ -97,9 +102,7 @@ const MapView = () => {
         ]}
         onClick={onClick}
         mapboxAccessToken={MAPBOX_TOKEN}>
-        <div style={{ position: 'absolute', zIndex: '10' }}>
-          <NavigationControl />
-        </div>
+        <NavigationControl />
         {showPopup && tuition.prov && (
           <Popup
             style={{

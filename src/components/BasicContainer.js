@@ -10,8 +10,8 @@ const BasicContainer = (
     ref={ref}
     maxWidth={width === undefined ? 'sm' : width}
     sx={{
-      paddingLeft: '70px',
-      paddingRight: '70px',
+      paddingLeft: '30px',
+      paddingRight: '30px',
       width: '100%',
       height: '100%',
       margin: 'auto',

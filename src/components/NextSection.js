@@ -20,7 +20,7 @@ const NextSection = ({ currentEl, homeInView = true }) => {
 
   return (
     <AnimatePresence>
-      {homeInView && (
+      {homeInView && !smallScreen && (
         <Grid
           component={motion.div}
           container

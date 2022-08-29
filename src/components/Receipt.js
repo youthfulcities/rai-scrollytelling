@@ -97,8 +97,7 @@ const Receipt = () => {
                 py={1.5}
                 container
                 sx={{ mixBlendMode: 'multiply' }}
-                justifyContent="space-between"
-                spacing={1}>
+                justifyContent="space-between">
                 <AnimatePresence>
                   {i >= currentItem ? (
                     <>

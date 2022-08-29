@@ -38,6 +38,11 @@ const Chap5 = ({ setCurrentEl }, ref) => {
           <Typography variant="h2" align="center" mb="2vh">
             Chapter 5: Searching for security
           </Typography>
+          <img
+            width="100%"
+            src="/assets/images/chap5.gif"
+            alt="A person thinking about expenses such as food."
+          />
           <Typography variant="body1">
             Every month you feel as if you are scraping by. You are part of a
             generation of young people in a deficit of $750 per month.
@@ -68,7 +73,7 @@ const Chap5 = ({ setCurrentEl }, ref) => {
         </BasicContainer>
         <BasicContainer ref={sec4Ref} inView={sec4InView}>
           <img
-            src="/assets/images/RAI Graphics.png"
+            src="/assets/images/rai.png"
             alt="Diagram of monthly deficits across 27 cities in Canada with the average being -$745 per month."
             width="100%"
           />
