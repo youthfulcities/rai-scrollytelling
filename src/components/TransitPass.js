@@ -2,7 +2,7 @@ import { Grid } from '@mui/material';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import React from 'react';
 
-const TransitPass = ({ inView = true, el }) => {
+const TransitPass = ({ el }) => {
   console.log(el);
   const { scrollYProgress } = useScroll({
     target: { current: el },

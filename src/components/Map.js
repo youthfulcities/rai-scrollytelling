@@ -6,7 +6,6 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import bbox from '@turf/bbox';
 import React, { useEffect, useRef, useState } from 'react';
 import Map, { NavigationControl, Popup } from 'react-map-gl';
 
@@ -18,7 +17,7 @@ const MapView = () => {
   const initialView = {
     longitude: -86.08,
     latitude: 54.67,
-    pitch: 40,
+    pitch: 0,
     bearing: 13.6,
     zoom: 3,
     duration: 2000,
@@ -36,33 +35,41 @@ const MapView = () => {
 
   const onClick = (event) => {
     const feature = event.features[0];
-    console.log(event.features);
-    const undergradFeature = event.features[event.features.length - 1];
+    const { lat, lng } = event.lngLat;
+
+    // const undergradFeature = event.features[event.features.length - 1];
 
     if (feature) {
       // calculate the bounding box of the feature
-      const { grad, undergrad, prov_name_en } = feature.properties;
-      const { r, g, b } = feature.layer.paint['fill-extrusion-color'];
-      const {
-        r: r1,
-        g: g1,
-        b: b1,
-      } = undergradFeature.layer.paint['fill-extrusion-color'];
-      const [minLng, minLat, maxLng, maxLat] = bbox(feature);
+      const { r, g, b } = feature.layer.paint['circle-color'];
+      // const {
+      //   r: r1,
+      //   g: g1,
+      //   b: b1,
+      // } = undergradFeature.layer.paint['fill-color'];
+      // const [minLng, minLat, maxLng, maxLat] = bbox(feature);
 
-      mapRef.current.fitBounds(
-        [
-          [minLng, minLat],
-          [maxLng, maxLat],
-        ],
-        { padding: 40, duration: 1000 }
-      );
+      // mapRef.current.fitBounds(
+      //   [
+      //     [minLng, minLat],
+      //     [maxLng, maxLat],
+      //   ],
+      //   { padding: 40, duration: 1000 }
+      // );
+
+      mapRef.current?.flyTo({
+        center: [lng, lat],
+        zoom: viewState.zoom,
+        pitch: viewState.pitch,
+        bearing: viewState.bearing,
+        duration: 2000,
+      });
+
       setTuition({
-        grad,
-        undergrad,
-        prov: prov_name_en,
-        gradColor: { r, g, b },
-        undergradColor: { r: r1, g: g1, b: b1 },
+        cost: feature.properties.tuition,
+        level: feature.properties['Level of study'],
+        prov: feature.properties['Province '],
+        color: { r, g, b },
       });
       setCompleted(true);
     }
@@ -86,9 +93,11 @@ const MapView = () => {
     });
   };
 
+  console.log(tuition);
+
   return (
     <>
-      <Grid container sx={{ width: '100%' }} justifyContent="center">
+      <Grid container sx={{ width: '100%' }} justifyContent="center" mb={2}>
         <Button
           variant="contained"
           color="secondary"
@@ -104,16 +113,11 @@ const MapView = () => {
         ref={mapRef}
         initialViewState={initialView}
         scrollZoom={false}
-        dragRotate={!smallScreen}
-        dragPan={!smallScreen}
         projection="globe"
         onMove={(e) => setViewState(e.viewState)}
-        style={{ width: '100%', height: '100vh' }}
+        style={{ width: '100%', height: '90vh' }}
         mapStyle="mapbox://styles/youthfulcities/cl759qkgf000015tcpu2ba6fc"
-        interactiveLayerIds={[
-          'tuition-undergrad',
-          'tuition-grad plus undergrad',
-        ]}
+        interactiveLayerIds={['tuition-undergraduate', 'tuition-graduate']}
         onClick={onClick}
         mapboxAccessToken={MAPBOX_TOKEN}>
         <NavigationControl />
@@ -121,6 +125,8 @@ const MapView = () => {
           <Popup
             style={{
               borderRadius: '35px',
+              filter:
+                'drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.07)) drop-shadow(0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198)) drop-shadow(0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275)) drop-shadow(0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035)) drop-shadow(0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725)) drop-shadow(0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802))',
             }}
             longitude={viewState.longitude}
             latitude={viewState.latitude}
@@ -128,8 +134,10 @@ const MapView = () => {
             closeOnClick
             onClose={() => setShowPopup(false)}>
             <Grid container p={1}>
-              <Typography variant="h5">
-                Tuition costs in {tuition.prov}
+              <Typography variant="body1" textTransform="uppercase">
+                <strong>
+                  Domestic {tuition.level} tuition costs in {tuition.prov}
+                </strong>
               </Typography>
               <Grid
                 item
@@ -142,37 +150,17 @@ const MapView = () => {
                   <Brightness1RoundedIcon
                     sx={{
                       color: `rgba(${Math.floor(
-                        tuition.undergradColor.r * 255
-                      )},${Math.floor(
-                        tuition.undergradColor.g * 255
-                      )},${Math.floor(tuition.undergradColor.b * 255)},1)`,
+                        tuition.color.r * 255
+                      )},${Math.floor(tuition.color.g * 255)},${Math.floor(
+                        tuition.color.b * 255
+                      )},1)`,
                     }}
                   />
                 </Grid>
                 <Grid item>
-                  <Typography variant="body1">
-                    <strong>Undergraduate:</strong>
-                    {` $${tuition.undergrad}`}
-                  </Typography>
+                  <Typography variant="body1">{` $${tuition.cost}`}</Typography>
                 </Grid>
               </Grid>
-              {tuition.grad && (
-                <>
-                  <Brightness1RoundedIcon
-                    sx={{
-                      color: `rgba(${Math.floor(
-                        tuition.gradColor.r * 255
-                      )},${Math.floor(tuition.gradColor.g * 255)},${Math.floor(
-                        tuition.gradColor.b * 255
-                      )},1)`,
-                    }}
-                  />
-                  <Typography variaqnt="body1">
-                    <strong>Graduate:</strong>
-                    {` $${tuition.grad}`}
-                  </Typography>
-                </>
-              )}
             </Grid>
           </Popup>
         )}
