@@ -11,6 +11,7 @@ const Chap3 = ({ setCurrentEl }, ref) => {
   const [sec2Ref, sec2InView, sec2Entry] = useInView({ threshold: 0.3 });
   const [sec3Ref, sec3InView, sec3Entry] = useInView({ threshold: 0 });
   const [sec4Ref, sec4InView, sec4Entry] = useInView({ threshold: 0.5 });
+  const [sec5Ref, sec5InView, sec5Entry] = useInView({ threshold: 0.5 });
 
   useEffect(() => {
     if (sec1InView) {
@@ -24,6 +25,9 @@ const Chap3 = ({ setCurrentEl }, ref) => {
     }
     if (sec4InView) {
       setCurrentEl(sec4Entry.target);
+    }
+    if (sec5InView) {
+      setCurrentEl(sec5Entry.target);
     }
   }, [sec1InView, sec2InView, sec3InView, sec4InView]);
 
@@ -46,11 +50,24 @@ const Chap3 = ({ setCurrentEl }, ref) => {
             You are adjusting and budgeting for changes in the cost of living as
             you get settled in your urban life.
           </Typography>
+          <Typography variant="h5">
+            Additional costs in Toronto include...
+          </Typography>
         </BasicContainer>
         <BasicContainer ref={sec2Ref} inView={sec2InView}>
           <Typography variant="body1" pt={30}>
-            Additional costs in Toronto include <strong>$1788</strong> per month
-            to rent a one bedroom apartment
+            <FloorPlan />
+            <Typography variant="h5" mt={2}>
+              ...$1788 per month to rent this one bedroom apartment{' '}
+              <sup>
+                <Link
+                  href="https://www.rentseeker.ca/average-rent-prices-canada"
+                  target="_blank">
+                  [8]
+                </Link>
+              </sup>
+              ...
+            </Typography>
             <sup>
               <Link
                 href="https://www.rentseeker.ca/average-rent-prices-canada"
@@ -66,18 +83,21 @@ const Chap3 = ({ setCurrentEl }, ref) => {
                 [2]
               </Link>
             </sup>{' '}
-            With these high costs it is harder to budget for the rising cost of
-            food.
           </Typography>
           {sec2Entry && (
             <TransitPass inView={sec2InView} el={sec2Entry.target} />
           )}
-          <FloorPlan />
           <Typography variant="h5" mt={2} mb={50}>
             This appartment costs $1788 per month
           </Typography>
         </BasicContainer>
         <BasicContainer ref={sec3Ref} inView={sec3InView}>
+          {' '}
+          Placeholder
+        </BasicContainer>
+        <BasicContainer ref={sec3Ref} inView={sec3InView}>
+          With these high costs it is harder to budget for the rising cost of
+          food.
           <Receipt inView={sec3InView} />
           <sub>
             Source:{' '}

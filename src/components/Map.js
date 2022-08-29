@@ -105,6 +105,7 @@ const MapView = () => {
         initialViewState={initialView}
         scrollZoom={false}
         dragRotate={!smallScreen}
+        dragPan={!smallScreen}
         projection="globe"
         onMove={(e) => setViewState(e.viewState)}
         style={{ width: '100%', height: '100vh' }}
