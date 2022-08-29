@@ -2,7 +2,7 @@ import { Grid } from '@mui/material';
 import React from 'react';
 
 const FloorPlan = () => (
-  <Grid container sx={{ width: '100%' }} mb={50}>
+  <Grid container sx={{ width: '100%' }}>
     <svg
       id="Layer_2"
       data-name="Layer 2"
