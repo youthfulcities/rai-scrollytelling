@@ -2,7 +2,7 @@ import { Grid } from '@mui/material';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import React from 'react';
 
-const TransitPass = ({ inView = true, el }) => {
+const TransitPass = ({ el }) => {
   console.log(el);
   const { scrollYProgress } = useScroll({
     target: { current: el },
@@ -11,7 +11,7 @@ const TransitPass = ({ inView = true, el }) => {
 
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.8]);
 
-  const y = useTransform(scrollYProgress, [0, 1], [-50, 400]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 300]);
 
   const springedScale = useSpring(scale, { damping: 10 });
   const springedY = useSpring(y, { damping: 10 });

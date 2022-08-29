@@ -2,16 +2,15 @@ import { motion } from 'framer-motion';
 
 import React from 'react';
 
-const FadeInUp = ({ inView, children }) => {
+const FadeInUp = ({ inView = true, children, delay = 0, x = 0, y = 0 }) => {
   const easing = [0.42, 0, 0.58, 1];
   const yOffset = 24;
-  const delay = 0;
   const transition = { duration: 0.8, delay, ease: easing };
   const variants = {
     hidden: { y: yOffset, opacity: 0, transition },
     show: {
-      y: 0,
-      x: 0,
+      y,
+      x,
       opacity: 1,
       transition,
     },

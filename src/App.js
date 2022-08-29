@@ -14,7 +14,7 @@ import Chap3 from './sections/Chap3';
 import Chap4 from './sections/Chap4';
 import Chap5 from './sections/Chap5';
 import Conclusion from './sections/Conclusion';
-import HomeSection from './sections/HomeSection';
+import HomeSection2 from './sections/HomeSection2';
 
 // import { Box, Container, FadeInUpBox, Flex, ScaleBox, StaggerWrap } from './ui';
 // import { picsList } from '../PicsList.js';
@@ -101,7 +101,7 @@ const App = () => {
                 currentEl={currentEl}
               />
             )}
-            <HomeSection ref={homeRef} homeInView={homeInView} />
+            <HomeSection2 ref={homeRef} homeInView={homeInView} />
 
             <Chap1 ref={chap1Ref} setCurrentEl={setCurrentEl} />
             <Chap2 ref={chap2Ref} setCurrentEl={setCurrentEl} />

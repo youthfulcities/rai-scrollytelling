@@ -49,7 +49,6 @@ const Chap2 = ({ setCurrentEl }, ref) => {
 
   return (
     <section id="chap2" ref={ref}>
-      <TorontoParallax />
       <Grid
         container
         direction="column"
@@ -60,6 +59,7 @@ const Chap2 = ({ setCurrentEl }, ref) => {
             'linear-gradient(180deg, rgba(246,217,215,1) 0%, rgba(251,209,102,1) 20%, rgba(251,209,102,1) 80%, rgba(216,213,123,1) 100%)',
         }}>
         <BasicContainer ref={sec1Ref} inView={sec1InView}>
+          <TorontoParallax />
           <Typography variant="h2" align="center" mt={6} mb="2vh">
             Chapter 2: Searching for work
           </Typography>

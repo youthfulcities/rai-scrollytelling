@@ -43,7 +43,7 @@ const Chap5 = ({ setCurrentEl }, ref) => {
             src="/assets/images/chap5.gif"
             alt="A person thinking about expenses such as food."
           />
-          <Typography variant="body1">
+          <Typography variant="body1" mt={3}>
             Every month you feel as if you are scraping by. You are part of a
             generation of young people in a deficit of $750 per month.
             <sup>

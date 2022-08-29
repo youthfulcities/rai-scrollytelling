@@ -55,6 +55,10 @@ const Receipt = () => {
       {/* <div className="receipt-placeholder" /> */}
       <div className="receipt-container" ref={ref}>
         <div className="sticky-container">
+          <Typography variant="body1">
+            With these high costs it is harder to budget for the rising cost of
+            food.
+          </Typography>
           <Typography variant="h5">
             44% of Canadians in urban areas state that they are affected by the
             rise in the cost of groceries.
