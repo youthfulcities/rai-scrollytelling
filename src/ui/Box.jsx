@@ -16,7 +16,7 @@ import {
   typography,
 } from 'styled-system';
 
-const composedHelpers = compose(
+export const composedHelpers = compose(
   background,
   layout,
   border,
@@ -37,4 +37,4 @@ const Box = styled.div`
 
 Box.defaultProps = {};
 
-export default { composedHelpers, Box };
+export default Box;

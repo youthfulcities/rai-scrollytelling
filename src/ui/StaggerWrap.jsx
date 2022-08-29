@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { IntersectionContext } from "./IntersectionObserver";
+import { IntersectionContext } from "./IntersectionObserver.jsx";
 import { MotionBox } from "./MotionBox";
 
 const StaggerContext = React.createContext({

@@ -17,7 +17,7 @@ const IntersectionObserver = ({
     const inViewNow = intersection && intersection.intersectionRatio > 0;
     if (inViewNow) {
       return setInView(inViewNow);
-    } else if (reset) {
+    } if (reset) {
       return setInView(false);
     }
   }, [intersection, reset]);
@@ -29,4 +29,4 @@ const IntersectionObserver = ({
   );
 };
 
-export default { IntersectionContext, IntersectionObserver };
+export default IntersectionContext;
