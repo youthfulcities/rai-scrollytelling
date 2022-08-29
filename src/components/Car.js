@@ -47,6 +47,7 @@ const Car = ({ el }) => {
       <img
         src="/assets/images/Ch1_Clouds.png"
         alt="Clouds"
+        width="100%"
         className="clouds"
       />
     </AnimatePresence>

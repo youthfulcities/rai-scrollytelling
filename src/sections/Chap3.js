@@ -10,7 +10,7 @@ const Chap3 = ({ setCurrentEl }, ref) => {
   const [sec1Ref, sec1InView, sec1Entry] = useInView({ threshold: 0.5 });
   const [sec2Ref, sec2InView, sec2Entry] = useInView({ threshold: 0.3 });
   const [sec3Ref, sec3InView, sec3Entry] = useInView({ threshold: 0 });
-  const [sec4Ref, sec4InView, sec4Entry] = useInView({ threshold: 0.5 });
+  const [sec4Ref, sec4InView, sec4Entry] = useInView({ threshold: 0 });
   const [sec5Ref, sec5InView, sec5Entry] = useInView({ threshold: 0.5 });
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const Chap3 = ({ setCurrentEl }, ref) => {
     if (sec5InView) {
       setCurrentEl(sec5Entry.target);
     }
-  }, [sec1InView, sec2InView, sec3InView, sec4InView]);
+  }, [sec1InView, sec2InView, sec3InView, sec4InView, sec5InView]);
 
   return (
     <section id="chap3" ref={ref}>
@@ -57,25 +57,25 @@ const Chap3 = ({ setCurrentEl }, ref) => {
         <BasicContainer ref={sec2Ref} inView={sec2InView}>
           <Typography variant="body1" pt={30}>
             <FloorPlan />
-            <Typography variant="h5" mt={2}>
-              ...$1788 per month to rent this one bedroom apartment{' '}
+            <Typography variant="h5" mt={2} mb={50}>
+              ...$1788 per month
               <sup>
                 <Link
                   href="https://www.rentseeker.ca/average-rent-prices-canada"
                   target="_blank">
                   [8]
                 </Link>
-              </sup>
-              ...
+              </sup>{' '}
+              to rent this one bedroom apartment...
             </Typography>
-            <sup>
-              <Link
-                href="https://www.rentseeker.ca/average-rent-prices-canada"
-                target="_blank">
-                [8]
-              </Link>
-            </sup>{' '}
-            and <strong>$1537</strong> annually for a transit pass.
+          </Typography>
+        </BasicContainer>
+        <BasicContainer ref={sec3Ref} inView={sec3InView}>
+          {sec3Entry && (
+            <TransitPass inView={sec3InView} el={sec3Entry.target} />
+          )}
+          <Typography variant="h5" mt={0} mb={50}>
+            ...and <strong>$1537</strong> annually for a transit pass.
             <sup>
               <Link
                 href="https://youthfulcities.com/urban-indexes/rai-2022/"
@@ -84,21 +84,9 @@ const Chap3 = ({ setCurrentEl }, ref) => {
               </Link>
             </sup>{' '}
           </Typography>
-          {sec2Entry && (
-            <TransitPass inView={sec2InView} el={sec2Entry.target} />
-          )}
-          <Typography variant="h5" mt={2} mb={50}>
-            This appartment costs $1788 per month
-          </Typography>
         </BasicContainer>
-        <BasicContainer ref={sec3Ref} inView={sec3InView}>
-          {' '}
-          Placeholder
-        </BasicContainer>
-        <BasicContainer ref={sec3Ref} inView={sec3InView}>
-          With these high costs it is harder to budget for the rising cost of
-          food.
-          <Receipt inView={sec3InView} />
+        <BasicContainer ref={sec4Ref} inView={sec4InView}>
+          <Receipt inView={sec4InView} />
           <sub>
             Source:{' '}
             <a
@@ -109,7 +97,7 @@ const Chap3 = ({ setCurrentEl }, ref) => {
             </a>
           </sub>
         </BasicContainer>
-        <BasicContainer ref={sec4Ref} inView={sec4InView}>
+        <BasicContainer ref={sec5Ref} inView={sec5InView}>
           <Typography variant="h5">
             In July of 2020 only 44.3% of young men and 30% of young women
             reported having very good mental health,

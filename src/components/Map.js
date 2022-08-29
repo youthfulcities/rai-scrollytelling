@@ -1,11 +1,5 @@
 import Brightness1RoundedIcon from '@mui/icons-material/Brightness1Rounded';
-import {
-  Button,
-  Grid,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from '@mui/material';
+import { Button, Grid, Typography, useTheme } from '@mui/material';
 import React, { useEffect, useRef, useState } from 'react';
 import Map, { NavigationControl, Popup } from 'react-map-gl';
 
@@ -24,7 +18,7 @@ const MapView = () => {
   };
 
   const theme = useTheme();
-  const smallScreen = useMediaQuery(theme.breakpoints.down('md'));
+  // const smallScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   const [viewState, setViewState] = useState(initialView);
   const [completed, setCompleted] = useState(false);
