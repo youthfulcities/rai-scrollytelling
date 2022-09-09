@@ -42,7 +42,7 @@ const TorontoParallax = ({ el }) => {
         height="100%"
       />
       <motion.img
-        style={{ y: y3, x: x2, position: 'absolute' }}
+        style={{ y: y3, position: 'absolute' }}
         src="/assets/images/foregroundclouds.png"
         alt=""
         width="100%"

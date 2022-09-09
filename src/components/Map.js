@@ -93,8 +93,6 @@ const MapView = () => {
     });
   };
 
-  console.log(tuition);
-
   return (
     <>
       <Grid container sx={{ width: '100%' }} justifyContent="center" mb={2}>

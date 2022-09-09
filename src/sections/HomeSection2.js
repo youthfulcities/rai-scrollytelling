@@ -57,36 +57,40 @@ const HomeSection = ({ el }, ref) => {
               experience joy and find meaning in an unaffordable time.
             </Typography>
           </Box>
-          <FadeInUp delay={1} y={-650}>
-            <motion.div
-              initial={{ x: '-60%' }}
-              style={{
-                background:
-                  'linear-gradient(122deg, rgba(242,105,93,1) 0%, rgba(251,209,102,1) 83%)',
-                width: '300px',
-                height: '300px',
-                borderRadius: '50%',
-                position: 'absolute',
-                zIndex: '0',
-                y: y1,
-              }}
-            />
-          </FadeInUp>
-          <FadeInUp delay={2} y={-300}>
-            <motion.div
-              initial={{ x: '95%' }}
-              style={{
-                background:
-                  'linear-gradient(17deg, rgba(37,61,136,1) 0%, rgba(242,105,93,1) 79%)',
-                width: '600px',
-                height: '600px',
-                borderRadius: '50%',
-                position: 'absolute',
-                zIndex: '0',
-                y: y2,
-              }}
-            />
-          </FadeInUp>
+          {el && (
+            <>
+              <FadeInUp delay={1} y={-650}>
+                <motion.div
+                  initial={{ x: '-60%' }}
+                  style={{
+                    background:
+                      'linear-gradient(122deg, rgba(242,105,93,1) 0%, rgba(251,209,102,1) 83%)',
+                    width: '300px',
+                    height: '300px',
+                    borderRadius: '50%',
+                    position: 'absolute',
+                    zIndex: '0',
+                    y: y1,
+                  }}
+                />
+              </FadeInUp>
+              <FadeInUp delay={2} y={-300}>
+                <motion.div
+                  initial={{ x: '95%' }}
+                  style={{
+                    background:
+                      'linear-gradient(17deg, rgba(37,61,136,1) 0%, rgba(242,105,93,1) 79%)',
+                    width: '600px',
+                    height: '600px',
+                    borderRadius: '50%',
+                    position: 'absolute',
+                    zIndex: '0',
+                    y: y2,
+                  }}
+                />
+              </FadeInUp>
+            </>
+          )}
         </BasicContainer>
       </Grid>
     </section>
