@@ -120,7 +120,7 @@ const EmploymentGraph = () => (
     <Typography
       variant="h3"
       textTransform="uppercase"
-      fontFamily="Gotham Narrow"
+      fontFamily="Gotham Narrow Black"
       textAlign="center"
       mb={1}
       mt={8}>

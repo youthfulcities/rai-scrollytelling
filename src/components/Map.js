@@ -1,5 +1,11 @@
 import Brightness1RoundedIcon from '@mui/icons-material/Brightness1Rounded';
-import { Button, Grid, Typography, useTheme } from '@mui/material';
+import {
+  Button,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import React, { useEffect, useRef, useState } from 'react';
 import Map, { NavigationControl, Popup } from 'react-map-gl';
 
@@ -18,7 +24,7 @@ const MapView = () => {
   };
 
   const theme = useTheme();
-  // const smallScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const smallScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   const [viewState, setViewState] = useState(initialView);
   const [completed, setCompleted] = useState(false);
@@ -109,7 +115,7 @@ const MapView = () => {
         scrollZoom={false}
         projection="globe"
         onMove={(e) => setViewState(e.viewState)}
-        style={{ width: '100%', height: '90vh' }}
+        style={{ width: '100%', height: smallScreen ? '50vh' : '90vh' }}
         mapStyle="mapbox://styles/youthfulcities/cl759qkgf000015tcpu2ba6fc"
         interactiveLayerIds={['tuition-undergraduate', 'tuition-graduate']}
         onClick={onClick}
@@ -130,7 +136,7 @@ const MapView = () => {
             <Grid container p={1}>
               <Typography variant="body1" textTransform="uppercase">
                 <strong>
-                  Domestic {tuition.level} tuition costs in {tuition.prov}
+                  Domestic {tuition.level} tuition cost in {tuition.prov}
                 </strong>
               </Typography>
               <Grid

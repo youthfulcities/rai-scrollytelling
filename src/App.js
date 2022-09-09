@@ -79,11 +79,12 @@ const App = () => {
     element.scrollIntoView({ behavior: 'smooth' });
   };
 
+
   return (
     <ThemeProvider theme={theme}>
       <Router>
         <div className="flexWrapper">
-          <div className="flexGrow">
+          <div className="flexGrowtt">
             <Header />
             {conclusionEntry && (
               <Navigation

@@ -132,7 +132,7 @@ const WageGraph = () => (
     <Typography
       variant="h3"
       textTransform="uppercase"
-      fontFamily="Gotham Narrow"
+      fontFamily="Gotham Narrow Black"
       textAlign="center"
       sx={{ width: '100%' }}
       mb={1}

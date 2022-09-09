@@ -95,7 +95,7 @@ const options = {
     },
     title: {
       display: false,
-      text: 'Inflation rate in Canada between 2019 and 2022',
+      text: 'Inflation rate in Canada between 2019 and 2022 testing',
       color: '#000',
       font: {
         size: 14,
@@ -124,7 +124,7 @@ const InflationGraph = () => (
     <Typography
       variant="h3"
       textTransform="uppercase"
-      fontFamily="Gotham Narrow"
+      fontFamily="Gotham Narrow Black"
       textAlign="center"
       sx={{ width: '100%' }}
       mb={1}
