@@ -1,5 +1,5 @@
 import { Box, Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import React, { forwardRef } from 'react';
 import BasicContainer from '../components/BasicContainer';
 import FadeInUp from '../components/FadeInUp';
@@ -7,23 +7,17 @@ import FadeInUp from '../components/FadeInUp';
 // import { Flex },Box, GridTemplate, Img, ScaleBox, StaggerWrap from '../ui';
 // Container omitted
 
-const HomeSection = (props, ref) => {
+const HomeSection = ({ el }, ref) => {
   const theme = useTheme();
   const smallScreen = useMediaQuery(theme.breakpoints.down('md'));
 
-  // const ProfilePic = styled(Img)`
-  //   /* box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.25); */
-  //   box-shadow: 0px 24px 30px rgba(0, 0, 0, 0.2);
-  // `;
-  // ProfilePic.defaultProps = {
-  //   borderRadius: 4,
-  //   height: [40, null, 60, 80],
-  //   width: [40, null, 60, 80],
-  // };
+  const { scrollYProgress } = useScroll({
+    target: { current: el },
+    offset: ['start end', 'end start'],
+  });
 
-  // function rand(min, max) {
-  //   return Math.floor(Math.random() * (+max - +min)) + +min;
-  // }
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, -500]);
 
   return (
     <section ref={ref} id="home">
@@ -63,32 +57,40 @@ const HomeSection = (props, ref) => {
               experience joy and find meaning in an unaffordable time.
             </Typography>
           </Box>
-          <FadeInUp delay={2} y={-700}>
-            <motion.div
-              initial={{ x: '140%' }}
-              style={{
-                backgroundColor: 'var(--yellow)',
-                width: '300px',
-                height: '300px',
-                borderRadius: '50%',
-                position: 'absolute',
-                zIndex: '0',
-              }}
-            />
-          </FadeInUp>
-          <FadeInUp delay={3} y={-600}>
-            <motion.div
-              initial={{ x: '-50%' }}
-              style={{
-                backgroundColor: 'var(--pink)',
-                width: '600px',
-                height: '600px',
-                borderRadius: '50%',
-                position: 'absolute',
-                zIndex: '0',
-              }}
-            />
-          </FadeInUp>
+          {el && (
+            <>
+              <FadeInUp delay={1} y={-650}>
+                <motion.div
+                  initial={{ x: '-60%' }}
+                  style={{
+                    background:
+                      'linear-gradient(122deg, rgba(242,105,93,1) 0%, rgba(251,209,102,1) 83%)',
+                    width: '300px',
+                    height: '300px',
+                    borderRadius: '50%',
+                    position: 'absolute',
+                    zIndex: '0',
+                    y: y1,
+                  }}
+                />
+              </FadeInUp>
+              <FadeInUp delay={2} y={-300}>
+                <motion.div
+                  initial={{ x: '95%' }}
+                  style={{
+                    background:
+                      'linear-gradient(17deg, rgba(37,61,136,1) 0%, rgba(242,105,93,1) 79%)',
+                    width: '600px',
+                    height: '600px',
+                    borderRadius: '50%',
+                    position: 'absolute',
+                    zIndex: '0',
+                    y: y2,
+                  }}
+                />
+              </FadeInUp>
+            </>
+          )}
         </BasicContainer>
       </Grid>
     </section>
