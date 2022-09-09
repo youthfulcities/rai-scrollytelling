@@ -79,7 +79,6 @@ const App = () => {
     element.scrollIntoView({ behavior: 'smooth' });
   };
 
-
   return (
     <ThemeProvider theme={theme}>
       <Router>
@@ -102,7 +101,11 @@ const App = () => {
                 currentEl={currentEl}
               />
             )}
-            <HomeSection2 ref={homeRef} homeInView={homeInView} />
+            <HomeSection2
+              ref={homeRef}
+              homeInView={homeInView}
+              el={homeEntry && homeEntry.target}
+            />
 
             <Chap1 ref={chap1Ref} setCurrentEl={setCurrentEl} />
             <Chap2 ref={chap2Ref} setCurrentEl={setCurrentEl} />
