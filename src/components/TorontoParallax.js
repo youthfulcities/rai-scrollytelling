@@ -9,10 +9,10 @@ const TorontoParallax = ({ el }) => {
   });
 
   const y1 = useTransform(scrollYProgress, [0.3, 1], [0, 300]);
-  const y2 = useTransform(scrollYProgress, [0.3, 1], [0, 200]);
-  const y3 = useTransform(scrollYProgress, [0.3, 1], [0, 100]);
-  const x1 = useTransform(scrollYProgress, [0.3, 1], [0, -50]);
-  const x2 = useTransform(scrollYProgress, [0.3, 1], [0, 40]);
+  // const y2 = useTransform(scrollYProgress, [0.3, 1], [0, 200]);
+  // const y3 = useTransform(scrollYProgress, [0.3, 1], [0, 100]);
+  const x1 = useTransform(scrollYProgress, [0.3, 1], [0, -300]);
+  const x2 = useTransform(scrollYProgress, [0.3, 1], [0, 200]);
 
   return (
     <Grid
@@ -35,14 +35,14 @@ const TorontoParallax = ({ el }) => {
         height="100%"
       />
       <motion.img
-        style={{ y: y2, x: x1, position: 'absolute' }}
+        style={{ x: x1, position: 'absolute' }}
         src="/assets/images/bgclouds.png"
         alt=""
         width="100%"
         height="100%"
       />
       <motion.img
-        style={{ y: y3, position: 'absolute' }}
+        style={{ x: x2, position: 'absolute' }}
         src="/assets/images/foregroundclouds.png"
         alt=""
         width="100%"

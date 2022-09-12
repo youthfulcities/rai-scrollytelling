@@ -3,33 +3,67 @@ import { forwardRef } from 'react';
 import FadeInUp from './FadeInUp';
 
 const BasicContainer = (
-  { children, inView = false, width, align = 'flex-start', height = '100vh' },
+  {
+    children,
+    inView = false,
+    width,
+    align = 'flex-start',
+    height = '100vh',
+    fadeIn = true,
+  },
   ref
 ) => (
-  <Container
-    ref={ref}
-    maxWidth={width === undefined ? 'sm' : width}
-    sx={{
-      paddingLeft: '30px',
-      paddingRight: '30px',
-      width: '100%',
-      height: '100%',
-      margin: 'auto',
-    }}>
-    <FadeInUp inView={inView}>
-      <Grid
-        sx={{ width: '100%', height: '100%', minHeight: height }}
-        item
-        container
-        direction="column"
-        justifyContent="center"
-        flexWrap="nowrap"
-        alignItems={align}
-        spacing={0}>
-        {children}
-      </Grid>
-    </FadeInUp>
-  </Container>
+  <div>
+    {fadeIn ? (
+      <Container
+        ref={ref}
+        maxWidth={width === undefined ? 'sm' : width}
+        sx={{
+          paddingLeft: '30px',
+          paddingRight: '30px',
+          width: '100%',
+          height: '100%',
+          margin: 'auto',
+        }}>
+        <FadeInUp inView={inView}>
+          <Grid
+            sx={{ width: '100%', height: '100%', minHeight: height }}
+            item
+            container
+            direction="column"
+            justifyContent="center"
+            flexWrap="nowrap"
+            alignItems={align}
+            spacing={0}>
+            {children}
+          </Grid>
+        </FadeInUp>
+      </Container>
+    ) : (
+      <Container
+        ref={ref}
+        maxWidth={width === undefined ? 'sm' : width}
+        sx={{
+          paddingLeft: '30px',
+          paddingRight: '30px',
+          width: '100%',
+          height: '100%',
+          margin: 'auto',
+        }}>
+        <Grid
+          sx={{ width: '100%', height: '100%', minHeight: height }}
+          item
+          container
+          direction="column"
+          justifyContent="center"
+          flexWrap="nowrap"
+          alignItems={align}
+          spacing={0}>
+          {children}
+        </Grid>
+      </Container>
+    )}
+  </div>
 );
 
 export default forwardRef(BasicContainer);

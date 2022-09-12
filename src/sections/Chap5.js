@@ -1,7 +1,8 @@
-import { Grid, Link, Typography } from '@mui/material';
+import { Box, Grid, Link, Typography } from '@mui/material';
 import { forwardRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import BasicContainer from '../components/BasicContainer';
+import RaiGraphic from '../components/RaiGraphic';
 
 const Chap5 = ({ setCurrentEl }, ref) => {
   const [sec1Ref, sec1InView, sec1Entry] = useInView({ threshold: 0.5 });
@@ -72,11 +73,15 @@ const Chap5 = ({ setCurrentEl }, ref) => {
           </Typography>
         </BasicContainer>
         <BasicContainer ref={sec4Ref} inView={sec4InView}>
-          <img
-            src="/assets/images/rai.png"
-            alt="Diagram of monthly deficits across 27 cities in Canada with the average being -$745 per month."
-            width="100%"
-          />
+          <Box
+            style={{
+              position: 'relative',
+              minHeight: '100vh',
+              width: '100%',
+              height: '100%',
+            }}>
+            <RaiGraphic />
+          </Box>
         </BasicContainer>
       </Grid>
     </section>

@@ -25,6 +25,7 @@
     "framer-motion": "^6.5.0",
     "intersection-observer": "^0.12.2",
     "jest": "^28.1.1",
+    "lodash": "^4.17.21",
     "mapbox-gl": "^2.9.2",
     "prettier": "^2.7.1",
     "react": "^18.2.0",

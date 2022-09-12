@@ -62,7 +62,8 @@ const Chap1 = ({ setCurrentEl }, ref) => {
           </Typography>
           <Typography variant="body1">
             By eventually moving to an urban centre, you will become part of the
-            70% of Canadian youth that leave rural areas for urban ones.{' '}
+            <strong>70%</strong> of Canadian youth that leave rural areas for
+            urban ones.{' '}
             <sup>
               <Link
                 href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410032701"
