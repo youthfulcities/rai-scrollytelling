@@ -50,7 +50,7 @@ const Chap3 = ({ setCurrentEl }, ref) => {
             You are adjusting and budgeting for changes in the cost of living as
             you get settled in your urban life.
           </Typography>
-          <Typography variant="h5">
+          <Typography variant="body1">
             Additional costs in Toronto include...
           </Typography>
         </BasicContainer>

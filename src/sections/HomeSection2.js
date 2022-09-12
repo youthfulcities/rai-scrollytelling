@@ -17,7 +17,7 @@ const HomeSection = ({ el }, ref) => {
   });
 
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -50]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, -500]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, -300]);
 
   return (
     <section ref={ref} id="home">
