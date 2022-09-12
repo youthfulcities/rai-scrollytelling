@@ -50,24 +50,22 @@ const Chap3 = ({ setCurrentEl }, ref) => {
             You are adjusting and budgeting for changes in the cost of living as
             you get settled in your urban life.
           </Typography>
-          <Typography variant="h5">
+          <Typography variant="body1">
             Additional costs in Toronto include...
           </Typography>
         </BasicContainer>
         <BasicContainer ref={sec2Ref} inView={sec2InView}>
-          <Typography variant="body1" pt={30}>
-            <FloorPlan />
-            <Typography variant="h5" mt={2} mb={50}>
-              ...$1788 per month
-              <sup>
-                <Link
-                  href="https://www.rentseeker.ca/average-rent-prices-canada"
-                  target="_blank">
-                  [8]
-                </Link>
-              </sup>{' '}
-              to rent this one bedroom apartment...
-            </Typography>
+          <FloorPlan />
+          <Typography variant="h5" mt={2} mb={50}>
+            ...$1788 per month
+            <sup>
+              <Link
+                href="https://www.rentseeker.ca/average-rent-prices-canada"
+                target="_blank">
+                [8]
+              </Link>
+            </sup>{' '}
+            to rent this one bedroom apartment...
           </Typography>
         </BasicContainer>
         <BasicContainer ref={sec3Ref} inView={sec3InView}>

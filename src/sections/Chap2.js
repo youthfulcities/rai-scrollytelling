@@ -75,8 +75,8 @@ const Chap2 = ({ setCurrentEl }, ref) => {
         </BasicContainer>
         <BasicContainer ref={sec2Ref} inView={sec2InView}>
           <Typography variant="body1">
-            The price of goods has increased 8.1% over the past year across
-            Canada.
+            The price of goods has increased <strong>8.1%</strong> over the past
+            year across Canada.
             <sup>
               <Link
                 href="https://www150.statcan.gc.ca/n1/daily-quotidien/220720/dq220720a-eng.htm"
@@ -91,8 +91,8 @@ const Chap2 = ({ setCurrentEl }, ref) => {
         </BasicContainer>
         <BasicContainer ref={sec3Ref} inView={sec3InView}>
           <Typography variant="h5">
-            Toronto has an estimated 35% to 36% of young people working in the
-            service sector,
+            Toronto has an estimated <strong>35% to 36% of young people</strong>{' '}
+            working in the service sector,
             <sup>
               <Link
                 href="https://youthfulcities.com/urban-indexes/rai-2022/"
@@ -110,8 +110,8 @@ const Chap2 = ({ setCurrentEl }, ref) => {
             width="100%"
           />
           <Typography variant="body1">
-            The minimum wage in Toronto is $15.50 an hour, but a liveable wage
-            is $23.62 an hour.
+            The minimum wage in Toronto is <strong>$15.50 an hour</strong>, but
+            a liveable wage is <strong>$23.62 an hour</strong>.
             <sup>
               <Link
                 href="https://youthfulcities.com/urban-indexes/rai-2022/"
@@ -140,8 +140,8 @@ const Chap2 = ({ setCurrentEl }, ref) => {
         <BasicContainer ref={sec5Ref} inView={sec5InView}>
           <Typography variant="body1">
             This isn’t the only factor that perpetuates affordability
-            differences between genders. People who menstruate average spending
-            $6000 in their lifetime on menstruation products
+            differences between genders. People who menstruate average spending{' '}
+            <strong>$6000</strong> in their lifetime on menstruation products,
             <sup>
               <Link
                 href="https://www.cpha.ca/period-poverty-canada-and-around-globe"
@@ -149,8 +149,8 @@ const Chap2 = ({ setCurrentEl }, ref) => {
                 [5]
               </Link>
             </sup>{' '}
-            resulting in 21% of Canadians stating that they have trouble
-            affording period products.
+            resulting in <strong>21% of Canadians</strong> stating that they
+            have trouble affording period products.
             <sup>
               <Link
                 href="https://www.multivu.com/players/English/9052951-menstrual-health-day-2022/"
@@ -158,8 +158,8 @@ const Chap2 = ({ setCurrentEl }, ref) => {
                 [6]
               </Link>
             </sup>{' '}
-            Women also average spending $35.65 more per month than men on
-            similar products.
+            Women also average spending <strong>$35.65 more per month</strong>{' '}
+            than men on similar products.
             <sup>
               <Link
                 href="https://youthfulcities.com/urban-indexes/rai-2022/"

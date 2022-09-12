@@ -10,6 +10,7 @@ const Chap4 = ({ setCurrentEl }, ref) => {
   const [sec2Ref, sec2InView, sec2Entry] = useInView({ threshold: 0.5 });
   const [sec3Ref, sec3InView, sec3Entry] = useInView({ threshold: 0.5 });
   const [sec4Ref, sec4InView, sec4Entry] = useInView({ threshold: 0.5 });
+  const [sec5Ref, sec5InView, sec5Entry] = useInView({ threshold: 0.5 });
   useEffect(() => {
     if (sec1InView) {
       setCurrentEl(sec1Entry.target);
@@ -23,7 +24,11 @@ const Chap4 = ({ setCurrentEl }, ref) => {
     if (sec4InView) {
       setCurrentEl(sec4Entry.target);
     }
-  }, [sec1InView, sec2InView, sec3InView, sec4InView]);
+    if (sec5InView) {
+      setCurrentEl(sec5Entry.target);
+    }
+  }, [sec1InView, sec2InView, sec3InView, sec4InView, sec5InView]);
+
   return (
     <section ref={ref} id="chap4">
       <Grid
@@ -45,6 +50,8 @@ const Chap4 = ({ setCurrentEl }, ref) => {
             education. Due to your high living costs you have to take out a
             loan.
           </Typography>
+        </BasicContainer>
+        <BasicContainer ref={sec2Ref} inView={sec2InView}>
           <Typography variant="h5">
             Although 73% of young people in Canada attend post secondary
             education,
@@ -67,11 +74,11 @@ const Chap4 = ({ setCurrentEl }, ref) => {
             </sup>
           </Typography>
         </BasicContainer>
-        <BasicContainer ref={sec2Ref} inView={sec2InView}>
+        <BasicContainer ref={sec3Ref} inView={sec3InView}>
           <Typography variant="body1">
             The tuition costs vary by province, with Sakatchewan having the most
-            affordable tuition and Ontario having the highest tuition at $9,743
-            on average.
+            affordable tuition and Ontario having the highest tuition at{' '}
+            <strong>$9,743</strong> on average.
             <sup>
               <Link
                 href="https://www150.statcan.gc.ca/n1/daily-quotidien/210908/dq210908a-eng.htm"
@@ -81,15 +88,16 @@ const Chap4 = ({ setCurrentEl }, ref) => {
             </sup>
           </Typography>
         </BasicContainer>
-        <div ref={sec3Ref}>
-          <FadeInUp inView={sec3InView}>
+        <div ref={sec4Ref}>
+          <FadeInUp inView={sec4InView}>
             <Map />
           </FadeInUp>
         </div>
-        <BasicContainer ref={sec4Ref} inView={sec4InView}>
+        <BasicContainer ref={sec5Ref} inView={sec5InView}>
           <Typography variant="body1">
             You don’t want to move to another province for school even though
-            the average tuition in another province would be $6,700,
+            the average tuition in another province would be{' '}
+            <strong>$6700</strong>,
             <sup>
               <Link
                 href="https://www150.statcan.gc.ca/n1/daily-quotidien/210908/dq210908a-eng.htm"

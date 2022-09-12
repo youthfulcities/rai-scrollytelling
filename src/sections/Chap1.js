@@ -61,8 +61,9 @@ const Chap1 = ({ setCurrentEl }, ref) => {
             or education opportunities amidst great uncertainty.
           </Typography>
           <Typography variant="body1">
-            By eventually moving to an urban centre, you will become part of the
-            70% of Canadian youth that leave rural areas for urban ones.{' '}
+            By eventually moving to an urban centre, you will become part of the{' '}
+            <strong>70% of Canadian youth</strong> that leave rural areas for
+            urban ones.{' '}
             <sup>
               <Link
                 href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410032701"
@@ -78,8 +79,9 @@ const Chap1 = ({ setCurrentEl }, ref) => {
         </BasicContainer>
         <BasicContainer ref={sec2Ref} inView={sec2InView}>
           <Typography variant="body1" pt={30}>
-            You work a minimum wage job in your hometown and are part of the 35%
-            of Canadian youth that are employed in the service sector,
+            You work a minimum wage job in your hometown and are part of the{' '}
+            <strong>35% of Canadian youth</strong> that are employed in the
+            service sector,
             <sup>
               <Link
                 href="https://youthfulcities.com/urban-indexes/rai-2022/"
@@ -169,7 +171,8 @@ const Chap1 = ({ setCurrentEl }, ref) => {
             is <strong>not</strong> a liveable wage.
           </Typography>
           <Typography variant="h5">
-            Young Canadians across the country experience a $2 and $10 gap
+            Young Canadians across the country experience a{' '}
+            <strong>$2 and $10 gap</strong>
             between minimum and liveable wage.
             <sup>
               <Link

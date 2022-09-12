@@ -1,7 +1,8 @@
-import { Grid, Link, Typography } from '@mui/material';
+import { Box, Grid, Link, Typography } from '@mui/material';
 import { forwardRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import BasicContainer from '../components/BasicContainer';
+import RaiGraphic from '../components/RaiGraphic';
 
 const Chap5 = ({ setCurrentEl }, ref) => {
   const [sec1Ref, sec1InView, sec1Entry] = useInView({ threshold: 0.5 });
@@ -45,7 +46,8 @@ const Chap5 = ({ setCurrentEl }, ref) => {
           />
           <Typography variant="body1" mt={3}>
             Every month you feel as if you are scraping by. You are part of a
-            generation of young people in a deficit of $750 per month.
+            generation of young people in a deficit of{' '}
+            <strong>$745 per month</strong>.
             <sup>
               <Link
                 sx={{ color: 'var(--red)' }}
@@ -54,10 +56,10 @@ const Chap5 = ({ setCurrentEl }, ref) => {
                 [2]
               </Link>
             </sup>{' '}
-            Minimum wage doesn’t keep up with the liveable wage making cities
-            feel unlivable, yet you don’t have another option. You must live in
-            an urban area in order to upskill and move away from the minimum
-            wage bracket so that you can have future successes.
+            Minimum wage doesn’t keep up with the liveable, making cities feel
+            unlivable, yet you don’t have another option. You must live in an
+            urban area in order to upskill and move away from the minimum wage
+            bracket so that you can have future successes.
           </Typography>
         </BasicContainer>
         <BasicContainer ref={sec2Ref} inView={sec2InView}>
@@ -68,15 +70,19 @@ const Chap5 = ({ setCurrentEl }, ref) => {
         <BasicContainer ref={sec3Ref} inView={sec3InView}>
           <Typography variant="body1">
             It feels like you are constantly searching for a sense of financial
-            security that is just out of reach.
+            security that is <strong>just out of reach</strong>.
           </Typography>
         </BasicContainer>
         <BasicContainer ref={sec4Ref} inView={sec4InView}>
-          <img
-            src="/assets/images/rai.png"
-            alt="Diagram of monthly deficits across 27 cities in Canada with the average being -$745 per month."
-            width="100%"
-          />
+          <Box
+            style={{
+              position: 'relative',
+              minHeight: '100vh',
+              width: '100%',
+              height: '100%',
+            }}>
+            <RaiGraphic />
+          </Box>
         </BasicContainer>
       </Grid>
     </section>
