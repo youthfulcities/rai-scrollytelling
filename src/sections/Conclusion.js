@@ -42,11 +42,23 @@ const Conclusion = ({ inView }, ref) => (
         <Grid item mb={1}>
           <Button
             component={Link}
-            href="https://youthfulcities.us7.list-manage.com/subscribe?u=ad93cdfc178e6d9bc7646844f&id=453e06e908"
+            href="https://realaffordability.ca/"
             target="_blank"
             rel="noreferrer"
             variant="contained"
             color="error"
+            sx={{ color: '#000', padding: '14px 35px', textAlign: 'center' }}>
+            Find your most affordable city
+          </Button>
+        </Grid>
+        <Grid item mb={1}>
+          <Button
+            component={Link}
+            href="https://youthfulcities.us7.list-manage.com/subscribe?u=ad93cdfc178e6d9bc7646844f&id=453e06e908"
+            target="_blank"
+            rel="noreferrer"
+            variant="contained"
+            color="secondary"
             sx={{
               color: '#000',
               padding: '14px 35px',
