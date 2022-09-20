@@ -83,7 +83,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <Router>
         <div className="flexWrapper">
-          <div className="flexGrowtt">
+          <div className="flexGrow">
             <Header />
             {conclusionEntry && (
               <Navigation
@@ -106,7 +106,6 @@ const App = () => {
               homeInView={homeInView}
               el={homeEntry && homeEntry.target}
             />
-
             <Chap1 ref={chap1Ref} setCurrentEl={setCurrentEl} />
             <Chap2 ref={chap2Ref} setCurrentEl={setCurrentEl} />
             <Chap3 ref={chap3Ref} setCurrentEl={setCurrentEl} />
