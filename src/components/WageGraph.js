@@ -69,7 +69,7 @@ const options = {
     },
     title: {
       display: false,
-      text: 'Wages by Gender and Ethnicity',
+      text: 'Wages by Sex and Ethnicity',
       color: '#000',
       font: {
         size: 14,
