@@ -137,7 +137,7 @@ const WageGraph = () => (
       sx={{ width: '100%' }}
       mb={1}
       mt={8}>
-      Wages by Gender and Ethnicity
+      Wages by Sex and Ethnicity
     </Typography>
     <Typography variant="body2" textAlign="center" mb={1}>
       Women make less than men in every ethnicity group, with Latin American
